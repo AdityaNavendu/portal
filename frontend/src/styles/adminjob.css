@@ -1,0 +1,32 @@
+.jobss__root {
+  display: flex;
+  flex-direction: column;
+  align-items: row;
+  justify-content: center;
+  margin-top: 50px;
+  width: 100%;
+}
+
+.jobss__search {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50vw;
+  margin-left: 15px;
+
+}
+
+.jobss__search__button {
+  background-color: rgb(73, 52, 208);
+  margin-right: 50px;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.jobss__search__button:hover {
+  background-color: rgb(241, 241, 241);
+  color: rgb(73, 52, 208);
+}

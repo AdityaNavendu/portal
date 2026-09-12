@@ -1,0 +1,43 @@
+/* Browse Page */
+
+.browse-page {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.browse-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.browse-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.browse-grid {
+display: flex;
+flex-wrap: wrap;
+gap: 30px;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .browse-grid {
+    grid-template-columns: repeat(2, 320px);
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .browse-grid {
+    grid-template-columns: 320px;
+  }
+
+  .browse-title {
+    font-size: 1.5rem;
+  }
+}

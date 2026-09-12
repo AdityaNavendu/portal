@@ -1,0 +1,46 @@
+Date : 2026-06-15 14:54:48
+Directory : c:\Users\adity\OneDrive\Desktop\portal
+Total : 11 files,  497 codes, 4 comments, 60 blanks, all 561 lines
+
+Languages
++----------------+------------+------------+------------+------------+------------+
+| language       | files      | code       | comment    | blank      | total      |
++----------------+------------+------------+------------+------------+------------+
+| JavaScript JSX |          9 |        494 |          4 |         60 |        558 |
+| JavaScript     |          1 |          2 |          0 |          0 |          2 |
+| JSON           |          1 |          1 |          0 |          0 |          1 |
++----------------+------------+------------+------------+------------+------------+
+
+Directories
++-----------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                          | files      | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                             |         11 |        497 |          4 |         60 |        561 |
+| . (Files)                                                                                     |          1 |          1 |          0 |          0 |          1 |
+| back                                                                                          |          1 |          2 |          0 |          0 |          2 |
+| back\controllers                                                                              |          1 |          2 |          0 |          0 |          2 |
+| frontend                                                                                      |          9 |        494 |          4 |         60 |        558 |
+| frontend\src                                                                                  |          9 |        494 |          4 |         60 |        558 |
+| frontend\src (Files)                                                                          |          1 |         10 |          0 |          1 |         11 |
+| frontend\src\components                                                                       |          8 |        484 |          4 |         59 |        547 |
+| frontend\src\components\compolite                                                             |          6 |        234 |          4 |         35 |        273 |
+| frontend\src\components\ui                                                                    |          2 |        250 |          0 |         24 |        274 |
++-----------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-----------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+
+| filename                                                                                      | language       | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+
+| c:\Users\adity\OneDrive\Desktop\portal\back\controllers\usercontrollers.js                    | JavaScript     |          2 |          0 |          0 |          2 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\App.jsx                                   | JavaScript JSX |         10 |          0 |          1 |         11 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\compolite\AppliedJob.jsx       | JavaScript JSX |         34 |          0 |          3 |         37 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\compolite\Description.jsx      | JavaScript JSX |         75 |          0 |          9 |         84 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\compolite\Editprofilemodal.jsx | JavaScript JSX |         23 |          0 |          3 |         26 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\compolite\Job.jsx              | JavaScript JSX |          4 |          0 |          1 |          5 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\compolite\Navbar.jsx           | JavaScript JSX |          1 |          0 |          0 |          1 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\compolite\Profile.jsx          | JavaScript JSX |         97 |          4 |         19 |        120 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\ui\dialog.jsx                  | JavaScript JSX |        139 |          0 |         13 |        152 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\ui\table.jsx                   | JavaScript JSX |        111 |          0 |         11 |        122 |
+| c:\Users\adity\OneDrive\Desktop\portal\package-lock.json                                      | JSON           |          1 |          0 |          0 |          1 |
+| Total                                                                                         |                |        497 |          4 |         60 |        561 |
++-----------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+

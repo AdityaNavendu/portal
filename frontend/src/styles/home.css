@@ -1,0 +1,10 @@
+/* Home page wrapper styles (replacing Tailwind utilities in Home.jsx) */
+
+.home__root{
+  display:flex;
+  flex-direction:column;
+
+
+
+}
+

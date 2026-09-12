@@ -1,0 +1,50 @@
+.setup__root {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+form {
+  width: 700px;
+}
+
+.setup__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.setup__form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formmodal__header {
+  display: flex;
+  align-items: center;
+}
+
+.formmodal__header label {
+  width: 180px;      
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.formmodal__header input {
+  flex: 1;            /* Takes remaining width */
+  padding: 10px;
+  font-size: 15px;
+}
+
+.setup__submit {
+  margin-top: 25px;
+  margin-left: 180px; /* Align with inputs */
+  background: #00b87c;
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+}

@@ -1,0 +1,47 @@
+"filename", "language", "JSON", "Markdown", "Ini", "JavaScript", "PostCSS", "JavaScript JSX", "Dotenv", "comment", "blank", "total"
+"c:\Users\adity\OneDrive\Desktop\portal\TODO.md", "Markdown", 0, 4, 0, 0, 0, 0, 0, 0, 5, 9
+"c:\Users\adity\OneDrive\Desktop\portal\back\.env", "Dotenv", 0, 0, 0, 0, 0, 0, 3, 0, 3, 6
+"c:\Users\adity\OneDrive\Desktop\portal\back\controllers\usercontrollers.js", "JavaScript", 0, 0, 0, 66, 0, 0, 0, 1, 10, 77
+"c:\Users\adity\OneDrive\Desktop\portal\back\index.js", "JavaScript", 0, 0, 0, 3, 0, 0, 0, 1, 1, 5
+"c:\Users\adity\OneDrive\Desktop\portal\back\middleware\multer.js", "JavaScript", 0, 0, 0, 9, 0, 0, 0, 0, 0, 9
+"c:\Users\adity\OneDrive\Desktop\portal\back\package-lock.json", "JSON", 69, 0, 0, 0, 0, 0, 0, 0, 0, 69
+"c:\Users\adity\OneDrive\Desktop\portal\back\package.json", "JSON", 2, 0, 0, 0, 0, 0, 0, 0, 0, 2
+"c:\Users\adity\OneDrive\Desktop\portal\back\routes\userroutes.js", "JavaScript", 0, 0, 0, 1, 0, 0, 0, 0, -1, 0
+"c:\Users\adity\OneDrive\Desktop\portal\back\utils\cloud.js", "JavaScript", 0, 0, 0, 9, 0, 0, 0, 1, 5, 15
+"c:\Users\adity\OneDrive\Desktop\portal\back\utils\datauri.js", "JavaScript", 0, 0, 0, 23, 0, 0, 0, 2, 12, 37
+"c:\Users\adity\OneDrive\Desktop\portal\backend\desktop.ini", "Ini", 0, 0, 2, 0, 0, 0, 0, 0, 1, 3
+"c:\Users\adity\OneDrive\Desktop\portal\backend\utils\cloud.js", "JavaScript", 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"c:\Users\adity\OneDrive\Desktop\portal\backend\utils\desktop.ini", "Ini", 0, 0, 2, 0, 0, 0, 0, 0, 1, 3
+"c:\Users\adity\OneDrive\Desktop\portal\frontend\package-lock.json", "JSON", 50, 0, 0, 0, 0, 0, 0, 0, 0, 50
+"c:\Users\adity\OneDrive\Desktop\portal\frontend\package.json", "JSON", 1, 0, 0, 0, 0, 0, 0, 0, 0, 1
+"c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\authen\Login.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, -1, 0, 0, -1, -2
+"c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\authen\Register.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 7, 0, 1, 4, 12
+"c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\compolite\Editprofilemodal.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, -2, 0, 0, 3, 1
+"c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\compolite\Header.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, -1, 0, 0, 0, -1
+"c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\compolite\Home.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 2, 0, 0, 0, 2
+"c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\compolite\Latestjob.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 3, 0, 0, 0, 3
+"c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\compolite\Navbar.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 21, 0, 0, 2, 23
+"c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\compolite\Profile.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 3, 0, 0, 1, 4
+"c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\ui\avatar.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, -97, 0, 0, -9, -106
+"c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\ui\badge.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, -42, 0, 0, -6, -48
+"c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\ui\button.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, -58, 0, 0, -6, -64
+"c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\ui\carousel.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, -171, 0, 0, -24, -195
+"c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\ui\desktop.ini", "Ini", 0, 0, -2, 0, 0, 0, 0, 0, -1, -3
+"c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\ui\dialog.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, -139, 0, 0, -13, -152
+"c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\ui\input.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, -19, 0, 0, -4, -23
+"c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\ui\label.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, -18, 0, 0, -4, -22
+"c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\ui\popover.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, -80, 0, 0, -10, -90
+"c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\ui\radio-group.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, -28, 0, -2, -7, -37
+"c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\ui\sonner.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, -45, 0, 0, -4, -49
+"c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\ui\spinner.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, -15, 0, 0, -3, -18
+"c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\ui\table.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, -111, 0, 0, -11, -122
+"c:\Users\adity\OneDrive\Desktop\portal\frontend\src\hooks\Getalljob.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 26, 0, 0, 4, 30
+"c:\Users\adity\OneDrive\Desktop\portal\frontend\src\hooks\desktop.ini", "Ini", 0, 0, 2, 0, 0, 0, 0, 0, 1, 3
+"c:\Users\adity\OneDrive\Desktop\portal\frontend\src\redux\jobslice.js", "JavaScript", 0, 0, 0, 15, 0, 0, 0, 0, 4, 19
+"c:\Users\adity\OneDrive\Desktop\portal\frontend\src\redux\store.js", "JavaScript", 0, 0, 0, 2, 0, 0, 0, 0, -1, 1
+"c:\Users\adity\OneDrive\Desktop\portal\frontend\src\styles\home.css", "PostCSS", 0, 0, 0, 0, -4, 0, 0, 0, 2, -2
+"c:\Users\adity\OneDrive\Desktop\portal\frontend\src\styles\job.css", "PostCSS", 0, 0, 0, 0, -144, 0, 0, -3, -21, -168
+"c:\Users\adity\OneDrive\Desktop\portal\frontend\src\utils\data.js", "JavaScript", 0, 0, 0, 1, 0, 0, 0, 0, 1, 2
+"c:\Users\adity\OneDrive\Desktop\portal\package-lock.json", "JSON", 55, 0, 0, 0, 0, 0, 0, 0, 0, 55
+"c:\Users\adity\OneDrive\Desktop\portal\package.json", "JSON", 1, 0, 0, 0, 0, 0, 0, 0, 0, 1
+"Total", "-", 178, 4, 4, 129, -148, -765, 3, 1, -65, -659

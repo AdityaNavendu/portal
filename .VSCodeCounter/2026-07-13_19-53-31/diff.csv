@@ -1,0 +1,16 @@
+"filename", "language", "Markdown", "JavaScript", "PostCSS", "JavaScript JSX", "comment", "blank", "total"
+"c:\Users\adity\OneDrive\Desktop\portal\TODO.md", "Markdown", -5, 0, 0, 0, 0, -2, -7
+"c:\Users\adity\OneDrive\Desktop\portal\back\controllers\jobcontroller.js", "JavaScript", 0, 15, 0, 0, 0, 3, 18
+"c:\Users\adity\OneDrive\Desktop\portal\frontend\src\App.jsx", "JavaScript JSX", 0, 0, 0, 8, 0, 7, 15
+"c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\admincomponent\Adminjobtable.jsx", "JavaScript JSX", 0, 0, 0, 81, 1, 18, 100
+"c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\admincomponent\Jobss.jsx", "JavaScript JSX", 0, 0, 0, 8, 0, 1, 9
+"c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\admincomponent\postjob.jsx", "JavaScript JSX", 0, 0, 0, 255, 3, 36, 294
+"c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\compolite\Browse.jsx", "JavaScript JSX", 0, 0, 0, 3, 0, 4, 7
+"c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\compolite\Jobcard.jsx", "JavaScript JSX", 0, 0, 0, 2, 0, 2, 4
+"c:\Users\adity\OneDrive\Desktop\portal\frontend\src\hooks\getalladminjob.jsx", "JavaScript JSX", 0, 0, 0, 39, 1, 8, 48
+"c:\Users\adity\OneDrive\Desktop\portal\frontend\src\redux\jobslice.js", "JavaScript", 0, 8, 0, 0, 0, 0, 8
+"c:\Users\adity\OneDrive\Desktop\portal\frontend\src\styles\adminjob.css", "PostCSS", 0, 0, 28, 0, 0, 5, 33
+"c:\Users\adity\OneDrive\Desktop\portal\frontend\src\styles\adminjobtable.css", "PostCSS", 0, 0, 60, 0, 0, 11, 71
+"c:\Users\adity\OneDrive\Desktop\portal\frontend\src\styles\jobcomponent.css", "PostCSS", 0, 0, -1, 0, 0, 2, 1
+"c:\Users\adity\OneDrive\Desktop\portal\frontend\src\styles\postjob.css", "PostCSS", 0, 0, 105, 0, 9, 20, 134
+"Total", "-", -5, 23, 192, 396, 14, 115, 735

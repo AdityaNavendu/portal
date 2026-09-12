@@ -1,0 +1,51 @@
+
+/* Latestjob section (existing) */
+.latestjob-wrapper {
+
+
+  display: flex;
+  flex-direction: column;
+  
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.latestjob-title {
+  font-size: 36px;
+  font-weight: 800;
+}
+
+.latestjob-title-highlight {
+  color: #3b82f6;
+}
+
+.latestjob-grid {
+ display: flex;
+ flex-wrap: wrap;
+ gap: 30px;
+ margin-top: 20px;
+ margin-bottom: 20px;
+color: black;
+}
+
+@media (max-width: 1024px) {
+  .latestjob-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .latestjob-wrapper {
+    margin: 50px 16px;
+  }
+
+  .latestjob-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .job-card {
+    width: 100%;
+  }
+}
+
+

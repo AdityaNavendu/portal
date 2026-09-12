@@ -1,0 +1,123 @@
+/* Styles for compolite/Jobcard.jsx */
+
+.jobcard-card {
+  width: 320px;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.jobcard-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Shared elements used by Jobcard */
+.jobcard-company-info {
+  margin-bottom: 20px;
+}
+
+.jobcard-content {
+  margin-bottom: 20px;
+}
+
+.jobcard-job-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+}
+
+.jobcard-desc {
+  color: #4b5563;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.jobcard-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 16px 0;
+}
+
+.jobcard-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.jobcard-btn-save {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #7c3aed;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+  white-space: nowrap;
+}
+
+.jobcard-btn-save:hover {
+  background: #6d28d9;
+}
+
+.jobcard-time {
+  color: #6b7280;
+  font-size: 14px;
+  margin: 0;
+}
+
+.jobcard-company {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.jobcard-country {
+  color: #6b7280;
+  margin-top: 4px;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+/* Badge pills (local names to avoid conflicts) */
+.jobcard-badge-pill {
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.jobcard-badge-blue {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+.jobcard-badge-green {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.jobcard-badge-purple {
+  background: #ede9fe;
+  color: #7c3aed;
+}
+
+.jobcard-badge-orange {
+  background: #ffedd5;
+  color: #ea580c;
+}
+
+@media (max-width: 640px) {
+  .jobcard-card {
+    width: 100%;
+  }
+}
+

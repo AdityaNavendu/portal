@@ -1,0 +1,60 @@
+.filter-container {
+  width: 100%;
+  background: #fff;
+  border-radius: 8px;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.filter-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #222;
+  margin: 0;
+}
+
+.filter-divider {
+  margin-top: 12px;
+  border: none;
+  border-top: 1px solid #ddd;
+}
+
+.filter-content {
+  margin-top: 20px;
+}
+
+.filter-section {
+  margin-bottom: 20px;
+}
+
+.filter-heading {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.filter-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 0;
+}
+
+.filter-checkbox {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: #6b3ac2;
+}
+
+.filter-label {
+  cursor: pointer;
+  color: #555;
+  font-size: 15px;
+  user-select: none;
+}
+
+.filter-label:hover {
+  color: #6b3ac2;
+}

@@ -1,0 +1,53 @@
+Date : 2026-07-13 19:53:31
+Directory : c:\Users\adity\OneDrive\Desktop\portal
+Total : 14 files,  606 codes, 14 comments, 115 blanks, all 735 lines
+
+Languages
++----------------+------------+------------+------------+------------+------------+
+| language       | files      | code       | comment    | blank      | total      |
++----------------+------------+------------+------------+------------+------------+
+| JavaScript JSX |          7 |        396 |          5 |         76 |        477 |
+| PostCSS        |          4 |        192 |          9 |         38 |        239 |
+| JavaScript     |          2 |         23 |          0 |          3 |         26 |
+| Markdown       |          1 |         -5 |          0 |         -2 |         -7 |
++----------------+------------+------------+------------+------------+------------+
+
+Directories
++-------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                            | files      | code       | comment    | blank      | total      |
++-------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                               |         14 |        606 |         14 |        115 |        735 |
+| . (Files)                                                                                       |          1 |         -5 |          0 |         -2 |         -7 |
+| back                                                                                            |          1 |         15 |          0 |          3 |         18 |
+| back\controllers                                                                                |          1 |         15 |          0 |          3 |         18 |
+| frontend                                                                                        |         12 |        596 |         14 |        114 |        724 |
+| frontend\src                                                                                    |         12 |        596 |         14 |        114 |        724 |
+| frontend\src (Files)                                                                            |          1 |          8 |          0 |          7 |         15 |
+| frontend\src\components                                                                         |          5 |        349 |          4 |         61 |        414 |
+| frontend\src\components\admincomponent                                                          |          3 |        344 |          4 |         55 |        403 |
+| frontend\src\components\compolite                                                               |          2 |          5 |          0 |          6 |         11 |
+| frontend\src\hooks                                                                              |          1 |         39 |          1 |          8 |         48 |
+| frontend\src\redux                                                                              |          1 |          8 |          0 |          0 |          8 |
+| frontend\src\styles                                                                             |          4 |        192 |          9 |         38 |        239 |
++-------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-------------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+
+| filename                                                                                        | language       | code       | comment    | blank      | total      |
++-------------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+
+| c:\Users\adity\OneDrive\Desktop\portal\TODO.md                                                  | Markdown       |         -5 |          0 |         -2 |         -7 |
+| c:\Users\adity\OneDrive\Desktop\portal\back\controllers\jobcontroller.js                        | JavaScript     |         15 |          0 |          3 |         18 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\App.jsx                                     | JavaScript JSX |          8 |          0 |          7 |         15 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\admincomponent\Adminjobtable.jsx | JavaScript JSX |         81 |          1 |         18 |        100 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\admincomponent\Jobss.jsx         | JavaScript JSX |          8 |          0 |          1 |          9 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\admincomponent\postjob.jsx       | JavaScript JSX |        255 |          3 |         36 |        294 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\compolite\Browse.jsx             | JavaScript JSX |          3 |          0 |          4 |          7 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\compolite\Jobcard.jsx            | JavaScript JSX |          2 |          0 |          2 |          4 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\hooks\getalladminjob.jsx                    | JavaScript JSX |         39 |          1 |          8 |         48 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\redux\jobslice.js                           | JavaScript     |          8 |          0 |          0 |          8 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\styles\adminjob.css                         | PostCSS        |         28 |          0 |          5 |         33 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\styles\adminjobtable.css                    | PostCSS        |         60 |          0 |         11 |         71 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\styles\jobcomponent.css                     | PostCSS        |         -1 |          0 |          2 |          1 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\styles\postjob.css                          | PostCSS        |        105 |          9 |         20 |        134 |
+| Total                                                                                           |                |        606 |         14 |        115 |        735 |
++-------------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+

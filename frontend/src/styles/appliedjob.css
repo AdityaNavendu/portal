@@ -1,0 +1,49 @@
+/* AppliedJob table (no shadcn/tailwind) */
+
+.applied-job-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.applied-job-title {
+  margin-bottom: 12px;
+  font-size: 14px;
+  letter-spacing: 0.4px;
+  font-weight: 600;
+  color: #111;
+}
+
+.applied-job-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 720px;
+  background: #fff;
+  border: 1px solid #e6e6e6;
+}
+
+.applied-job-table thead th {
+  text-align: left;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 12px 14px;
+  color: #222;
+  border-bottom: 1px solid #e6e6e6;
+  background: #fafafa;
+  text-transform: lowercase;
+}
+
+.applied-job-table tbody td {
+  font-size: 13px;
+  padding: 12px 14px;
+  color: #222;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.applied-job-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.applied-job-table tbody tr:hover td {
+  background: #f7fbff;
+}
+

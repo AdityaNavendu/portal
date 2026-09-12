@@ -1,0 +1,145 @@
+.footer{
+  margin-top:40px;
+  background:#fff;
+  border-top:1px solid #e5e7eb;
+  font-family:inherit;
+}
+
+.footer__container{
+  max-width:80rem;
+  margin:0 auto;
+  padding:0 1.5rem;
+  padding-top:3rem;
+  padding-bottom:3rem;
+}
+
+.footer__grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:2.5rem;
+}
+
+@media (min-width: 768px){
+  .footer__grid{ grid-template-columns: repeat(3, 1fr); }
+}
+
+.footer__brand{
+  display:flex;
+  flex-direction:column;
+  gap:1rem;
+}
+
+.footer__title{
+  font-size:1.5rem;
+  font-weight:700;
+}
+
+.footer__title span{
+  color:#3b82f6;
+}
+
+.footer__desc{
+  color:#4b5563;
+  line-height:1.75;
+}
+
+.footer__socialRow{
+  display:flex;
+  align-items:center;
+  gap:0.75rem;
+}
+
+.footer__socialLink{
+  width:2.5rem;
+  height:2.5rem;
+  border-radius:9999px;
+  border:1px solid #e5e7eb;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#6b7280;
+  text-decoration:none;
+}
+
+.footer__socialLink svg{
+  width:1.25rem;
+  height:1.25rem;
+}
+
+.footer__socialLink:hover{
+  background:#f9fafb;
+}
+
+.footer__col{
+  display:flex;
+  flex-direction:column;
+  gap:1rem;
+}
+
+.footer__heading{
+  font-weight:600;
+  color:#111827;
+}
+
+.footer__list{
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:flex;
+  flex-direction:column;
+  gap:0.75rem;
+  color:#4b5563;
+}
+
+.footer__list a{
+  color:inherit;
+  text-decoration:none;
+}
+
+.footer__list a:hover{
+  color:#111827;
+}
+
+.footer__finePrintRow{
+  margin-top:2.5rem;
+  padding-top:1.5rem;
+  border-top:1px solid #e5e7eb;
+}
+
+.footer__finePrintInner{
+  display:flex;
+  flex-direction:column;
+  gap:1rem;
+  align-items:flex-start;
+  justify-content:space-between;
+}
+
+@media (min-width: 768px){
+  .footer__finePrintInner{
+    flex-direction:row;
+    align-items:center;
+  }
+}
+
+.footer__copyright{
+  color:#6b7280;
+  font-size:0.875rem;
+}
+
+.footer__links{
+  display:flex;
+  align-items:center;
+  gap:1.5rem;
+  font-size:0.875rem;
+  color:#6b7280;
+}
+
+.footer__links a{
+  color:inherit;
+  text-decoration:none;
+}
+
+.footer__links a:hover{
+  color:#111827;
+}
+

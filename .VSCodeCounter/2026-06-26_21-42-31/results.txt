@@ -1,0 +1,208 @@
+Date : 2026-06-26 21:42:31
+Directory : c:\Users\adity\OneDrive\Desktop\portal
+Total : 135 files,  19581 codes, 72 comments, 936 blanks, all 20589 lines
+
+Languages
++--------------------+------------+------------+------------+------------+------------+
+| language           | files      | code       | comment    | blank      | total      |
++--------------------+------------+------------+------------+------------+------------+
+| JSON               |          9 |     14,210 |          0 |          9 |     14,219 |
+| JavaScript JSX     |         35 |      2,532 |         40 |        370 |      2,942 |
+| PostCSS            |         22 |      1,915 |         29 |        384 |      2,328 |
+| JavaScript         |         25 |        747 |          3 |        118 |        868 |
+| Ini                |         29 |         58 |          0 |         29 |         87 |
+| XML                |          8 |         54 |          0 |          4 |         58 |
+| HTML               |          2 |         26 |          0 |          2 |         28 |
+| Markdown           |          2 |         18 |          0 |         16 |         34 |
+| Skill              |          1 |          9 |          0 |          4 |         13 |
+| JSON with Comments |          1 |          9 |          0 |          0 |          9 |
+| Dotenv             |          1 |          3 |          0 |          0 |          3 |
++--------------------+------------+------------+------------+------------+------------+
+
+Directories
++-----------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                          | files      | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                             |        135 |     19,581 |         72 |        936 |     20,589 |
+| . (Files)                                                                                     |          3 |      1,238 |          0 |          3 |      1,241 |
+| .blackbox                                                                                     |          4 |         15 |          0 |          7 |         22 |
+| .blackbox (Files)                                                                             |          1 |          2 |          0 |          1 |          3 |
+| .blackbox\skills                                                                              |          3 |         13 |          0 |          6 |         19 |
+| .blackbox\skills (Files)                                                                      |          1 |          2 |          0 |          1 |          3 |
+| .blackbox\skills\java                                                                         |          2 |         11 |          0 |          5 |         16 |
+| back                                                                                          |         43 |      5,323 |          1 |        182 |      5,506 |
+| back (Files)                                                                                  |          5 |      1,782 |          0 |         13 |      1,795 |
+| back\controllers                                                                              |          5 |        386 |          0 |         64 |        450 |
+| back\front                                                                                    |         18 |      2,916 |          1 |         69 |      2,986 |
+| back\front (Files)                                                                            |          7 |      2,500 |          1 |         16 |      2,517 |
+| back\front\public                                                                             |          3 |         27 |          0 |          2 |         29 |
+| back\front\src                                                                                |          8 |        389 |          0 |         51 |        440 |
+| back\front\src (Files)                                                                        |          5 |        385 |          0 |         49 |        434 |
+| back\front\src\assets                                                                         |          3 |          4 |          0 |          2 |          6 |
+| back\middleware                                                                               |          3 |         23 |          0 |          4 |         27 |
+| back\modals                                                                                   |          5 |        162 |          0 |         15 |        177 |
+| back\routes                                                                                   |          5 |         39 |          0 |         14 |         53 |
+| back\utils                                                                                    |          2 |         15 |          0 |          3 |         18 |
+| frontend                                                                                      |         85 |     13,005 |         71 |        744 |     13,820 |
+| frontend (Files)                                                                              |         10 |      8,853 |          2 |         16 |      8,871 |
+| frontend\frontend                                                                             |          4 |          6 |          0 |          4 |         10 |
+| frontend\frontend (Files)                                                                     |          1 |          2 |          0 |          1 |          3 |
+| frontend\frontend\src                                                                         |          3 |          4 |          0 |          3 |          7 |
+| frontend\frontend\src (Files)                                                                 |          1 |          2 |          0 |          1 |          3 |
+| frontend\frontend\src\styles                                                                  |          2 |          2 |          0 |          2 |          4 |
+| frontend\public                                                                               |          3 |         27 |          0 |          2 |         29 |
+| frontend\src                                                                                  |         68 |      4,119 |         69 |        722 |      4,910 |
+| frontend\src (Files)                                                                          |          4 |         88 |          1 |         14 |        103 |
+| frontend\src\assets                                                                           |          3 |          4 |          0 |          2 |          6 |
+| frontend\src\components                                                                       |         35 |      2,338 |         40 |        361 |      2,739 |
+| frontend\src\components (Files)                                                               |          1 |          2 |          0 |          1 |          3 |
+| frontend\src\components\authen                                                                |          3 |        308 |          0 |         42 |        350 |
+| frontend\src\components\compolite                                                             |         18 |      1,203 |         38 |        216 |      1,457 |
+| frontend\src\components\ui                                                                    |         13 |        825 |          2 |        102 |        929 |
+| frontend\src\lib                                                                              |          2 |          7 |          0 |          2 |          9 |
+| frontend\src\redux                                                                            |          3 |         29 |          0 |          6 |         35 |
+| frontend\src\styles                                                                           |         19 |      1,650 |         28 |        336 |      2,014 |
+| frontend\src\utils                                                                            |          2 |          3 |          0 |          1 |          4 |
++-----------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-----------------------------------------------------------------------------------------------+--------------------+------------+------------+------------+------------+
+| filename                                                                                      | language           | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------------------+--------------------+------------+------------+------------+------------+
+| c:\Users\adity\OneDrive\Desktop\portal\.blackbox\desktop.ini                                  | Ini                |          2 |          0 |          1 |          3 |
+| c:\Users\adity\OneDrive\Desktop\portal\.blackbox\skills\desktop.ini                           | Ini                |          2 |          0 |          1 |          3 |
+| c:\Users\adity\OneDrive\Desktop\portal\.blackbox\skills\java\SKILL.md                         | Skill              |          9 |          0 |          4 |         13 |
+| c:\Users\adity\OneDrive\Desktop\portal\.blackbox\skills\java\desktop.ini                      | Ini                |          2 |          0 |          1 |          3 |
+| c:\Users\adity\OneDrive\Desktop\portal\back\.env                                              | Dotenv             |          3 |          0 |          0 |          3 |
+| c:\Users\adity\OneDrive\Desktop\portal\back\controllers\applicationcontroller.js              | JavaScript         |         71 |          0 |         13 |         84 |
+| c:\Users\adity\OneDrive\Desktop\portal\back\controllers\companycontroller.js                  | JavaScript         |         76 |          0 |          9 |         85 |
+| c:\Users\adity\OneDrive\Desktop\portal\back\controllers\desktop.ini                           | Ini                |          2 |          0 |          1 |          3 |
+| c:\Users\adity\OneDrive\Desktop\portal\back\controllers\jobcontroller.js                      | JavaScript         |         70 |          0 |         14 |         84 |
+| c:\Users\adity\OneDrive\Desktop\portal\back\controllers\usercontrollers.js                    | JavaScript         |        167 |          0 |         27 |        194 |
+| c:\Users\adity\OneDrive\Desktop\portal\back\desktop.ini                                       | Ini                |          2 |          0 |          1 |          3 |
+| c:\Users\adity\OneDrive\Desktop\portal\back\front\README.md                                   | Markdown           |          9 |          0 |          8 |         17 |
+| c:\Users\adity\OneDrive\Desktop\portal\back\front\desktop.ini                                 | Ini                |          2 |          0 |          1 |          3 |
+| c:\Users\adity\OneDrive\Desktop\portal\back\front\eslint.config.js                            | JavaScript         |         20 |          0 |          2 |         22 |
+| c:\Users\adity\OneDrive\Desktop\portal\back\front\index.html                                  | HTML               |         13 |          0 |          1 |         14 |
+| c:\Users\adity\OneDrive\Desktop\portal\back\front\package-lock.json                           | JSON               |      2,424 |          0 |          1 |      2,425 |
+| c:\Users\adity\OneDrive\Desktop\portal\back\front\package.json                                | JSON               |         27 |          0 |          1 |         28 |
+| c:\Users\adity\OneDrive\Desktop\portal\back\front\public\desktop.ini                          | Ini                |          2 |          0 |          1 |          3 |
+| c:\Users\adity\OneDrive\Desktop\portal\back\front\public\favicon.svg                          | XML                |          1 |          0 |          0 |          1 |
+| c:\Users\adity\OneDrive\Desktop\portal\back\front\public\icons.svg                            | XML                |         24 |          0 |          1 |         25 |
+| c:\Users\adity\OneDrive\Desktop\portal\back\front\src\App.css                                 | PostCSS            |        158 |          0 |         27 |        185 |
+| c:\Users\adity\OneDrive\Desktop\portal\back\front\src\App.jsx                                 | JavaScript JSX     |        116 |          0 |          7 |        123 |
+| c:\Users\adity\OneDrive\Desktop\portal\back\front\src\assets\desktop.ini                      | Ini                |          2 |          0 |          1 |          3 |
+| c:\Users\adity\OneDrive\Desktop\portal\back\front\src\assets\react.svg                        | XML                |          1 |          0 |          0 |          1 |
+| c:\Users\adity\OneDrive\Desktop\portal\back\front\src\assets\vite.svg                         | XML                |          1 |          0 |          1 |          2 |
+| c:\Users\adity\OneDrive\Desktop\portal\back\front\src\desktop.ini                             | Ini                |          2 |          0 |          1 |          3 |
+| c:\Users\adity\OneDrive\Desktop\portal\back\front\src\index.css                               | PostCSS            |        100 |          0 |         12 |        112 |
+| c:\Users\adity\OneDrive\Desktop\portal\back\front\src\main.jsx                                | JavaScript JSX     |          9 |          0 |          2 |         11 |
+| c:\Users\adity\OneDrive\Desktop\portal\back\front\vite.config.js                              | JavaScript         |          5 |          1 |          2 |          8 |
+| c:\Users\adity\OneDrive\Desktop\portal\back\index.js                                          | JavaScript         |         35 |          0 |         10 |         45 |
+| c:\Users\adity\OneDrive\Desktop\portal\back\middleware\desktop.ini                            | Ini                |          2 |          0 |          1 |          3 |
+| c:\Users\adity\OneDrive\Desktop\portal\back\middleware\isauthn.js                             | JavaScript         |         18 |          0 |          2 |         20 |
+| c:\Users\adity\OneDrive\Desktop\portal\back\middleware\multer.js                              | JavaScript         |          3 |          0 |          1 |          4 |
+| c:\Users\adity\OneDrive\Desktop\portal\back\modals\application.modal.js                       | JavaScript         |         21 |          0 |          2 |         23 |
+| c:\Users\adity\OneDrive\Desktop\portal\back\modals\companymodel.js                            | JavaScript         |         27 |          0 |          6 |         33 |
+| c:\Users\adity\OneDrive\Desktop\portal\back\modals\desktop.ini                                | Ini                |          2 |          0 |          1 |          3 |
+| c:\Users\adity\OneDrive\Desktop\portal\back\modals\jobmodal.js                                | JavaScript         |         57 |          0 |          3 |         60 |
+| c:\Users\adity\OneDrive\Desktop\portal\back\modals\usermodels.js                              | JavaScript         |         55 |          0 |          3 |         58 |
+| c:\Users\adity\OneDrive\Desktop\portal\back\package-lock.json                                 | JSON               |      1,717 |          0 |          1 |      1,718 |
+| c:\Users\adity\OneDrive\Desktop\portal\back\package.json                                      | JSON               |         25 |          0 |          1 |         26 |
+| c:\Users\adity\OneDrive\Desktop\portal\back\routes\applicationroute.js                        | JavaScript         |          9 |          0 |          2 |         11 |
+| c:\Users\adity\OneDrive\Desktop\portal\back\routes\company.route.js                           | JavaScript         |          9 |          0 |          3 |         12 |
+| c:\Users\adity\OneDrive\Desktop\portal\back\routes\desktop.ini                                | Ini                |          2 |          0 |          1 |          3 |
+| c:\Users\adity\OneDrive\Desktop\portal\back\routes\jobroute.js                                | JavaScript         |          9 |          0 |          3 |         12 |
+| c:\Users\adity\OneDrive\Desktop\portal\back\routes\userroutes.js                              | JavaScript         |         10 |          0 |          5 |         15 |
+| c:\Users\adity\OneDrive\Desktop\portal\back\utils\db.js                                       | JavaScript         |         13 |          0 |          2 |         15 |
+| c:\Users\adity\OneDrive\Desktop\portal\back\utils\desktop.ini                                 | Ini                |          2 |          0 |          1 |          3 |
+| c:\Users\adity\OneDrive\Desktop\portal\desktop.ini                                            | Ini                |          2 |          0 |          1 |          3 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\README.md                                     | Markdown           |          9 |          0 |          8 |         17 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\components.json                               | JSON               |         25 |          0 |          1 |         26 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\desktop.ini                                   | Ini                |          2 |          0 |          1 |          3 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\eslint.config.js                              | JavaScript         |         20 |          0 |          2 |         22 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\frontend\desktop.ini                          | Ini                |          2 |          0 |          1 |          3 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\frontend\src\desktop.ini                      | Ini                |          2 |          0 |          1 |          3 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\frontend\src\styles\desktop.ini               | Ini                |          2 |          0 |          1 |          3 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\frontend\src\styles\profile.css               | PostCSS            |          0 |          0 |          1 |          1 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\index.html                                    | HTML               |         13 |          0 |          1 |         14 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\jsconfig.json                                 | JSON with Comments |          9 |          0 |          0 |          9 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\package-lock.json                             | JSON               |      8,706 |          0 |          1 |      8,707 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\package.json                                  | JSON               |         50 |          0 |          1 |         51 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\public\desktop.ini                            | Ini                |          2 |          0 |          1 |          3 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\public\favicon.svg                            | XML                |          1 |          0 |          0 |          1 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\public\icons.svg                              | XML                |         24 |          0 |          1 |         25 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\App.jsx                                   | JavaScript JSX     |         62 |          0 |          3 |         65 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\assets\desktop.ini                        | Ini                |          2 |          0 |          1 |          3 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\assets\react.svg                          | XML                |          1 |          0 |          0 |          1 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\assets\vite.svg                           | XML                |          1 |          0 |          1 |          2 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\authen\Login.jsx               | JavaScript JSX     |        130 |          0 |         17 |        147 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\authen\Register.jsx            | JavaScript JSX     |        176 |          0 |         24 |        200 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\authen\desktop.ini             | Ini                |          2 |          0 |          1 |          3 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\compolite\AppliedJob.jsx       | JavaScript JSX     |         33 |          0 |          6 |         39 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\compolite\Browse.jsx           | JavaScript JSX     |         22 |          0 |          5 |         27 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\compolite\Categories.jsx       | JavaScript JSX     |         91 |          0 |         15 |        106 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\compolite\Description.jsx      | JavaScript JSX     |         72 |          0 |         17 |         89 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\compolite\Editprofilemodal.jsx | JavaScript JSX     |        161 |          0 |         25 |        186 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\compolite\Filter.jsx           | JavaScript JSX     |         87 |          0 |         12 |         99 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\compolite\Footer.jsx           | JavaScript JSX     |         91 |          0 |         12 |        103 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\compolite\Header.jsx           | JavaScript JSX     |         43 |          0 |         12 |         55 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\compolite\Home.jsx             | JavaScript JSX     |         18 |          0 |          5 |         23 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\compolite\Job.jsx              | JavaScript JSX     |         57 |          4 |         11 |         72 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\compolite\Jobcard.jsx          | JavaScript JSX     |         34 |          4 |          6 |         44 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\compolite\Jobs.jsx             | JavaScript JSX     |         31 |          2 |          9 |         42 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\compolite\Latestjob.jsx        | JavaScript JSX     |         19 |          0 |          6 |         25 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\compolite\Navbar.jsx           | JavaScript JSX     |        104 |          0 |         15 |        119 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\compolite\Privacyploicy.jsx    | JavaScript JSX     |        113 |          9 |         22 |        144 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\compolite\Profile.jsx          | JavaScript JSX     |        109 |          7 |         21 |        137 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\compolite\Termsofservices.jsx  | JavaScript JSX     |        116 |         12 |         16 |        144 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\compolite\desktop.ini          | Ini                |          2 |          0 |          1 |          3 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\desktop.ini                    | Ini                |          2 |          0 |          1 |          3 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\ui\avatar.jsx                  | JavaScript JSX     |         97 |          0 |          9 |        106 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\ui\badge.jsx                   | JavaScript JSX     |         42 |          0 |          6 |         48 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\ui\button.jsx                  | JavaScript JSX     |         58 |          0 |          6 |         64 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\ui\carousel.jsx                | JavaScript JSX     |        171 |          0 |         24 |        195 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\ui\desktop.ini                 | Ini                |          2 |          0 |          1 |          3 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\ui\dialog.jsx                  | JavaScript JSX     |        139 |          0 |         13 |        152 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\ui\input.jsx                   | JavaScript JSX     |         19 |          0 |          4 |         23 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\ui\label.jsx                   | JavaScript JSX     |         18 |          0 |          4 |         22 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\ui\popover.jsx                 | JavaScript JSX     |         80 |          0 |         10 |         90 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\ui\radio-group.jsx             | JavaScript JSX     |         28 |          2 |          7 |         37 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\ui\sonner.jsx                  | JavaScript JSX     |         45 |          0 |          4 |         49 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\ui\spinner.jsx                 | JavaScript JSX     |         15 |          0 |          3 |         18 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\components\ui\table.jsx                   | JavaScript JSX     |        111 |          0 |         11 |        122 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\desktop.ini                               | Ini                |          2 |          0 |          1 |          3 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\index.css                                 | PostCSS            |          9 |          1 |          9 |         19 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\lib\desktop.ini                           | Ini                |          2 |          0 |          1 |          3 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\lib\utils.js                              | JavaScript         |          5 |          0 |          1 |          6 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\main.jsx                                  | JavaScript JSX     |         15 |          0 |          1 |         16 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\redux\authslice.js                        | JavaScript         |         19 |          0 |          3 |         22 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\redux\desktop.ini                         | Ini                |          2 |          0 |          1 |          3 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\redux\store.js                            | JavaScript         |          8 |          0 |          2 |         10 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\styles\appliedjob.css                     | PostCSS            |         40 |          1 |          9 |         50 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\styles\auth.css                           | PostCSS            |         86 |          0 |         15 |        101 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\styles\browse.css                         | PostCSS            |         33 |          3 |          7 |         43 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\styles\categories.css                     | PostCSS            |         84 |          3 |         27 |        114 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\styles\description.css                    | PostCSS            |         67 |          0 |          2 |         69 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\styles\desktop.ini                        | Ini                |          2 |          0 |          1 |          3 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\styles\editprofilemodal.css               | PostCSS            |        110 |          2 |         23 |        135 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\styles\filter.css                         | PostCSS            |         61 |          2 |         17 |         80 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\styles\footer.css                         | PostCSS            |        121 |          0 |         25 |        146 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\styles\header.css                         | PostCSS            |         78 |          1 |         16 |         95 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\styles\home.css                           | PostCSS            |          8 |          1 |          4 |         13 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\styles\job.css                            | PostCSS            |        181 |          4 |         35 |        220 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\styles\jobcard.css                        | PostCSS            |        100 |          3 |         21 |        124 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\styles\jobcomponent.css                   | PostCSS            |        147 |          1 |         28 |        176 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\styles\jobs.css                           | PostCSS            |         49 |          3 |         15 |         67 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\styles\navbar.css                         | PostCSS            |        133 |          2 |         27 |        162 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\styles\profile.css                        | PostCSS            |        168 |          1 |         36 |        205 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\styles\register.css                       | PostCSS            |        110 |          1 |         20 |        131 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\styles\terms.css                          | PostCSS            |         72 |          0 |          8 |         80 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\utils\data.js                             | JavaScript         |          1 |          0 |          0 |          1 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\src\utils\desktop.ini                         | Ini                |          2 |          0 |          1 |          3 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\tailwind.config.js                            | JavaScript         |          7 |          1 |          0 |          8 |
+| c:\Users\adity\OneDrive\Desktop\portal\frontend\vite.config.js                                | JavaScript         |         12 |          1 |          1 |         14 |
+| c:\Users\adity\OneDrive\Desktop\portal\package-lock.json                                      | JSON               |      1,229 |          0 |          1 |      1,230 |
+| c:\Users\adity\OneDrive\Desktop\portal\package.json                                           | JSON               |          7 |          0 |          1 |          8 |
+| Total                                                                                         |                    |     19,581 |         72 |        936 |     20,589 |
++-----------------------------------------------------------------------------------------------+--------------------+------------+------------+------------+------------+
