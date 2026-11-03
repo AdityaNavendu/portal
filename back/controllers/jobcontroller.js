@@ -34,7 +34,9 @@ export const postjob = async (req, res) => {
 
 export const getalljobs = async (req, res) => {
     try {
-        const keyword = req.query.keyword || "";
+        const keyword = typeof req.query.keyword === "string"
+            ? req.query.keyword.trim().replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
+            : "";
         const query = {
             $or: [
                 { title: { $regex: keyword, $options: "i" } },

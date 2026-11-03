@@ -33,14 +33,14 @@ form {
 }
 
 .formmodal__header input {
-  flex: 1;            /* Takes remaining width */
+  flex: 1;
   padding: 10px;
   font-size: 15px;
 }
 
 .setup__submit {
   margin-top: 25px;
-  margin-left: 180px; /* Align with inputs */
+  margin-left: 180px;
   background: #00b87c;
   color: white;
   border: none;

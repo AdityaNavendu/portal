@@ -1,4 +1,4 @@
-import Company from "../modals/companymodel.js"; // importing the model
+import Company from "../modals/companymodel.js";
 
 import getDataUri from "../utils/datauri.js";
 import cloudinary from '../utils/cloud.js';
@@ -36,7 +36,7 @@ export const registerCompany = async (req, res) => {
 
 export const getallCompanies = async (req, res) => {
   try {
-    const userId = req.id; // loggedin user id
+    const userId = req.id;
     const companies = await Company.find({ userId });
     if (!companies) {
       return res.status(404).json({ message: "No companies found" });
@@ -50,7 +50,7 @@ export const getallCompanies = async (req, res) => {
   }
 };
 
-//get company by id
+
 export const getCompanyByid = async (req, res) => {
   try {
     const companyId = req.params.id;
@@ -64,7 +64,7 @@ export const getCompanyByid = async (req, res) => {
   }
 };
 
-//update company details
+
 export const updateCompany = async (req, res) => {
   try {
     const { name, description, website, location } = req.body;
@@ -81,7 +81,7 @@ export const updateCompany = async (req, res) => {
         return res.status(400).json({ message: "Invalid file upload" });
       }
 
-      // cloudinary expects a data URL / base64 string
+
       const cloudResponse = await cloudinary.uploader.upload(fileUri.dataUri);
       updateData.logo = cloudResponse.secure_url;
     }

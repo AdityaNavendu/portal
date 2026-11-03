@@ -1,54 +1,55 @@
 import '../../styles/Applicantable.css'
 
-import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
 import { useMemo, useState } from 'react';
+import { toast } from 'sonner';
 import { APPLICATION_API_URL } from '@/utils/data';
-import { setsingleApplications } from '@/redux/Applicationslice';
+import { useAppContext } from '@/context/AppContext';
+
+const actionStatuses = [
+  { label: 'Accepted', value: 'accepted' },
+  { label: 'Rejected', value: 'rejected' },
+];
 
 const Applicanttable = () => {
-  const dispatch = useDispatch();
-  const { allapplications } = useSelector((state) => state.application);
-  const applicants = allapplications?.applicants ?? [];
+  const { allapplications, setAllApplications } = useAppContext();
+  const applicants = allapplications?.applicants;
 
   const [searchText, setSearchText] = useState('');
   const [statusFilter, setStatusFilter] = useState('all');
+  const [updatingApplicationId, setUpdatingApplicationId] = useState(null);
 
-
-
-
-
-
-  const actionStatuses = useMemo(() => {
-    return [
-      { label: 'Accepted', value: 'accepted' },
-      { label: 'Rejected', value: 'rejected' },
-    ];
-  }, []);
-
-  const jobId = useMemo(() => allapplications?.jobId || allapplications?.id || null, [allapplications]);
+  const jobId = allapplications?.jobId || allapplications?.id || null;
 
   const updateStatus = async (applicationId, nextStatus) => {
-    if (!applicationId) return;
+    if (!applicationId || updatingApplicationId) return;
 
-    await axios.post(
-      `${APPLICATION_API_URL}/status/${applicationId}/update`,
-      { status: nextStatus },
-      { withCredentials: true }
-    );
-
-    if (jobId) {
-      const res = await axios.get(`${APPLICATION_API_URL}/${jobId}/applicants`, { withCredentials: true });
-      dispatch(setsingleApplications(res.data.job));
-    } else {
-      dispatch(
-        setsingleApplications({
-          ...(allapplications || {}),
-          applicants: applicants.map((a) =>
-            a.applicationId === applicationId ? { ...a, status: nextStatus } : a
-          ),
-        })
+    setUpdatingApplicationId(applicationId);
+    try {
+      const res = await axios.post(
+        `${APPLICATION_API_URL}/status/${applicationId}/update`,
+        { status: nextStatus },
+        { withCredentials: true }
       );
+
+      if (!res.data?.success) {
+        throw new Error(res.data?.message || 'Failed to update application status');
+      }
+
+      setAllApplications((current) => ({
+        ...current,
+        jobId: current?.jobId || jobId,
+        applicants: (current?.applicants || []).map((applicant) =>
+          applicant.applicationId === applicationId
+            ? { ...applicant, status: nextStatus }
+            : applicant
+        ),
+      }));
+      toast.success(`Application ${nextStatus}`);
+    } catch (error) {
+      toast.error(error?.response?.data?.message || error.message || 'Failed to update application status');
+    } finally {
+      setUpdatingApplicationId(null);
     }
   };
 
@@ -63,7 +64,7 @@ const Applicanttable = () => {
       return s;
     };
 
-    return (applicants || []).filter((applicant) => {
+    return (applicants ?? []).filter((applicant) => {
       const applicantStatus = normalizeStatus(applicant?.status);
 
       if (statusFilter !== 'all') {
@@ -162,9 +163,9 @@ const Applicanttable = () => {
                     <button
                       key={s.value}
                       onClick={() => updateStatus(applicant.applicationId, s.value)}
-                      disabled={!applicant.applicationId}
+                      disabled={!applicant.applicationId || updatingApplicationId !== null}
                     >
-                      {s.label}
+                      {updatingApplicationId === applicant.applicationId ? 'Updating...' : s.label}
                     </button>
                   ))}
                 </td>
@@ -186,5 +187,3 @@ const Applicanttable = () => {
 };
 
 export default Applicanttable;
-
-

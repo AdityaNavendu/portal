@@ -4,7 +4,7 @@ import { Mail, Contact, Pen } from "lucide-react";
 import AppliedJob from "./AppliedJob";
 import EditProfilemodal from "./Editprofilemodal";
 import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useAppContext } from "@/context/AppContext";
 
 
 
@@ -14,7 +14,7 @@ const Profile = () => {
   
   const [open, setOpen] = useState(false);
 
-  const { user } = useSelector((state) => state.auth);
+  const { user } = useAppContext();
   console.log(user);
 
   if (!user) return null;
@@ -31,10 +31,10 @@ const Profile = () => {
       <Navbar />
 
       <div className="profile__container">
-        {/* Profile Card */}
+
         <div className="profile__card">
           <div className="profile__topRow">
-            {/* Left */}
+
             <div className="profile__left">
               <div className="profile__avatarWrap">
                 <img
@@ -56,7 +56,7 @@ const Profile = () => {
               </div>
             </div>
 
-            {/* Edit Button */}
+
             <button
               type="button"
               className="profile__editBtn"
@@ -67,7 +67,7 @@ const Profile = () => {
             </button>
           </div>
 
-          {/* Contact */}
+
           <div className="profile__contact">
             <div className="profile__contactRow">
               <Mail className="profile__contactIcon" />
@@ -82,7 +82,7 @@ const Profile = () => {
             </div>
           </div>
 
-          {/* Skills */}
+
           <div className="profile__section">
             <h2 className="profile__sectionTitle">
               Skills
@@ -101,7 +101,7 @@ const Profile = () => {
             </div>
           </div>
 
-          {/* Resume */}
+
           <div className="profile__section">
             <h2 className="profile__sectionTitle">
         {user?.profile?.resumeoriginalname || "Resume"}
@@ -122,7 +122,7 @@ const Profile = () => {
           </div>
         </div>
 
-        {/* Applied Jobs */}
+
         <div className="profile__jobsSection">
           <h1 className="profile__jobsTitle2">
             Applied Jobs

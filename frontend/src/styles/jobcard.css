@@ -1,4 +1,4 @@
-/* Styles for compolite/Jobcard.jsx */
+
 
 .jobcard-card {
   width: 320px;
@@ -16,7 +16,7 @@
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Shared elements used by Jobcard */
+
 .jobcard-company-info {
   margin-bottom: 20px;
 }
@@ -87,7 +87,7 @@
   margin-bottom: 0;
 }
 
-/* Badge pills (local names to avoid conflicts) */
+
 .jobcard-badge-pill {
   padding: 6px 12px;
   border-radius: 999px;

@@ -2,43 +2,53 @@ import Navbar from "./Navbar";
 import Filter from "./Filter";
 import Job from "./Job";
 import "../../styles/jobs.css";
-import { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useMemo } from "react";
+import { useAppContext } from "@/context/AppContext";
+import Getalljob from "@/hooks/Getalljob";
+import { jobFilters } from "@/utils/jobFilters";
 
 const Jobs = () => {
-  const { alljobs, searchquery } = useSelector((state) => state.jobs);
+  const { loading, error } = Getalljob();
+  const { alljobs, searchquery } = useAppContext();
 
-  const [filter, setFilter] = useState(alljobs);
+  const filteredJobs = useMemo(() => {
+    const selectedValues = Array.isArray(searchquery) ? searchquery : [];
+    if (selectedValues.length === 0) return alljobs;
 
-  useEffect(() => {
-    // No filter selected
-    if (
-      !searchquery ||
-      (Array.isArray(searchquery) && searchquery.length === 0) ||
-      (typeof searchquery === "string" && searchquery.trim() === "")
-    ) {
-      setFilter(alljobs);
-      return;
-    }
+    const selectedGroups = jobFilters
+      .map(({ filterType, array }) => ({
+        filterType,
+        values: selectedValues.filter((value) => array.includes(value)),
+      }))
+      .filter(({ values }) => values.length > 0);
 
-    const queryArray = Array.isArray(searchquery)
-      ? searchquery
-      : [searchquery];
+    return alljobs.filter((job) =>
+      selectedGroups.every(({ filterType, values }) =>
+        values.some((value) => {
+          if (filterType === "Location") {
+            return String(job.location ?? "").toLowerCase().includes(value.toLowerCase());
+          }
 
-    const filteredJobs = alljobs.filter((job) =>
-      queryArray.some((query) => {
-        const q = query.toLowerCase();
+          if (filterType === "Technology") {
+            const searchableText = [
+              job.title,
+              job.description,
+              job.position,
+              ...(Array.isArray(job.requirements) ? job.requirements : [job.requirements]),
+            ]
+              .join(" ")
+              .toLowerCase();
+            return searchableText.includes(value.toLowerCase());
+          }
 
-        return (
-          job.title?.toLowerCase().includes(q) ||
-          job.description?.toLowerCase().includes(q) ||
-          job.location?.toLowerCase().includes(q) ||
-          String(job.salary)?.toLowerCase().includes(q)
-        );
-      })
+          const amount = Number(filterType === "Experience" ? job.experience : job.salary);
+          if (!Number.isFinite(amount)) return false;
+
+          const [lowerBound, upperBound] = value.match(/\d+(?:\.\d+)?/g).map(Number);
+          return amount >= lowerBound && (upperBound === undefined || amount < upperBound);
+        }),
+      ),
     );
-
-    setFilter(filteredJobs);
   }, [alljobs, searchquery]);
 
   return (
@@ -47,16 +57,20 @@ const Jobs = () => {
 
       <div className="jobs-container">
         <div className="jobs-layout">
-          {/* Left Side Filter */}
+
           <div className="jobs-filter">
             <Filter />
           </div>
 
-          {/* Right Side Jobs */}
+
           <div className="jobs-results">
-            {filter.length > 0 ? (
+            {loading ? (
+              <p>Loading jobs...</p>
+            ) : error ? (
+              <p>Error loading jobs: {error.message}</p>
+            ) : filteredJobs.length > 0 ? (
               <div className="jobs-grid">
-                {filter.map((job) => (
+                {filteredJobs.map((job) => (
                   <div key={job._id}>
                     <Job job={job} />
                   </div>

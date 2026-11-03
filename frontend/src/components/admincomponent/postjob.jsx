@@ -1,15 +1,15 @@
 import Navbar from "../compolite/Navbar";
 import { useEffect, useMemo, useState } from "react";
 import "../../styles/postjob.css";
-import { useSelector } from "react-redux";
 import { toast } from "sonner";
 import axios from "axios";
 import { JOB_API_URL } from "../../utils/data";
 import { useNavigate, useParams } from "react-router-dom";
+import { useAppContext } from "@/context/AppContext";
 
 
 const PostJob = () => {
-  const { id } = useParams(); // if provided => edit mode
+  const { id } = useParams();
   const navigate = useNavigate();
 
   const [input, setInput] = useState({
@@ -39,7 +39,7 @@ const PostJob = () => {
     [],
   );
 
-  const { companies = [] } = useSelector((state) => state.company);
+  const { companies } = useAppContext();
 
   const [loading, setLoading] = useState(false);
   const [fetching, setFetching] = useState(false);
@@ -52,7 +52,7 @@ const PostJob = () => {
     setInput((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  // Load previous job data when in edit mode
+
   useEffect(() => {
     let cancelled = false;
 
@@ -122,7 +122,7 @@ const PostJob = () => {
       }
 
 
-      // create
+
       const res = await axios.post(`${JOB_API_URL}/postjob`, input, {
         headers: {
           "Content-Type": "application/json",

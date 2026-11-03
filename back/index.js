@@ -24,7 +24,7 @@ const corsOptions = {
             "http://127.0.0.1:5173",
         ];
 
-        // Allow requests with no origin (e.g., curl, server-to-server)
+
         if (!origin) return callback(null, true);
 
         if (allowed.includes(origin)) return callback(null, true);

@@ -1,18 +1,15 @@
 import "../../styles/description.css";
 import axios from "axios";
 import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 
 import { JOB_API_URL, APPLICATION_API_URL } from "@/utils/data";
-import { setSingleJob } from "@/redux/jobslice";
+import { useAppContext } from "@/context/AppContext";
 
 const Description = () => {
-  const dispatch = useDispatch();
+  const { singlejob, user, setSingleJob } = useAppContext();
   const { jobId } = useParams();
-
-  const { singlejob, user } = useSelector((state) => state.jobs);
 
   const isApplied =
     singlejob?.applicants?.some(
@@ -41,7 +38,7 @@ const Description = () => {
         );
 
         if (jobRes.data.success) {
-          dispatch(setSingleJob(jobRes.data.job));
+          setSingleJob(jobRes.data.job);
         }
 
         toast.success(res.data.message);
@@ -60,9 +57,9 @@ const Description = () => {
         });
 
         if (res.data.success) {
-          dispatch(setSingleJob(res.data.job));
+          setSingleJob(res.data.job);
         } else {
-          dispatch(setSingleJob(null));
+          setSingleJob(null);
         }
       } catch (error) {
         console.error(error);
@@ -72,7 +69,7 @@ const Description = () => {
     if (jobId) {
       fetchSingleJob();
     }
-  }, [dispatch, jobId]);
+  }, [jobId, setSingleJob]);
 
   return (
     <div className="description-page">

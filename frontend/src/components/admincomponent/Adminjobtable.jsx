@@ -1,42 +1,27 @@
 import useGetalladminjob from "@/hooks/getalladminjob";
 import "../../styles/adminjobtable.css";
-import { useSelector } from "react-redux";
 import { Eye } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useAppContext } from "@/context/AppContext";
 
 const Adminjobtable = () => {
   useGetalladminjob();
 
   const {
-    companies = [],
-    searchCompanyByText,
-    serachcompanybytext,
-  } = useSelector((state) => state.company);
+    alladminjobs,
+    searchjobbyText,
+  } = useAppContext();
 
-  const { alladminjobs = [], searchjobbyText = "" } = useSelector(
-    (state) => state.jobs || {},
-  );
-
-  const queryjob = (searchjobbyText || serachcompanybytext || "")
+  const queryjob = (searchjobbyText || "")
     .trim()
     .toLowerCase();
 
-  // Always keep this as an array to avoid runtime crash when Redux state is not ready
+
   const filteredJobs = queryjob
     ? (alladminjobs || []).filter((jobs) =>
         (jobs?.position || "").toLowerCase().includes(queryjob),
       )
     : alladminjobs || [];
-
-  const query = (searchCompanyByText || serachcompanybytext || "")
-    .trim()
-    .toLowerCase();
-
-  const filteredCompanies = query
-    ? companies.filter((company) =>
-        (company?.name || "").toLowerCase().includes(query),
-      )
-    : companies;
 
   const navigate = useNavigate();
 

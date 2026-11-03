@@ -5,18 +5,13 @@ import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import axios from 'axios';
 import { APPLICATION_API_URL } from '@/utils/data';
-
-import { useDispatch, useSelector } from 'react-redux';
-import { setsingleApplications } from '@/redux/Applicationslice';
+import { useAppContext } from '@/context/AppContext';
 const Applicant = () => {
 const param = useParams();
 
   console.log('Applicant route params:', param);
 
-
-const dispatch= useDispatch()
-
-  const { allapplications } = useSelector((state) => state.application);
+  const { allapplications, setAllApplications } = useAppContext();
 
   useEffect(() => {
     const fetchAllApplicants = async () => {
@@ -27,8 +22,8 @@ const dispatch= useDispatch()
           withCredentials: true,
         });
 
-        // backend returns: { job: <job>, success: true }
-        dispatch(setsingleApplications(res.data.job));
+
+        setAllApplications(res.data.job);
         console.log(res.data.job);
       } catch (error) {
         console.log(error);
@@ -36,7 +31,7 @@ const dispatch= useDispatch()
     };
 
     fetchAllApplicants();
-  }, [param?.id, dispatch]);
+  }, [param?.id, setAllApplications]);
  
 
 

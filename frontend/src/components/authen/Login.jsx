@@ -5,9 +5,7 @@ import { useState } from "react";
 import axios from "axios";
 import { USER_API_URL } from "../../utils/data.js";
 import { toast } from "sonner";
-import { useDispatch } from "react-redux";
-import { setLoading, setUser } from "../../redux/authslice.js";
-import { useSelector } from "react-redux"
+import { useAppContext } from "@/context/AppContext";
 import {useEffect} from "react"
 import "../../styles/auth.css";
 
@@ -17,10 +15,8 @@ const Login = () => {
     password: "",
     role: "",
   });
-
   const navigate = useNavigate();
-  const dispatch = useDispatch();
-  const { loading,user } = useSelector((state) => state.auth);
+  const { loading, setLoading, user, setUser } = useAppContext();
 
   const changeEventHandler = (e) => {
     setInput({ ...input, [e.target.name]: e.target.value });
@@ -29,7 +25,7 @@ const Login = () => {
   const submitHandler = async (e) => {
     e.preventDefault();
     try {
-      dispatch(setLoading(true));
+      setLoading(true);
       const res = await axios.post(`${USER_API_URL}/login`, input, {
         headers: {
           "Content-Type": "application/json",
@@ -38,14 +34,14 @@ const Login = () => {
       });
 
       if (res.data.success) {
-        dispatch(setUser(res.data.user));
+        setUser(res.data.user);
         navigate("/");
         toast.success(res.data.message);
       }
     } catch (error) {
       console.log(error);
     } finally {
-      dispatch(setLoading(false));
+      setLoading(false);
     }
   };
   useEffect(() => {
@@ -148,4 +144,3 @@ const Login = () => {
 };
 
 export default Login;
-

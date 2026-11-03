@@ -5,14 +5,12 @@ import axios from "axios";
 import { COMPANY_API_URL } from "../../utils/data";
 import { toast } from "sonner";
 import { useState } from "react";
-import { setSingleCompany } from "../../redux/Companyslice.js";
-import { useDispatch } from "react-redux";
+import { useAppContext } from "@/context/AppContext";
 
 const Companycreate = () => {
   const navigate = useNavigate();
   const [companyName, setCompanyName] = useState("");
-
-  const dispatch = useDispatch();
+  const { setSingleCompany } = useAppContext();
 
   const registerNewCompany = async () => {
     try {
@@ -29,7 +27,7 @@ const Companycreate = () => {
 
       if (res?.data?.success) {
         toast.success("Company created successfully");
-        dispatch(setSingleCompany(res.data.company));
+        setSingleCompany(res.data.company);
         const companyId = res?.data?.company?._id;
         navigate(`/admin/companies/${companyId}`);
       }

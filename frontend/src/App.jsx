@@ -63,7 +63,7 @@ const approuter = createBrowserRouter([
   },
 
 
-  //admin
+
   {
     path: "/admin/companies",
     element: <ProtectedRoute><Companies /></ProtectedRoute>,

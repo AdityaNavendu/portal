@@ -1,31 +1,17 @@
 import Navbar from "./Navbar";
 import Job from "./Job";
 import "../../styles/browse.css";
-import { useSelector } from "react-redux";
 import Getalljob from "../../hooks/Getalljob";
-import { useDispatch } from "react-redux";
-import { setSearchquery } from "@/redux/jobslice";
-import { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
+import { useAppContext } from "@/context/AppContext";
 
 const Browse = () => {
   const [searchParams] = useSearchParams();
   const category = searchParams.get("category") || "";
+  const keyword = searchParams.get("keyword") || "";
 
-  Getalljob({ keyword: category });
-  const { alljobs } = useSelector((store) => store.jobs);
-  const dispatch = useDispatch();
-
-
- 
-  useEffect(() => {
-    
-  
-    return () => {
-      dispatch(setSearchquery(""));
-    }
-  }, [])
-  
+  const { loading, error } = Getalljob(category || keyword);
+  const { alljobs } = useAppContext();
 
   return (
     <div className="browse-page">
@@ -35,7 +21,11 @@ const Browse = () => {
         <h1 className="browse-title">Search Result ({alljobs?.length || 0})</h1>
 
         <div className="browse-grid">
-          {alljobs?.length ? (
+          {loading ? (
+            <p>Loading jobs...</p>
+          ) : error ? (
+            <p>Error loading jobs: {error.message}</p>
+          ) : alljobs?.length ? (
             alljobs.map((job) => <Job key={job._id} job={job} />)
           ) : (
             <p>No jobs available</p>
@@ -47,5 +37,3 @@ const Browse = () => {
 };
 
 export default Browse;
-
-

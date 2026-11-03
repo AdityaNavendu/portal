@@ -26,13 +26,11 @@ export const applyjob = async (req, res) => {
 
 
 
-    const newApplication = await Application.create({
+    await Application.create({
       applicant: userId,
       job: jobId,
     });
 
-    // job.applicants stores User IDs in schema, so push the userId
-    // (your current code pushed newApplication._id which is an Application document id)
     if (!job.applicants.some((id) => id.toString() === userId.toString())) {
       job.applicants.push(userId);
       await job.save();
@@ -49,17 +47,21 @@ export const getappliedjobs = async (req, res) => {
   try {
     const userId = req.id;
 
-    const jobs = await Job.find({ applicants: userId })
+    const applications = await Application.find({ applicant: userId })
       .sort({ createdAt: -1 })
       .populate({
-        path: 'company',
-        options: { sort: { createdAt: -1 } },
+        path: 'job',
+        populate: { path: 'company' },
       });
 
-    if (!jobs || jobs.length === 0) {
-      // Return 200 with empty list so frontend can still render "No applied jobs" gracefully.
-      return res.status(200).json({ jobs: [], success: true });
-    }
+    const jobs = applications
+      .filter((application) => application.job)
+      .map((application) => ({
+        ...application.job.toObject(),
+        applicationId: application._id,
+        status: application.status,
+        appliedAt: application.createdAt,
+      }));
 
     return res.status(200).json({ jobs, success: true });
   } catch (error) {
@@ -71,7 +73,6 @@ export const getapplicants = async (req, res) => {
   try {
     const jobId = req.params.id;
 
-    // Fetch applicants from Application collection (source of truth)
     const applications = await Application.find({ job: jobId })
       .populate({
         path: 'applicant',
@@ -79,22 +80,13 @@ export const getapplicants = async (req, res) => {
       })
       .sort({ createdAt: -1 });
 
-    if (!applications) {
-      return res.status(400).json({ message: 'No applications found', success: false });
-    }
-
-    // Keep response shape compatible with frontend: { job: { applicants: [...] }, success: true }
-    // But include application id + status so frontend can update it.
     const applicants = applications.map((app) => ({
       applicationId: app._id,
       status: app.status,
-      // `applicant` is populated, so spread its fields at top-level for existing UI compatibility.
       ...(app.applicant?.toObject ? app.applicant.toObject() : app.applicant),
-      // also keep jobTitle/job if frontend expects them later (optional)
     }));
 
     return res.status(200).json({
-      // include job id so frontend can optionally refetch after status updates
       job: { applicants, jobId },
       success: true,
     });
@@ -108,8 +100,11 @@ export const updateapplicationstatus = async (req, res) => {
     const { id: applicationId } = req.params;
     const { status } = req.body;
 
-    if (!status) {
-      return res.status(400).json({ message: 'Status is required', success: false });
+    if (!['accepted', 'rejected'].includes(status)) {
+      return res.status(400).json({
+        message: 'Status must be accepted or rejected',
+        success: false,
+      });
     }
 
     const application = await Application.findById(applicationId);

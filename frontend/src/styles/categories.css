@@ -19,7 +19,7 @@
   margin-top: 8px;
 }
 
-/* Slider */
+
 
 .slider-wrapper {
   max-width: 1000px;
@@ -92,7 +92,7 @@
   background: #1d4ed8;
 }
 
-/* Tablet */
+
 
 @media (max-width: 768px) {
   .slider-card {
@@ -100,7 +100,7 @@
   }
 }
 
-/* Mobile */
+
 
 @media (max-width: 576px) {
   .slider-card {

@@ -1,15 +1,13 @@
 import { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
 import { USER_API_URL } from "../../utils/data.js";
 import { toast } from "sonner";
-import { setUser } from "../../redux/authslice.js";
+import { useAppContext } from "@/context/AppContext";
 
 import "../../styles/editprofilemodal.css";
 
 const Editprofilemodal = ({ open, setOpen }) => {
-  const { user } = useSelector((state) => state.auth);
-  const dispatch = useDispatch();
+  const { user, setUser } = useAppContext();
 
   const [loading, setLoading] = useState(false);
 
@@ -67,7 +65,7 @@ const Editprofilemodal = ({ open, setOpen }) => {
       });
 
       if (res.data.success) {
-        dispatch(setUser(res.data.user));
+        setUser(res.data.user);
         toast.success(res.data.message);
         setOpen(false);
       }
@@ -183,4 +181,3 @@ const Editprofilemodal = ({ open, setOpen }) => {
 };
 
 export default Editprofilemodal;
-

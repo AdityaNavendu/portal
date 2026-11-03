@@ -1,4 +1,4 @@
-/* Editprofilemodal - Tailwind-equivalent plain CSS */
+
 
 .editprofilemodal__overlay{
   position:fixed;
@@ -22,9 +22,9 @@
 
 
 .editprofilemodal__header{
-  padding:20px 24px; /* px-6 py-5 */
-  border-bottom:1px solid rgba(255,255,255,0.05); /* border-white/5 */
-  /* bg-gradient-to-br from-blue-500/15 via-slate-900 to-slate-950 */
+  padding:20px 24px;
+  border-bottom:1px solid rgba(255,255,255,0.05);
+
   background:linear-gradient(135deg,
     rgba(59,130,246,0.15) 0%,
     rgb(15,23,42) 50%,
@@ -34,18 +34,18 @@
 
 .editprofilemodal__title{
   color:#fff;
-  font-size:18px; /* text-lg */
+  font-size:18px;
   font-weight:600;
 }
 
 .editprofilemodal__form{
-  padding:22px 28px 24px 28px; /* px-7 pb-6 pt-5 */
+  padding:22px 28px 24px 28px;
 }
 
 .editprofilemodal__grid{
   display:grid;
   grid-template-columns:1fr;
-  gap:20px; /* gap-5 */
+  gap:20px;
 }
 
 @media (min-width:640px){
@@ -57,12 +57,12 @@
 .editprofilemodal__spaceY2{
   display:flex;
   flex-direction:column;
-  gap:8px; /* space-y-2 */
+  gap:8px;
 }
 
 .editprofilemodal__label{
   color:rgba(255,255,255,0.9);
-  font-size:14px; /* text-sm */
+  font-size:14px;
   font-weight:500;
 }
 
@@ -104,23 +104,23 @@
 }
 
 .editprofilemodal__actions{
-  margin-top:24px; /* mt-6 */
+  margin-top:24px;
 }
 
 .editprofilemodal__spaceY2{
   display:flex;
   flex-direction:column;
-  gap:8px; /* space-y-2 */
+  gap:8px;
 }
 
 .editprofilemodal__mt5{ margin-top:20px; }
 .editprofilemodal__mt6{ margin-top:24px; }
 
-.editprofilemodal__grid-gap5{ gap:20px; } /* gap-5 */
+.editprofilemodal__grid-gap5{ gap:20px; }
 
 .editprofilemodal__btn{
   width:100%;
-  background:#2563EB; /* blue-600 */
+  background:#2563EB;
   color:#fff;
   border:0;
   padding:12px 16px;
@@ -129,6 +129,6 @@
   font-weight:600;
 }
 
-.editprofilemodal__btn:hover{ background:#1D4ED8; } /* blue-700 */
+.editprofilemodal__btn:hover{ background:#1D4ED8; }
 
 

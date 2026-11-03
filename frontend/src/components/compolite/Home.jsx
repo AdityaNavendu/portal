@@ -5,18 +5,16 @@ import Categories from "./Categories";
 import Latestjob from "./Latestjob";
 import Footer from "./Footer";
 import "../../styles/home.css";
-import { useSelector } from "react-redux";
 import Getalljob from "@/hooks/Getalljob";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAppContext } from "@/context/AppContext";
 
 const Home = () => {
 
-  const {loading,error}=Getalljob();
-  const jobs=useSelector((state)=>state.jobs.alljobs);
+  const { loading, error } = Getalljob();
+  const { alljobs: jobs, user } = useAppContext();
   console.log(jobs);
-
-  const { user } = useSelector((state) => state.auth);
 
   const navigate = useNavigate();
 
@@ -42,5 +40,3 @@ useEffect(() => {
 };
 
 export default Home;
-
-

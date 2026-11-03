@@ -2,10 +2,9 @@ import React, { useEffect, useState } from "react";
 import Navbar from "../compolite/Navbar";
 
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
 import "../../styles/adminjob.css";
 import Adminjobtable from "./Adminjobtable";
-import { setSearchJob } from "@/redux/jobslice";
+import { useAppContext } from "@/context/AppContext";
 
 
 
@@ -14,12 +13,12 @@ const Jobss = () => {
   const navigate = useNavigate();
 
   const [input, setInput] = useState("");
-  const dispatch = useDispatch();
+  const { setSearchJobByText } = useAppContext();
 useEffect(() => {
-  dispatch(setSearchJob(input));
+  setSearchJobByText(input);
 
 
-}, [input])
+}, [input, setSearchJobByText])
 
 
   return (

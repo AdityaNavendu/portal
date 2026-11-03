@@ -5,7 +5,7 @@ import { useState } from "react";
 const Job = ({ job }) => {
   const navigate = useNavigate();
   const jobId = job._id;
-  console.log("Job component received job:", job); // Debugging line to check the job prop
+  console.log("Job component received job:", job);
 
   const [isbookmarked, setIsBookmarked] = useState(false);
   const daysago= (mongodbTime) =>{
@@ -27,7 +27,7 @@ const Job = ({ job }) => {
         </button>
       </div>
 
-      {/* Company Info */}
+
       <div className="jobcomponent-main">
         <img
           src={job?.company?.logo}
@@ -42,14 +42,14 @@ const Job = ({ job }) => {
         </div>
       </div>
 
-      {/* Description */}
+
       <p className="jobcomponent-desc">
         {job?.description?.length > 100
           ? job?.description?.substring(0, 100) + "..."
           : job?.description}    
       </p>
 
-      {/* Badges */}
+
       <div className="jobcomponent-badges">
         <span className="jobcomponent-badge-pill jobcomponent-badge-blue">
       {job?.position} OPEN POSITION
@@ -65,7 +65,7 @@ const Job = ({ job }) => {
         </span>
       </div>
 
-      {/* Actions */}
+
       <div className="jobcomponent-actions">
         <button
           className="jobcomponent-btn-details"

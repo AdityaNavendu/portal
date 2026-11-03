@@ -1,11 +1,10 @@
 import { COMPANY_API_URL } from '@/utils/data';
 import axios from 'axios';
 import { useEffect } from 'react'
-import { useDispatch } from 'react-redux';
 import { useState } from 'react';
-import { setSingleCompany } from '@/redux/Companyslice';
+import { useAppContext } from '@/context/AppContext';
 function useCompanyGetById(companyId) {
-  const dispatch = useDispatch();
+  const { setSingleCompany } = useAppContext();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -18,7 +17,7 @@ function useCompanyGetById(companyId) {
         });
 
         if (res.data?.success) {
-          dispatch(setSingleCompany(res.data.company));
+          setSingleCompany(res.data.company);
         }
       } catch (err) {
         setError(err);
@@ -29,11 +28,10 @@ function useCompanyGetById(companyId) {
     };
 
     fetchsinglecompany();
-  }, [companyId, dispatch]);
+  }, [companyId, setSingleCompany]);
 
   return { loading, error };
 }
 
 export default useCompanyGetById;
-
 

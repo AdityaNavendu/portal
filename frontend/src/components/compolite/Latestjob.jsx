@@ -1,10 +1,10 @@
 import Jobcard from "./Jobcard";
 import "../../styles/job.css";
-import { useSelector } from "react-redux";
+import { useAppContext } from "@/context/AppContext";
 
 
 const Latestjob = () => {
-  const {alljobs}=useSelector((store)=>store.jobs)
+  const { alljobs } = useAppContext();
   return (
     <div className="latestjob-wrapper">
       <h2 className="latestjob-title">
@@ -24,4 +24,3 @@ const Latestjob = () => {
 };
 
 export default Latestjob;
-

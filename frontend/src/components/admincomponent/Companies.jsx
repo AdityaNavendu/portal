@@ -4,17 +4,16 @@ import CompanyTable from "./companytable";
 import { useNavigate } from "react-router-dom";
 import getallcompanies from "@/hooks/getallcompanies";
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
 import { useState } from "react";
-import { setSearchCompany } from "@/redux/Companyslice";
+import { useAppContext } from "@/context/AppContext";
 const Companies = () => {
   const navigate = useNavigate();
   const [input, setInput] = useState("");
-  const dispatch = useDispatch();
+  const { setSearchCompanyByText } = useAppContext();
 
 useEffect(() => {
-  dispatch(setSearchCompany(input));
-}, [input, dispatch])
+  setSearchCompanyByText(input);
+}, [input, setSearchCompanyByText])
 
 
 const inputhandler = (e) => {

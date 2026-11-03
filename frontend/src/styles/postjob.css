@@ -1,4 +1,4 @@
-/* Background */
+
 .postjob__container {
     
     background: #f4f7fb;
@@ -8,14 +8,14 @@
     padding: 20px 10px;
 }
 
-/* Form */
+
 .postjob__form {
     width: 100%;
     max-width: 600px;
 
 }
 
-/* Card */ /* make hieight width equal as square */
+
 .postjob__card {
     background: #fff;
     border-radius: 18px;
@@ -26,7 +26,7 @@
     width: 100%;
 }
 
-/* Heading */
+
 .postjob__heading {
     font-size: 30px;
     font-weight: 700;
@@ -35,20 +35,20 @@
     color: #222;
 }
 
-/* Grid */
+
 .postjob__root {
     display: grid;
     grid-template-columns: repeat(2,1fr);
     gap: 22px;
 }
 
-/* Every field */
+
 .postjob__root > div {
     display: flex;
     flex-direction: column;
 }
 
-/* Labels */
+
 .postjob__root label {
     font-size: 15px;
     font-weight: 600;
@@ -56,7 +56,7 @@
     color: #444;
 }
 
-/* Inputs */
+
 .postjob__root input {
     padding: 12px 15px;
     border: 1px solid #d8d8d8;
@@ -72,7 +72,7 @@
 }
 
 
-/* Button */
+
 .postjob__submit {
     grid-column: 1 / -1;
     margin-top: 10px;
@@ -91,7 +91,7 @@
     background: #1d4ed8;
 }
 
-/* Responsive */
+
 @media (max-width:768px){
 
     .postjob__card{

@@ -4,7 +4,7 @@ const Termsofservices = () => {
   return (
     <div className="terms-page">
       <div className="terms-container">
-        {/* Header */}
+
         <div className="terms-card">
           <div className="terms-header">
             <div className="terms-icon">📜</div>
@@ -16,7 +16,7 @@ const Termsofservices = () => {
           </div>
         </div>
 
-        {/* Introduction */}
+
         <div className="terms-card terms-card--soft">
           <p className="terms-text">
             Welcome to <strong>JobPortal</strong>. By accessing or using our
@@ -26,7 +26,7 @@ const Termsofservices = () => {
           </p>
         </div>
 
-        {/* Section 1 */}
+
         <section className="terms-card terms-card--soft">
           <h2 className="terms-section-title">1. Acceptance of Terms</h2>
           <p className="terms-text">
@@ -36,7 +36,7 @@ const Termsofservices = () => {
           </p>
         </section>
 
-        {/* Section 2 */}
+
         <section className="terms-card terms-card--soft">
           <h2 className="terms-section-title">
             2. User Responsibilities
@@ -50,7 +50,7 @@ const Termsofservices = () => {
           </ul>
         </section>
 
-        {/* Section 3 */}
+
         <section className="terms-card terms-card--soft">
           <h2 className="terms-section-title">3. Account Registration</h2>
           <p className="terms-text">
@@ -60,7 +60,7 @@ const Termsofservices = () => {
           </p>
         </section>
 
-        {/* Section 4 */}
+
         <section className="terms-card terms-card--soft">
           <h2 className="terms-section-title">4. Job Applications</h2>
           <p className="terms-text">
@@ -70,7 +70,7 @@ const Termsofservices = () => {
           </p>
         </section>
 
-        {/* Section 5 */}
+
         <section className="terms-card terms-card--soft">
           <h2 className="terms-section-title">
             5. Prohibited Activities
@@ -84,7 +84,7 @@ const Termsofservices = () => {
           </ul>
         </section>
 
-        {/* Section 6 */}
+
         <section className="terms-card terms-card--soft">
           <h2 className="terms-section-title">6. Intellectual Property</h2>
           <p className="terms-text">
@@ -94,7 +94,7 @@ const Termsofservices = () => {
           </p>
         </section>
 
-        {/* Section 7 */}
+
         <section className="terms-card terms-card--soft">
           <h2 className="terms-section-title">
             7. Limitation of Liability
@@ -106,7 +106,7 @@ const Termsofservices = () => {
           </p>
         </section>
 
-        {/* Section 8 */}
+
         <section className="terms-card terms-card--soft">
           <h2 className="terms-section-title">8. Termination</h2>
           <p className="terms-text">
@@ -116,7 +116,7 @@ const Termsofservices = () => {
           </p>
         </section>
 
-        {/* Section 9 */}
+
         <section className="terms-card terms-card--soft">
           <h2 className="terms-section-title">9. Changes to Terms</h2>
           <p className="terms-text">
@@ -126,7 +126,7 @@ const Termsofservices = () => {
           </p>
         </section>
 
-        {/* Contact */}
+
         <section className="terms-contact">
           <h2>Contact Us</h2>
           <div className="terms-text" style={{ color: "#fff" }}>

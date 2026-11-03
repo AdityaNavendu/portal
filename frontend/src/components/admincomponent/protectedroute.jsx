@@ -1,10 +1,10 @@
  
 import { useEffect } from "react";
-import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { useAppContext } from "@/context/AppContext";
 
 const ProtectedRoute = ({ children }) => {
-  const { user } = useSelector((store) => store.auth);
+  const { user } = useAppContext();
   const navigate = useNavigate();
 
   useEffect(() => {

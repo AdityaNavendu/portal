@@ -1,46 +1,51 @@
 import { JOB_API_URL } from '@/utils/data';
 import axios from 'axios';
 import { useEffect } from 'react'
-import { useDispatch } from 'react-redux';
-import { setallJobs } from '@/redux/jobslice';
 import { useState } from 'react';
-import { useSelector } from 'react-redux';
-function Getalljob(props = {}) {
-  const { keyword = "" } = props;
-  const dispatch = useDispatch();
+import { useAppContext } from '@/context/AppContext';
+function Getalljob(keyword = "") {
+  const { setAllJobs } = useAppContext();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const { searchquery } = useSelector((state) => state.jobs);
-
-  const effectiveKeyword = keyword || searchquery || "";
 
   useEffect(() => {
+    const controller = new AbortController();
+
     const fetchAllJobs = async () => {
       setLoading(true);
+      setError(null);
+      setAllJobs([]);
       try {
         const res = await axios.get(`${JOB_API_URL}/getalljobs`, {
-          params: { keyword: effectiveKeyword },
+          params: { keyword },
           withCredentials: true,
+          signal: controller.signal,
         });
 
-
         if (res.data?.success) {
-          dispatch(setallJobs(res.data.jobs));
+          setAllJobs(Array.isArray(res.data.jobs) ? res.data.jobs : []);
+        } else {
+          setAllJobs([]);
         }
       } catch (err) {
-        setError(err);
-        console.log(err);
+        if (!controller.signal.aborted) {
+          setAllJobs([]);
+          setError(err);
+          console.error(err);
+        }
       } finally {
-        setLoading(false);
+        if (!controller.signal.aborted) {
+          setLoading(false);
+        }
       }
     };
 
     fetchAllJobs();
-  }, [dispatch, effectiveKeyword]);
+
+    return () => controller.abort();
+  }, [keyword, setAllJobs]);
 
   return { loading, error };
 }
 
 export default Getalljob;
-
-

@@ -1,7 +1,7 @@
 import path from "path";
 
-// multer (memoryStorage) file -> { contentType, base64 }
-// This avoids relying on `datauri` package internals.
+
+
 const getdatauri = async (file) => {
   if (!file?.buffer) return null;
 

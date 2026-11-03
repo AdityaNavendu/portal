@@ -1,11 +1,10 @@
 import { COMPANY_API_URL } from "@/utils/data";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
-import { setcompanies } from "@/redux/Companyslice";
+import { useAppContext } from "@/context/AppContext";
 
 const useGetAllCompanies = () => {
-  const dispatch = useDispatch();
+  const { setCompanies } = useAppContext();
 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -20,7 +19,7 @@ const useGetAllCompanies = () => {
         });
 
         if (res.data.success) {
-          dispatch(setcompanies(res.data.companies));
+          setCompanies(res.data.companies);
         }
       } catch (err) {
         console.error(err);
@@ -31,7 +30,7 @@ const useGetAllCompanies = () => {
     };
 
     fetchCompanies();
-  }, [dispatch]);
+  }, [setCompanies]);
 
   return { loading, error };
 };

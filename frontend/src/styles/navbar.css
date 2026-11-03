@@ -1,4 +1,4 @@
-/* Navbar styles without Tailwind utility classes */
+
 
 .navbar__root{
   width:100%;
@@ -11,30 +11,30 @@
   align-items:center;
   justify-content:space-between;
   width:100%;
-  height:4rem; /* h-16 */
+  height:4rem;
   margin-left:auto;
   margin-right:auto;
 }
 
 .navbar__brand{
-  font-size:1.5rem; /* text-2xl */
+  font-size:1.5rem;
   font-weight:700;
   cursor: pointer;
 }
 
 .navbar__brandAccent{
-  color:#3b82f6; /* blue-500 */
+  color:#3b82f6;
 }
 
 .navbar__right{
   display:flex;
   align-items:center;
-  gap:1.25rem; /* gap-5 */
+  gap:1.25rem;
 }
 
 .navbar__navList{
   display:flex;
-  gap:2.5rem; /* gap-10 */
+  gap:2.5rem;
   font-weight:500;
   align-items:center;
   list-style:none;
@@ -54,7 +54,7 @@
 .navbar__authActions{
   display:flex;
   align-items:center;
-  gap:2.5rem; /* similar to gap-10 */
+  gap:2.5rem;
 }
 
 .navbar__navButton{
@@ -68,18 +68,18 @@
 }
 
 .navbar__navButton--login{
-  background:#ef4444; /* red-500 */
+  background:#ef4444;
   color:#fff;
   border:0;
 }
 
 .navbar__navButton--register{
-  background:#ef4444; /* red-500 */
+  background:#ef4444;
   color:#fff;
   border:0;
 }
 
-/* profile dropdown */
+
 .navbar__profileWrap{
   position:relative;
 }
@@ -92,7 +92,7 @@
 }
 
 .navbar__avatarImage{
-  width:2rem; /* 32px */
+  width:2rem;
   height:2rem;
   border-radius:9999px;
   object-fit:cover;
@@ -108,7 +108,7 @@
   position:absolute;
   right:0;
   top:calc(100% + 0.5rem);
-  width:20rem; /* ~w-80 */
+  width:20rem;
   background:#fff;
   border:1px solid #e5e7eb;
   border-radius:0.5rem;
@@ -124,14 +124,14 @@
 }
 
 .navbar__userName{
-  font-size:0.875rem; /* text-sm */
+  font-size:0.875rem;
   font-weight:500;
   margin:0;
 }
 
 .navbar__mutedText{
-  font-size:0.875rem; /* text-sm */
-  color:#6b7280; /* gray-500 */
+  font-size:0.875rem;
+  color:#6b7280;
   margin:0.25rem 0 0;
 }
 

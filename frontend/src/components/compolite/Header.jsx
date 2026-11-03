@@ -3,28 +3,18 @@
 
 import { Search } from "lucide-react";
 import { GiPostOffice } from "react-icons/gi";
-import { useState , useEffect} from "react";
+import { useState } from "react";
 import "../../styles/header.css";
-import { useDispatch } from "react-redux";
-import { setSearchquery } from "@/redux/jobslice";
 import { useNavigate} from "react-router-dom";
 
 
 const Header = () => {
     const [query, setquery] = useState("");
-    const dispatch = useDispatch();
     const navigate = useNavigate();
-    // use useeffect to update the searchquery in redux
-    useEffect(() => {
-        dispatch(setSearchquery(query));
-    }, [query, dispatch]);
 
     const searchJobhandler = () => {
-        console.log("searchJobhandler");
-        console.log(query);
-        dispatch(setSearchquery(query));
-        navigate("/browse");
-
+        const keyword = query.trim();
+        navigate(keyword ? `/browse?keyword=${encodeURIComponent(keyword)}` : "/browse");
     };
 
   return (
@@ -51,16 +41,21 @@ const Header = () => {
           </p>
 
           <div className="header__searchRow">
-            <div className="header__searchBar">
-              <input onChange={(e)=> setquery(e.target.value)}
+            <form className="header__searchBar" onSubmit={(event) => {
+              event.preventDefault();
+              searchJobhandler();
+            }}>
+              <input
+                value={query}
+                onChange={(e)=> setquery(e.target.value)}
                 placeholder="Search jobs"
                 className="header__searchInput"
               />
 
-              <button className="header__searchBtn" onClick={searchJobhandler}>
+              <button type="submit" className="header__searchBtn">
                 <Search className="header__searchIcon" />
               </button>
-            </div>
+            </form>
           </div>
         </div>
       </div>
@@ -69,4 +64,3 @@ const Header = () => {
 };
 
 export default Header;
-

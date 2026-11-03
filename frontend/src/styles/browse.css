@@ -1,4 +1,4 @@
-/* Browse Page */
+
 
 .browse-page {
   width: 100%;
@@ -24,14 +24,14 @@ flex-wrap: wrap;
 gap: 30px;
 }
 
-/* Tablet */
+
 @media (max-width: 1024px) {
   .browse-grid {
     grid-template-columns: repeat(2, 320px);
   }
 }
 
-/* Mobile */
+
 @media (max-width: 768px) {
   .browse-grid {
     grid-template-columns: 320px;

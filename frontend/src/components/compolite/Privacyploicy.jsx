@@ -5,7 +5,7 @@ const Privacypolicy = () => {
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-100 py-12 px-4">
       <div className="max-w-4xl mx-auto">
 
-        {/* Header */}
+
         <div className="bg-white rounded-3xl shadow-lg border border-blue-100 p-10 text-center mb-6">
           <div className="flex justify-center mb-5">
             <div className="w-20 h-20 rounded-full bg-blue-100 flex items-center justify-center">
@@ -26,7 +26,7 @@ const Privacypolicy = () => {
           </p>
         </div>
 
-        {/* Introduction */}
+
         <div className="bg-white rounded-2xl shadow-md border border-blue-100 p-6 text-center mb-6">
           <p className="text-gray-700 leading-8">
             Welcome to{" "}
@@ -40,7 +40,7 @@ const Privacypolicy = () => {
           </p>
         </div>
 
-        {/* Section 1 */}
+
         <section className="bg-white rounded-2xl shadow-md border border-blue-100 p-8 text-center mb-6">
           <h2 className="text-3xl font-bold text-blue-800 mb-6">
             1. Information We Collect
@@ -57,7 +57,7 @@ const Privacypolicy = () => {
           </ul>
         </section>
 
-        {/* Section 2 */}
+
         <section className="bg-white rounded-2xl shadow-md border border-blue-100 p-8 text-center mb-6">
           <h2 className="text-3xl font-bold text-blue-800 mb-6">
             2. How We Use Your Information
@@ -72,7 +72,7 @@ const Privacypolicy = () => {
           </ul>
         </section>
 
-        {/* Section 3 */}
+
         <section className="bg-white rounded-2xl shadow-md border border-blue-100 p-8 text-center mb-6">
           <h2 className="text-3xl font-bold text-blue-800 mb-6">
             3. Information Sharing
@@ -85,7 +85,7 @@ const Privacypolicy = () => {
           </p>
         </section>
 
-        {/* Section 4 */}
+
         <section className="bg-white rounded-2xl shadow-md border border-blue-100 p-8 text-center mb-6">
           <h2 className="text-3xl font-bold text-blue-800 mb-6">
             4. Data Security
@@ -98,7 +98,7 @@ const Privacypolicy = () => {
           </p>
         </section>
 
-        {/* Section 5 */}
+
         <section className="bg-white rounded-2xl shadow-md border border-blue-100 p-8 text-center mb-6">
           <h2 className="text-3xl font-bold text-blue-800 mb-6">
             5. Cookies
@@ -110,7 +110,7 @@ const Privacypolicy = () => {
           </p>
         </section>
 
-        {/* Section 6 */}
+
         <section className="bg-white rounded-2xl shadow-md border border-blue-100 p-8 text-center mb-6">
           <h2 className="text-3xl font-bold text-blue-800 mb-6">
             6. Your Rights
@@ -124,7 +124,7 @@ const Privacypolicy = () => {
           </ul>
         </section>
 
-        {/* Contact */}
+
         <section className="bg-gradient-to-r from-blue-700 to-blue-900 text-white rounded-3xl shadow-xl p-10 text-center">
           <h2 className="text-4xl font-bold mb-6">
             Contact Us

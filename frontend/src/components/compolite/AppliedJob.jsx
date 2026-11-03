@@ -1,26 +1,24 @@
 import '../../styles/appliedjob.css';
 import { useEffect } from 'react';
 import axios from 'axios';
-import { useDispatch, useSelector } from 'react-redux';
 
 import { APPLICATION_API_URL } from '@/utils/data';
-import { setallappliedjob } from '@/redux/jobslice';
+import { useAppContext } from '@/context/AppContext';
 
 const AppliedJob = () => {
-  const dispatch = useDispatch();
-  const { allappliedjob } = useSelector((state) => state.jobs);
+  const { allappliedjob, setAllAppliedJob } = useAppContext();
 
   useEffect(() => {
     const fetchAllAppliedJob = async () => {
       try {
-        // backend route: GET /api/applicants/get
+
         const res = await axios.get(`${APPLICATION_API_URL}/get`, {
           withCredentials: true,
         });
 
         if (res.data?.success) {
-          // backend returns: { success: true, jobs: [...] }
-          dispatch(setallappliedjob(res.data.jobs || []));
+
+          setAllAppliedJob(res.data.jobs || []);
         }
       } catch (error) {
         console.log('AppliedJob fetch error:', error?.response?.data || error?.message || error);
@@ -28,7 +26,7 @@ const AppliedJob = () => {
     };
 
     fetchAllAppliedJob();
-  }, [dispatch]);
+  }, [setAllAppliedJob]);
 
   const appliedJobs = Array.isArray(allappliedjob) ? allappliedjob : [];
   console.log("appliedJobs:", appliedJobs);
@@ -56,10 +54,10 @@ const AppliedJob = () => {
           ) : (
             appliedJobs.map((job) => (
               <tr key={job?._id || job?.job?._id || job?.createdAt}>
-                <td>{job?.createdAt ? new Date(job.createdAt).toLocaleDateString() : '-'}</td>
+                <td>{job?.appliedAt || job?.createdAt ? new Date(job.appliedAt || job.createdAt).toLocaleDateString() : '-'}</td>
                 <td>{job?.company?.name || '-'}</td>
                 <td>{job?.title || '-'}</td>
-                <td>{job?.status === '' || job?.status == null ? 'Applied' : job.status}</td>
+                <td>{job?.status === 'accepted' ? 'Accepted' : job?.status === 'rejected' ? 'Rejected' : 'Applied'}</td>
               </tr>
             ))
           )}
@@ -70,4 +68,3 @@ const AppliedJob = () => {
 };
 
 export default AppliedJob;
-

@@ -8,7 +8,7 @@ export const register = async (req, res) => {
     const { fullname, email, phoneNumber, password, role } = req.body;
     const files = req.files;
 
-    // profilepicture/resume are optional, but multer expects req.files to exist when multipart is sent.
+
     const profilePictureFile = files?.profilepicture?.[0];
     let cloudinaryProfilePictureResponse = null;
 

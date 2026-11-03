@@ -5,8 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { USER_API_URL } from "../../utils/data.js";
 import { toast } from "sonner";
-import { useDispatch, useSelector } from "react-redux";
-import { setLoading } from "../../redux/authslice.js";
+import { useAppContext } from "@/context/AppContext";
 import { useEffect } from "react";
 import "../../styles/register.css";
 
@@ -20,10 +19,8 @@ const Register = () => {
     resumeFile: null,
     profilePictureFile:"",
   });
-
   const navigate = useNavigate();
-  const dispatch = useDispatch();
-  const { loading, user } = useSelector((state) => state.auth);
+  const { loading, setLoading, user } = useAppContext();
 
   const changeEventHandler = (e) => {
     setInput({ ...input, [e.target.name]: e.target.value });
@@ -53,7 +50,7 @@ const Register = () => {
     }
 
     try {
-      dispatch(setLoading(true));
+      setLoading(true);
       const res = await axios.post(`${USER_API_URL}/register`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
@@ -68,7 +65,7 @@ const Register = () => {
     } catch (error) {
       console.log(error);
     } finally {
-      dispatch(setLoading(false));
+      setLoading(false);
     }
   };
  useEffect(() => {
@@ -213,4 +210,3 @@ const Register = () => {
 };
 
 export default Register;
-

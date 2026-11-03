@@ -1,15 +1,15 @@
 import "../../styles/companiesTable.css";
-import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { useAppContext } from "@/context/AppContext";
  
 const CompanyTable = () => {
-  const { companies = [], searchCompanyByText, serachcompanybytext } = useSelector((state) => state.company);
+  const { companies, searchCompanyByText } = useAppContext();
 
 
   const filteredCompanies = companies.filter((company) => {
-    if (!(searchCompanyByText || serachcompanybytext)) return true;
+    if (!searchCompanyByText) return true;
 
-    const text = (searchCompanyByText || serachcompanybytext).toLowerCase();
+    const text = searchCompanyByText.toLowerCase();
     return company?.name?.toLowerCase().includes(text);
   });
 

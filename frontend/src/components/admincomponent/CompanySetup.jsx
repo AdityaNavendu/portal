@@ -7,20 +7,17 @@ import { COMPANY_API_URL } from "@/utils/data";
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
-
-import { useSelector } from "react-redux";
 import useCompanyGetById from "@/hooks/Companygetbyid";
+import { useAppContext } from "@/context/AppContext";
 
 
 const CompanySetup = () => {
   const param = useParams();
 
-  // fetch company when id changes (hook must be called unconditionally)
+
   useCompanyGetById(param?.id);
 
-  const { singleCompany } = useSelector((state) => state.company);
-
-
+  const { singleCompany } = useAppContext();
 
   const [input, setInput] = useState({
     name: "",

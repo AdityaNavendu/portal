@@ -3,27 +3,23 @@ import "../../styles/navbar.css";
 import { useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Users2, LogOut } from "lucide-react";
-import { useSelector } from "react-redux";
 import { toast } from "sonner";
 import axios from "axios";
 import { USER_API_URL } from "../../utils/data.js";
-
-import { useDispatch } from "react-redux";
-import { setUser } from "@/redux/authslice";
+import { useAppContext } from "@/context/AppContext";
 
 const Navbar = () => {
-  const { user } = useSelector((state) => state.auth);
+  const { user, setUser } = useAppContext();
   const [open, setOpen] = useState(false);
   const rootRef = useRef(null);
   const navigate =useNavigate();
-  const dispatch = useDispatch();
 const logouthandler = async () => {
   try {
     const res = await axios.get(`${USER_API_URL}/logout`, {
       withCredentials: true,
     });
     if (res.data.success) {
-      dispatch(setUser(null));
+      setUser(null);
       navigate("/login");
       toast.success(res.data.message);
     
@@ -156,5 +152,4 @@ const logouthandler = async () => {
 };
 
 export default Navbar;
-
 
