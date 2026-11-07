@@ -11,6 +11,7 @@ import Profile from "./components/compolite/Profile.jsx";
 import Browse from "./components/compolite/Browse.jsx";
 import Companies from "./components/admincomponent/Companies.jsx";
 import Description from "./components/compolite/Description.jsx";
+import SavedJobs from "./components/compolite/SavedJobs.jsx";
 import Companycreate from "./components/admincomponent/Companycreate.jsx";
 import CompanySetup from "./components/admincomponent/CompanySetup.jsx";
 import Jobss from "./components/admincomponent/Jobss.jsx";
@@ -40,6 +41,10 @@ const approuter = createBrowserRouter([
   {
     path: "/profile",
     element: <Profile />,
+  },
+  {
+    path: "/saved-jobs",
+    element: <SavedJobs />,
   },
   {
     path: "/privacy-policy",

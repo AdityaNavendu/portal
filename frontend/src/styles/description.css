@@ -1,13 +1,16 @@
 .description-page{
-  width:100%;
-  display:flex;
-  justify-content:center;
+  width:60vw;
+  min-height:80vh;
+  border:2px solid black;
+  margin-left: 18vw;
+  margin-top: 5vh;
 }
 .description-container{
   width:100%;
   max-width:48rem;
   padding:0 1rem;
   padding-top:6rem;
+  margin-left: 40px;
 }
 .description-header{
   display:flex;
@@ -38,7 +41,7 @@
 .badge-orange{background:#ffedd5;color:#c2410c;}
 .description-button{
   border:1px solid #d1d5db;
-  background:#fff;
+  background:blue;
   padding:0.5rem 1rem;
   border-radius:0.5rem;
   font-weight:500;
@@ -65,4 +68,8 @@
 .description-value{
   color:#6b7280;
 }
+.description-value a{
+  color:#1d4ed8;
+} 
+
 

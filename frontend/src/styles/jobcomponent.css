@@ -151,6 +151,15 @@
   background: #6d28d9;
 }
 
+.jobcomponent-btn-save[aria-pressed="true"] {
+  background: #5b21b6;
+}
+
+.jobcomponent-btn-save:disabled {
+  cursor: wait;
+  opacity: 0.6;
+}
+
 .jobcomponent-btn-details {
   padding: 10px 16px;
   border: 1px solid #e5e7eb;
@@ -173,4 +182,3 @@
     width: 100%;
   }
 }
-

@@ -2,7 +2,7 @@ import "../../styles/navbar.css";
 
 import { useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Users2, LogOut } from "lucide-react";
+import { Bookmark, Users2, LogOut } from "lucide-react";
 import { toast } from "sonner";
 import axios from "axios";
 import { USER_API_URL } from "../../utils/data.js";
@@ -118,7 +118,7 @@ const logouthandler = async () => {
 
                   <div className="navbar__popoverActions">
                  {user && user.role==="applicant" && (
-                     <Link
+                    <Link
                       to="/profile"
                       className="navbar__popoverLine"
                     >
@@ -126,6 +126,14 @@ const logouthandler = async () => {
                       <span>Profile</span>
                     </Link>
                  )}
+
+                    <Link
+                      to="/saved-jobs"
+                      className="navbar__popoverLine"
+                    >
+                      <Bookmark size={18} />
+                      <span>Saved Jobs</span>
+                    </Link>
 
                     <button type="button" onClick={logouthandler} className="navbar__popoverLine">
                       <LogOut size={18} />
@@ -152,4 +160,3 @@ const logouthandler = async () => {
 };
 
 export default Navbar;
-

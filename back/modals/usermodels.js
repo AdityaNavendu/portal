@@ -50,6 +50,15 @@ const userSchema = new mongoose.Schema(
         default: " ",
       },
     },
+    bookmarks: {
+      type: [
+        {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: "Job",
+        },
+      ],
+      default: [],
+    },
   },
   { timestamps: true },
 );

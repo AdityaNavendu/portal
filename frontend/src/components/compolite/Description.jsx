@@ -1,15 +1,17 @@
 import "../../styles/description.css";
 import axios from "axios";
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 
 import { JOB_API_URL, APPLICATION_API_URL } from "@/utils/data";
 import { useAppContext } from "@/context/AppContext";
+import Navbar from "./Navbar";
 
 const Description = () => {
   const { singlejob, user, setSingleJob } = useAppContext();
   const { jobId } = useParams();
+  const navigate = useNavigate();
 
   const isApplied =
     singlejob?.applicants?.some(
@@ -17,6 +19,11 @@ const Description = () => {
     ) || false;
 
   const applyjobhandler = async () => {
+    if (!user) {
+      navigate("/login");
+      return;
+    }
+
     try {
       const res = await axios.post(
         `${APPLICATION_API_URL.replace(
@@ -72,7 +79,10 @@ const Description = () => {
   }, [jobId, setSingleJob]);
 
   return (
+    <div>
+         <Navbar/>
     <div className="description-page">
+   
       <div className="description-container">
         <div className="description-header">
           <div>
@@ -187,6 +197,8 @@ const Description = () => {
         </div>
       </div>
     </div>
+    </div>
+
   );
 };
 

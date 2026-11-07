@@ -2,12 +2,37 @@ import { Bookmark } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import "../../styles/jobcomponent.css";
 import { useState } from "react";
+import { toast } from "sonner";
+import { useAppContext } from "@/context/AppContext";
 const Job = ({ job }) => {
   const navigate = useNavigate();
   const jobId = job._id;
+  const {
+    user,
+    bookmarkedJobIds,
+    bookmarksLoading,
+    toggleBookmark,
+  } = useAppContext();
   console.log("Job component received job:", job);
 
-  const [isbookmarked, setIsBookmarked] = useState(false);
+  const [bookmarkPending, setBookmarkPending] = useState(false);
+  const isbookmarked = bookmarkedJobIds.includes(String(jobId));
+  const bookmarkJob = async () => {
+    if (!user) {
+      navigate("/login");
+      return;
+    }
+
+    setBookmarkPending(true);
+    try {
+      await toggleBookmark(job);
+    } catch (error) {
+      toast.error(error.message || "Unable to update saved jobs");
+    } finally {
+      setBookmarkPending(false);
+    }
+  };
+
   const daysago= (mongodbTime) =>{
     const date = new Date(mongodbTime);
     const now = new Date();
@@ -22,8 +47,15 @@ const Job = ({ job }) => {
       <div className="jobcomponent-header">
         <p className="jobcomponent-time">{daysago(job?.createdAt)} days ago</p>
 
-        <button className="jobcomponent-bookmark-btn" onClick={() => setIsBookmarked(!isbookmarked)}>
-          <Bookmark size={18} />
+        <button
+          type="button"
+          className="jobcomponent-bookmark-btn"
+          aria-label={isbookmarked ? "Remove from saved jobs" : "Save job"}
+          aria-pressed={isbookmarked}
+          disabled={bookmarkPending || bookmarksLoading}
+          onClick={bookmarkJob}
+        >
+          <Bookmark size={18} fill={isbookmarked ? "currentColor" : "none"} />
         </button>
       </div>
 
@@ -74,7 +106,15 @@ const Job = ({ job }) => {
           View Details
         </button>
 
-        <button className="jobcomponent-btn-save">Save For Later</button>
+        <button
+          type="button"
+          className="jobcomponent-btn-save"
+          aria-pressed={isbookmarked}
+          disabled={bookmarkPending || bookmarksLoading}
+          onClick={bookmarkJob}
+        >
+          {isbookmarked ? "Saved" : "Save For Later"}
+        </button>
       </div>
     </div>
   );
