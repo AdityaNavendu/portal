@@ -3,8 +3,8 @@
 .jobcomponent-card {
   width: 320px;
   padding: 20px;
-  background: #fff;
-  border: 1px solid #e5e7eb;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
   border-radius: 12px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   transition: 0.3s;
@@ -25,28 +25,28 @@
 }
 
 .jobcomponent-time {
-  color: #6b7280;
+  color: #475569;
   font-size: 14px;
   margin: 0;
 }
 
 .jobcomponent-bookmark-btn {
 
-  border: 1px solid black;
+  border: 1px solid #E2E8F0;
   
   border-radius: 10px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  background-color: white;
-  color: black;
+  background-color: #FFFFFF;
+  color: #475569;
   transition: 0.2s ease;
 }
 
 .jobcomponent-bookmark-btn:hover {
-  background-color: #7c3aed;
-  color: white;
+  background-color: #059669;
+  color: #FFFFFF;
 }
 
 .jobcomponent-main {
@@ -61,7 +61,7 @@
   height: 46px;
   border-radius: 12px;
   object-fit: cover;
-  border: 1px solid #e5e7eb;
+  border: 1px solid #E2E8F0;
 }
 
 .jobcomponent-company-info {
@@ -75,7 +75,7 @@
 }
 
 .jobcomponent-country {
-  color: #6b7280;
+  color: #475569;
   margin-top: 4px;
   font-size: 14px;
   margin-bottom: 0;
@@ -88,7 +88,7 @@
 }
 
 .jobcomponent-desc {
-  color: #4b5563;
+  color: #475569;
   line-height: 1.6;
   margin: 0;
 }
@@ -108,23 +108,23 @@
 }
 
 .jobcomponent-badge-blue {
-  background: #dbeafe;
-  color: #2563eb;
+  background: #D1FAE5;
+  color: #064E3B;
 }
 
 .jobcomponent-badge-green {
-  background: #dcfce7;
-  color: #16a34a;
+  background: #D1FAE5;
+  color: #16A34A;
 }
 
 .jobcomponent-badge-purple {
-  background: #ede9fe;
-  color: #7c3aed;
+  background: #D1FAE5;
+  color: #064E3B;
 }
 
 .jobcomponent-badge-orange {
-  background: #ffedd5;
-  color: #ea580c;
+  background: #D1FAE5;
+  color: #D97706;
 }
 
 .jobcomponent-actions {
@@ -139,8 +139,8 @@
   padding: 10px 16px;
   border: none;
   border-radius: 8px;
-  background: #7c3aed;
-  color: white;
+  background: #059669;
+  color: #FFFFFF;
   cursor: pointer;
   font-weight: 600;
   transition: 0.3s;
@@ -148,11 +148,11 @@
 }
 
 .jobcomponent-btn-save:hover {
-  background: #6d28d9;
+  background: #047857;
 }
 
 .jobcomponent-btn-save[aria-pressed="true"] {
-  background: #5b21b6;
+  background: #064E3B;
 }
 
 .jobcomponent-btn-save:disabled {
@@ -162,19 +162,19 @@
 
 .jobcomponent-btn-details {
   padding: 10px 16px;
-  border: 1px solid #e5e7eb;
+  border: 1px solid #E2E8F0;
   border-radius: 8px;
-  background: #fff;
+  background: #FFFFFF;
   cursor: pointer;
   font-weight: 600;
-  color: #111827;
+  color: #0F172A;
   transition: 0.2s ease;
   white-space: nowrap;
 }
 
 .jobcomponent-btn-details:hover {
-  border-color: #d1d5db;
-  background: #f9fafb;
+  border-color: #E2E8F0;
+  background: #F8FAFC;
 }
 
 @media (max-width: 640px) {

@@ -2,11 +2,11 @@
   width: 100%;
   max-width: 900px;
   margin: 20px auto;
-  border: 1px solid #ddd;
+  border: 1px solid #E2E8F0;
   border-radius: 10px;
   overflow: hidden;
   
-  background: #fff;
+  background: #FFFFFF;
 }
 
 .adminjobtable__table {
@@ -19,24 +19,24 @@
   font-size: 18px;
   font-weight: 800;
   text-align: left;
-  background: #f6f7fb;
-  border-bottom: 1px solid #e5e7eb;
+  background: #F8FAFC;
+  border-bottom: 1px solid #E2E8F0;
 }
 
 .adminjobtable__thead {
-  background: #f5f5f5;
+  background: #F8FAFC;
 }
 
 .adminjobtable__th,
 .adminjobtable__td {
   padding: 12px 12px;
   text-align: center;
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid #E2E8F0;
   vertical-align: middle;
 }
 
 .adminjobtable__tbody tr:hover {
-  background: #f9fafb;
+  background: #F8FAFC;
 }
 
 .adminjobtable__logo {
@@ -44,14 +44,14 @@
   height: 40px;
   border-radius: 50%;
   object-fit: cover;
-  border: 1px solid #e5e7eb;
+  border: 1px solid #E2E8F0;
 }
 
 .adminjobtable__actionButton {
   padding: 7px 14px;
   border: none;
-  background: #2563eb;
-  color: #fff;
+  background: #059669;
+  color: #FFFFFF;
   border-radius: 6px;
   cursor: pointer;
   font-weight: 600;
@@ -59,13 +59,13 @@
 }
 
 .adminjobtable__actionButton:hover {
-  background: #1d4ed8;
+  background: #047857;
 }
 
 .adminjobtable__empty {
   display: inline-block;
   padding: 18px;
-  color: #6b7280;
+  color: #475569;
   font-weight: 600;
 }
 
@@ -73,8 +73,8 @@
   display: inline-block;
     padding: 7px 14px;
     border: none;
-    background: #2563eb;
-    color: #fff;
+    background: #059669;
+    color: #FFFFFF;
     border-radius: 6px;
     cursor: pointer;
     font-weight: 600;
@@ -82,5 +82,5 @@
 }
 
 .adminjobtable__action:hover{
-  background: #1d4ed8;
+  background: #047857;
 }

@@ -1,6 +1,6 @@
 .filter-container {
   width: 100%;
-  background: #fff;
+  background: #FFFFFF;
   border-radius: 8px;
   padding: 16px;
   box-sizing: border-box;
@@ -9,14 +9,14 @@
 .filter-title {
   font-size: 22px;
   font-weight: bold;
-  color: #222;
+  color: #0F172A;
   margin: 0;
 }
 
 .filter-divider {
   margin-top: 12px;
   border: none;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #E2E8F0;
 }
 
 .filter-content {
@@ -31,7 +31,7 @@
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 10px;
-  color: #333;
+  color: #0F172A;
 }
 
 .filter-item {
@@ -45,16 +45,16 @@
   width: 16px;
   height: 16px;
   cursor: pointer;
-  accent-color: #6b3ac2;
+  accent-color: #059669;
 }
 
 .filter-label {
   cursor: pointer;
-  color: #555;
+  color: #475569;
   font-size: 15px;
   user-select: none;
 }
 
 .filter-label:hover {
-  color: #6b3ac2;
+  color: #047857;
 }

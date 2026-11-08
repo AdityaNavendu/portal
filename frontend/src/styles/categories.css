@@ -11,11 +11,11 @@
 .categories-title {
   font-size: 32px;
   font-weight: 700;
-  color: #2563eb;
+  color: #059669;
 }
 
 .categories-subtitle {
-  color: #6b7280;
+  color: #475569;
   margin-top: 8px;
 }
 
@@ -55,10 +55,10 @@
   align-items: center;
   justify-content: center;
 
-  border: 1px solid #e5e7eb;
+  border: 1px solid #E2E8F0;
   border-radius: 12px;
 
-  background: #ffffff;
+  background: #FFFFFF;
 
   font-size: 18px;
   font-weight: 600;
@@ -79,8 +79,8 @@
   border: none;
   border-radius: 50%;
 
-  background: #2563eb;
-  color: white;
+  background: #059669;
+  color: #FFFFFF;
 
   font-size: 22px;
   cursor: pointer;
@@ -89,7 +89,7 @@
 }
 
 .slider-btn:hover {
-  background: #1d4ed8;
+  background: #047857;
 }
 
 

@@ -1,7 +1,7 @@
 .description-page{
   width:60vw;
   min-height:80vh;
-  border:2px solid black;
+  border:2px solid #E2E8F0;
   margin-left: 18vw;
   margin-top: 5vh;
 }
@@ -20,7 +20,7 @@
 .description-title{
   font-size:1.875rem;
   font-weight:700;
-  color:#111827;
+  color:#0F172A;
 }
 .description-badges{
   display:flex;
@@ -35,13 +35,13 @@
   font-weight:500;
   line-height:1.25;
 }
-.badge-blue{background:#dbeafe;color:#1d4ed8;}
-.badge-green{background:#dcfce7;color:#15803d;}
-.badge-purple{background:#ede9fe;color:#6d28d9;}
-.badge-orange{background:#ffedd5;color:#c2410c;}
+.badge-blue{background:#D1FAE5;color:#064E3B;}
+.badge-green{background:#D1FAE5;color:#16A34A;}
+.badge-purple{background:#D1FAE5;color:#064E3B;}
+.badge-orange{background:#D1FAE5;color:#D97706;}
 .description-button{
-  border:1px solid #d1d5db;
-  background:blue;
+  border:1px solid #E2E8F0;
+  background:#059669;
   padding:0.5rem 1rem;
   border-radius:0.5rem;
   font-weight:500;
@@ -54,7 +54,7 @@
 .description-section-title{
   margin-top:2.5rem;
   padding-bottom:0.5rem;
-  border-bottom:1px solid #d1d5db;
+  border-bottom:1px solid #E2E8F0;
   font-weight:600;
 }
 .description-list{
@@ -66,10 +66,9 @@
 }
 .description-key{font-weight:600;}
 .description-value{
-  color:#6b7280;
+  color:#475569;
 }
 .description-value a{
-  color:#1d4ed8;
+  color:#047857;
 } 
-
 

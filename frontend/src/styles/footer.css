@@ -1,7 +1,7 @@
 .footer{
   margin-top:40px;
-  background:#fff;
-  border-top:1px solid #e5e7eb;
+  background:#FFFFFF;
+  border-top:1px solid #E2E8F0;
   font-family:inherit;
 }
 
@@ -35,11 +35,11 @@
 }
 
 .footer__title span{
-  color:#3b82f6;
+  color:#059669;
 }
 
 .footer__desc{
-  color:#4b5563;
+  color:#475569;
   line-height:1.75;
 }
 
@@ -53,11 +53,11 @@
   width:2.5rem;
   height:2.5rem;
   border-radius:9999px;
-  border:1px solid #e5e7eb;
+  border:1px solid #E2E8F0;
   display:flex;
   align-items:center;
   justify-content:center;
-  color:#6b7280;
+  color:#475569;
   text-decoration:none;
 }
 
@@ -67,7 +67,7 @@
 }
 
 .footer__socialLink:hover{
-  background:#f9fafb;
+  background:#F8FAFC;
 }
 
 .footer__col{
@@ -78,7 +78,7 @@
 
 .footer__heading{
   font-weight:600;
-  color:#111827;
+  color:#0F172A;
 }
 
 .footer__list{
@@ -88,7 +88,7 @@
   display:flex;
   flex-direction:column;
   gap:0.75rem;
-  color:#4b5563;
+  color:#475569;
 }
 
 .footer__list a{
@@ -97,13 +97,13 @@
 }
 
 .footer__list a:hover{
-  color:#111827;
+  color:#0F172A;
 }
 
 .footer__finePrintRow{
   margin-top:2.5rem;
   padding-top:1.5rem;
-  border-top:1px solid #e5e7eb;
+  border-top:1px solid #E2E8F0;
 }
 
 .footer__finePrintInner{
@@ -122,7 +122,7 @@
 }
 
 .footer__copyright{
-  color:#6b7280;
+  color:#475569;
   font-size:0.875rem;
 }
 
@@ -131,7 +131,7 @@
   align-items:center;
   gap:1.5rem;
   font-size:0.875rem;
-  color:#6b7280;
+  color:#475569;
 }
 
 .footer__links a{
@@ -140,6 +140,5 @@
 }
 
 .footer__links a:hover{
-  color:#111827;
+  color:#0F172A;
 }
-

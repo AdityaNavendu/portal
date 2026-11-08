@@ -2,7 +2,7 @@
 
 .profile__page{
   min-height:100vh;
-  background:#f3f4f6;
+  background:#F8FAFC;
 }
 
 .profile__container{
@@ -16,10 +16,10 @@
 }
 
 .profile__card{
-  background:#fff;
+  background:#FFFFFF;
   border-radius:1rem;
   box-shadow:0 1px 3px rgba(0,0,0,0.1);
-  border:1px solid rgba(0,0,0,0.05);
+  border:1px solid #E2E8F0;
   padding:2rem;
 }
 
@@ -57,7 +57,7 @@
 
 .profile__bio{
   margin-top:0.5rem;
-  color:#6b7280;
+  color:#475569;
 }
 
 .profile__contact{
@@ -91,24 +91,24 @@
 }
 
 .profile__muted{
-  color:#6b7280;
+  color:#475569;
 }
 
 .profile__link{
-  color:#2563eb;
+  color:#059669;
   text-decoration:none;
 }
 
 .profile__link:hover{
-  color:#1d4ed8;
+  color:#047857;
   text-decoration:underline;
 }
 
 .profile__jobsCard{
-  background:#fff;
+  background:#FFFFFF;
   border-radius:1rem;
   box-shadow:0 1px 3px rgba(0,0,0,0.1);
-  border:1px solid rgba(0,0,0,0.05);
+  border:1px solid #E2E8F0;
   padding:1.5rem;
   margin-top:2rem;
 }
@@ -127,14 +127,14 @@
 }
 
 .profile__contactText{
-  color:#374151;
+  color:#475569;
   font-size:1rem;
 }
 
 .profile__contactIcon{
   width:20px;
   height:20px;
-  color:#6b7280;
+  color:#475569;
 }
 
 .profile__editBtn{
@@ -143,20 +143,20 @@
   display:flex;
   align-items:center;
   justify-content:center;
-  border:1px solid rgba(0,0,0,0.15);
+  border:1px solid #E2E8F0;
   border-radius:0.5rem;
   background:transparent;
   cursor:pointer;
 }
 
 .profile__editBtn:hover{
-  background:rgba(0,0,0,0.03);
+  background:#F8FAFC;
 }
 
 .profile__editIcon{
   width:16px;
   height:16px;
-  color:#111827;
+  color:#0F172A;
 }
 
 .profile__avatarWrap{
@@ -164,7 +164,7 @@
   height:6rem;
   border-radius:9999px;
   overflow:hidden;
-  background:#e5e7eb;
+  background:#E2E8F0;
   flex:0 0 auto;
 }
 
@@ -179,26 +179,25 @@
   align-items:center;
   padding:0.25rem 0.5rem;
   border-radius:9999px;
-  background:#f3f4f6;
-  color:#111827;
-  border:1px solid rgba(0,0,0,0.06);
+  background:#D1FAE5;
+  color:#064E3B;
+  border:1px solid #D1FAE5;
   font-size:0.875rem;
 }
 
 .profile__resumeLink{
-  color:#2563eb;
+  color:#059669;
   text-decoration:none;
 }
 
 .profile__resumeLink:hover{
-  color:#1d4ed8;
+  color:#047857;
   text-decoration:underline;
 }
 
 .profile__jobsOverflow{
   overflow-x:auto;
 }
-
 
 
 

@@ -18,7 +18,7 @@
 }
 
 .jobss__search__button {
-  background-color: rgb(73, 52, 208);
+  background-color: #059669;
   margin-right: 50px;
   border: none;
   padding: 10px;
@@ -27,6 +27,6 @@
 }
 
 .jobss__search__button:hover {
-  background-color: rgb(241, 241, 241);
-  color: rgb(73, 52, 208);
+  background-color: #D1FAE5;
+  color: #064E3B;
 }

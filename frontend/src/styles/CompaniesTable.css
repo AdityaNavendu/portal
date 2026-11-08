@@ -2,7 +2,7 @@
   width: 100%;
   max-width: 900px;
   margin: 20px auto;
-  border: 1px solid #ddd;
+  border: 1px solid #E2E8F0;
   border-radius: 8px;
   overflow: hidden;
 }
@@ -20,18 +20,18 @@
 }
 
 .company-table thead {
-  background: #f5f5f5;
+  background: #F8FAFC;
 }
 
 .company-table th,
 .company-table td {
   padding: 12px 16px;
   text-align: left;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #E2E8F0;
 }
 
 .company-table tbody tr:hover {
-  background: #f9f9f9;
+  background: #F8FAFC;
 }
 
 .logo {
@@ -43,12 +43,12 @@
 button {
   padding: 6px 12px;
   border: none;
-  background: #2563eb;
-  color: white;
+  background: #059669;
+  color: #FFFFFF;
   border-radius: 4px;
   cursor: pointer;
 }
 
 button:hover {
-  background: #1d4ed8;
+  background: #047857;
 }
