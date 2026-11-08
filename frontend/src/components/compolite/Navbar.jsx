@@ -135,7 +135,7 @@ const logouthandler = async () => {
                       <span>Saved Jobs</span>
                     </Link>
 
-                    <button type="button" onClick={logouthandler} className="navbar__popoverLine">
+                    <button type="button" onClick={logouthandler} className="navbar__popoverLine logout">
                       <LogOut size={18} />
                       <span>log out</span>
                     </button>

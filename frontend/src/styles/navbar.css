@@ -153,9 +153,12 @@
   border:0;
   font:inherit;
 }
-
 .navbar__popoverLine:hover{
-  color:#0F172A;
+  text-decoration:underline;
+}
+.logout:hover{
+  background:transparent;
+  text-decoration:underline;
 }
 
 
