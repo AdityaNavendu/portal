@@ -1,3 +1,8 @@
+/**
+ * Backend module: Node.js, Express 5, Mongoose aur MongoDB.
+ * Use case: Ye file job portal ke HTTP API aur database data flow mein kaam karti hai.
+ */
+
 import express from "express";
 import cookieParser from "cookie-parser";
 import cors from "cors";
@@ -19,6 +24,11 @@ app.use(cookieParser());
 
 const corsOptions = {
     origin: function (origin, callback) {
+        /**
+         * Express route/controller or Node.js utility: `allowed`.
+         * Processes one HTTP/API or data operation using Express, Mongoose, or a project utility.
+         * Example: `allowed(req, res);`
+         */
         const allowed = [
             "http://localhost:5173",
             "http://127.0.0.1:5173",

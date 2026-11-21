@@ -1,5 +1,15 @@
+/**
+ * Frontend module: React 19, Vite, React Router aur Axios.
+ * Use case: Ye file job portal ke browser-side UI aur API flow mein kaam karti hai.
+ */
+
 import React from "react";
 
+/**
+ * React component: `Privacypolicy`.
+ * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+ * Example: `<Privacypolicy />`
+ */
 const Privacypolicy = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 py-12 px-4">

@@ -1,3 +1,8 @@
+/**
+ * Frontend module: React 19, Vite, React Router aur Axios.
+ * Use case: Ye file job portal ke browser-side UI aur API flow mein kaam karti hai.
+ */
+
 import Navbar from "../compolite/Navbar";
 import { useEffect, useMemo, useState } from "react";
 import "../../styles/postjob.css";
@@ -8,6 +13,11 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useAppContext } from "@/context/AppContext";
 
 
+/**
+ * React component: `PostJob`.
+ * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+ * Example: `<PostJob />`
+ */
 const PostJob = () => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -44,10 +54,20 @@ const PostJob = () => {
   const [loading, setLoading] = useState(false);
   const [fetching, setFetching] = useState(false);
 
+  /**
+   * React component: `selectChangeHandler`.
+   * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+   * Example: `<selectChangeHandler />`
+   */
   const selectChangeHandler = (companyId) => {
     setInput((prev) => ({ ...prev, company_Id: companyId }));
   };
 
+  /**
+   * React component: `handleChange`.
+   * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+   * Example: `<handleChange />`
+   */
   const handleChange = (e) => {
     setInput((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
@@ -56,6 +76,11 @@ const PostJob = () => {
   useEffect(() => {
     let cancelled = false;
 
+    /**
+     * React component: `fetchJob`.
+     * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+     * Example: `<fetchJob />`
+     */
     const fetchJob = async () => {
       if (!id) return;
       setFetching(true);
@@ -95,6 +120,11 @@ const PostJob = () => {
     };
   }, [id, initialInput]);
 
+  /**
+   * React component: `onsubmitHandler`.
+   * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+   * Example: `<onsubmitHandler />`
+   */
   const onsubmitHandler = async (e) => {
     e.preventDefault();
 

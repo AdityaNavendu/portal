@@ -1,8 +1,18 @@
+/**
+ * Frontend module: React 19, Vite, React Router aur Axios.
+ * Use case: Ye file job portal ke browser-side UI aur API flow mein kaam karti hai.
+ */
+
 import { JOB_API_URL } from '@/utils/data';
 import axios from 'axios';
 import { useEffect } from 'react'
 import { useState } from 'react';
 import { useAppContext } from '@/context/AppContext';
+/**
+ * React component: `Getalljob`.
+ * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+ * Example: `<Getalljob />`
+ */
 function Getalljob(keyword = "") {
   const { setAllJobs } = useAppContext();
   const [loading, setLoading] = useState(false);
@@ -11,6 +21,11 @@ function Getalljob(keyword = "") {
   useEffect(() => {
     const controller = new AbortController();
 
+    /**
+     * React component: `fetchAllJobs`.
+     * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+     * Example: `<fetchAllJobs />`
+     */
     const fetchAllJobs = async () => {
       setLoading(true);
       setError(null);

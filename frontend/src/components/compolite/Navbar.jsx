@@ -1,3 +1,8 @@
+/**
+ * Frontend module: React 19, Vite, React Router aur Axios.
+ * Use case: Ye file job portal ke browser-side UI aur API flow mein kaam karti hai.
+ */
+
 import "../../styles/navbar.css";
 
 import { useEffect, useRef, useState } from "react";
@@ -8,13 +13,26 @@ import axios from "axios";
 import { USER_API_URL } from "../../utils/data.js";
 import { useAppContext } from "@/context/AppContext";
 
+/**
+ * React component: `Navbar`.
+ * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+ * Example: `<Navbar />`
+ */
 const Navbar = () => {
   const { user, setUser } = useAppContext();
   const [open, setOpen] = useState(false);
-  const rootRef = useRef(null);
-  const navigate =useNavigate();
-const logouthandler = async () => {
+  /**
+   * React component: `logouthandler`.
+   * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+   * Example: `<logouthandler />`
+   */
+  const logouthandler = async () => {
   try {
+    /**
+     * React component: `res`.
+     * Renders one UI section of the job portal and responds to application state or user actions.
+     * Example: `<res />`
+     */
     const res = await axios.get(`${USER_API_URL}/logout`, {
       withCredentials: true,
     });
@@ -31,6 +49,26 @@ const logouthandler = async () => {
   }
 }
   useEffect(() => {
+    /**
+     * React component: `onDocClick`.
+     * Renders one UI section of the job portal and responds to application state or user actions.
+     * Example: `<onDocClick />`
+     */
+    /**
+     * React component: `onDocClick`.
+     * Renders one UI section of the job portal and responds to application state or user actions.
+     * Example: `<onDocClick />`
+     */
+    /**
+     * React component: `onDocClick`.
+     * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+     * Example: `<onDocClick />`
+     */
+    /**
+     * React component: `onDocClick`.
+     * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+     * Example: `<onDocClick />`
+     */
     const onDocClick = (e) => {
       if (!rootRef.current) return;
       if (!rootRef.current.contains(e.target)) setOpen(false);

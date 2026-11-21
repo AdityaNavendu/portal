@@ -1,9 +1,19 @@
+/**
+ * Frontend module: React 19, Vite, React Router aur Axios.
+ * Use case: Ye file job portal ke browser-side UI aur API flow mein kaam karti hai.
+ */
+
 import useGetalladminjob from "@/hooks/getalladminjob";
 import "../../styles/adminjobtable.css";
 import { Eye } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useAppContext } from "@/context/AppContext";
 
+/**
+ * React component: `Adminjobtable`.
+ * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+ * Example: `<Adminjobtable />`
+ */
 const Adminjobtable = () => {
   useGetalladminjob();
 

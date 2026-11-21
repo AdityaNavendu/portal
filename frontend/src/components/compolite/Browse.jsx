@@ -1,3 +1,8 @@
+/**
+ * Frontend module: React 19, Vite, React Router aur Axios.
+ * Use case: Ye file job portal ke browser-side UI aur API flow mein kaam karti hai.
+ */
+
 import Navbar from "./Navbar";
 import Job from "./Job";
 import "../../styles/browse.css";
@@ -5,6 +10,11 @@ import Getalljob from "../../hooks/Getalljob";
 import { useSearchParams } from "react-router-dom";
 import { useAppContext } from "@/context/AppContext";
 
+/**
+ * React component: `Browse`.
+ * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+ * Example: `<Browse />`
+ */
 const Browse = () => {
   const [searchParams] = useSearchParams();
   const category = searchParams.get("category") || "";

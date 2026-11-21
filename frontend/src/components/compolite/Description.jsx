@@ -1,3 +1,8 @@
+/**
+ * Frontend module: React 19, Vite, React Router aur Axios.
+ * Use case: Ye file job portal ke browser-side UI aur API flow mein kaam karti hai.
+ */
+
 import "../../styles/description.css";
 import axios from "axios";
 import { useEffect } from "react";
@@ -8,16 +13,51 @@ import { JOB_API_URL, APPLICATION_API_URL } from "@/utils/data";
 import { useAppContext } from "@/context/AppContext";
 import Navbar from "./Navbar";
 
+/**
+ * React component: `Description`.
+ * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+ * Example: `<Description />`
+ */
 const Description = () => {
   const { singlejob, user, setSingleJob } = useAppContext();
   const { jobId } = useParams();
+  /**
+   * React component: `navigate`.
+   * Renders one UI section of the job portal and responds to application state or user actions.
+   * Example: `<navigate />`
+   */
   const navigate = useNavigate();
 
+  /**
+   * React component: `isApplied`.
+   * Renders one UI section of the job portal and responds to application state or user actions.
+   * Example: `<isApplied />`
+   */
   const isApplied =
     singlejob?.applicants?.some(
       (applicant) => (applicant?._id || applicant) === user?._id
     ) || false;
 
+  /**
+   * React component: `applyjobhandler`.
+   * Renders one UI section of the job portal and responds to application state or user actions.
+   * Example: `<applyjobhandler />`
+   */
+  /**
+   * React component: `applyjobhandler`.
+   * Renders one UI section of the job portal and responds to application state or user actions.
+   * Example: `<applyjobhandler />`
+   */
+  /**
+   * React component: `applyjobhandler`.
+   * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+   * Example: `<applyjobhandler />`
+   */
+  /**
+   * React component: `applyjobhandler`.
+   * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+   * Example: `<applyjobhandler />`
+   */
   const applyjobhandler = async () => {
     if (!user) {
       navigate("/login");
@@ -25,6 +65,11 @@ const Description = () => {
     }
 
     try {
+      /**
+       * React component: `res`.
+       * Renders one UI section of the job portal and responds to application state or user actions.
+       * Example: `<res />`
+       */
       const res = await axios.post(
         `${APPLICATION_API_URL.replace(
           "/api/application",
@@ -37,6 +82,11 @@ const Description = () => {
       );
 
       if (res.data.success) {
+        /**
+         * React component: `jobRes`.
+         * Renders one UI section of the job portal and responds to application state or user actions.
+         * Example: `<jobRes />`
+         */
         const jobRes = await axios.get(
           `${JOB_API_URL}/getjobbyid/${jobId}`,
           {
@@ -57,8 +107,33 @@ const Description = () => {
   };
 
   useEffect(() => {
+    /**
+     * React component: `fetchSingleJob`.
+     * Renders one UI section of the job portal and responds to application state or user actions.
+     * Example: `<fetchSingleJob />`
+     */
+    /**
+     * React component: `fetchSingleJob`.
+     * Renders one UI section of the job portal and responds to application state or user actions.
+     * Example: `<fetchSingleJob />`
+     */
+    /**
+     * React component: `fetchSingleJob`.
+     * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+     * Example: `<fetchSingleJob />`
+     */
+    /**
+     * React component: `fetchSingleJob`.
+     * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+     * Example: `<fetchSingleJob />`
+     */
     const fetchSingleJob = async () => {
       try {
+        /**
+         * React component: `res`.
+         * Renders one UI section of the job portal and responds to application state or user actions.
+         * Example: `<res />`
+         */
         const res = await axios.get(`${JOB_API_URL}/getjobbyid/${jobId}`, {
           withCredentials: true,
         });

@@ -1,9 +1,19 @@
+/**
+ * Frontend module: React 19, Vite, React Router aur Axios.
+ * Use case: Ye file job portal ke browser-side UI aur API flow mein kaam karti hai.
+ */
+
 import axios from "axios";
 import { createContext, useContext, useEffect, useRef, useState } from "react";
 import { USER_API_URL } from "@/utils/data";
 
 const AppContext = createContext(null);
 
+/**
+ * React hook ya state helper: `getSavedUser`.
+ * Shared portal state ko read/update karta hai aur React components ise reuse karte hain.
+ * Example: `getSavedUser();`
+ */
 const getSavedUser = () => {
   const savedUser = localStorage.getItem("user");
   if (savedUser) return JSON.parse(savedUser);
@@ -15,6 +25,11 @@ const getSavedUser = () => {
   return auth ? JSON.parse(auth).user ?? null : null;
 };
 
+/**
+ * React component: `AppProvider`.
+ * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+ * Example: `<AppProvider />`
+ */
 export const AppProvider = ({ children }) => {
   const [user, setUserState] = useState(getSavedUser);
   const userId = user?._id ? String(user._id) : null;
@@ -26,6 +41,11 @@ export const AppProvider = ({ children }) => {
   }));
   const bookmarkUserIdRef = useRef(userId);
   const bookmarkMutationVersion = useRef(new Map());
+  /**
+   * React component: `setUser`.
+   * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+   * Example: `<setUser />`
+   */
   const setUser = (nextUser) => {
     const updatedUser =
       typeof nextUser === "function" ? nextUser(user) : nextUser;
@@ -112,6 +132,11 @@ export const AppProvider = ({ children }) => {
   const bookmarksError =
     bookmarkFetch.userId === userId ? bookmarkFetch.error : null;
 
+  /**
+   * React hook ya state helper: `toggleBookmark`.
+   * Shared portal state ko read/update karta hai aur React components ise reuse karte hain.
+   * Example: `toggleBookmark();`
+   */
   const toggleBookmark = async (job) => {
     if (!userId) {
       throw new Error("Please log in to save jobs");
@@ -203,6 +228,11 @@ export const AppProvider = ({ children }) => {
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 };
 
+/**
+ * React hook ya state helper: `useAppContext`.
+ * Shared portal state ko read/update karta hai aur React components ise reuse karte hain.
+ * Example: `useAppContext();`
+ */
 export const useAppContext = () => {
   const context = useContext(AppContext);
   if (!context) {

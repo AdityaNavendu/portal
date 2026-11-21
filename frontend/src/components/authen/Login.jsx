@@ -1,3 +1,8 @@
+/**
+ * Frontend module: React 19, Vite, React Router aur Axios.
+ * Use case: Ye file job portal ke browser-side UI aur API flow mein kaam karti hai.
+ */
+
 import React from "react";
 import Navbar from "../compolite/Navbar.jsx";
 import { Link, useNavigate } from "react-router-dom";
@@ -9,6 +14,11 @@ import { useAppContext } from "@/context/AppContext";
 import {useEffect} from "react"
 import "../../styles/auth.css";
 
+/**
+ * React component: `Login`.
+ * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+ * Example: `<Login />`
+ */
 const Login = () => {
   const [input, setInput] = useState({
     email: "",
@@ -18,10 +28,20 @@ const Login = () => {
   const navigate = useNavigate();
   const { loading, setLoading, user, setUser } = useAppContext();
 
+  /**
+   * React component: `changeEventHandler`.
+   * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+   * Example: `<changeEventHandler />`
+   */
   const changeEventHandler = (e) => {
     setInput({ ...input, [e.target.name]: e.target.value });
   };
 
+  /**
+   * React component: `submitHandler`.
+   * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+   * Example: `<submitHandler />`
+   */
   const submitHandler = async (e) => {
     e.preventDefault();
     try {

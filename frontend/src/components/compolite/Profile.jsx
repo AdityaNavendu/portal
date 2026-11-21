@@ -1,3 +1,8 @@
+/**
+ * Frontend module: React 19, Vite, React Router aur Axios.
+ * Use case: Ye file job portal ke browser-side UI aur API flow mein kaam karti hai.
+ */
+
 import Navbar from "./Navbar";
 import "../../styles/profile.css";
 import { Mail, Contact, Pen } from "lucide-react";
@@ -10,6 +15,11 @@ import { useAppContext } from "@/context/AppContext";
 
 
 
+/**
+ * React component: `Profile`.
+ * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+ * Example: `<Profile />`
+ */
 const Profile = () => {
   
   const [open, setOpen] = useState(false);
@@ -19,10 +29,25 @@ const Profile = () => {
 
   if (!user) return null;
 
+  /**
+   * React component: `skills`.
+   * Renders one UI section of the job portal and responds to application state or user actions.
+   * Example: `<skills />`
+   */
   const skills = user?.profile?.skills || [];
   console.log(skills);
+  /**
+   * React component: `resumeFile`.
+   * Renders one UI section of the job portal and responds to application state or user actions.
+   * Example: `<resumeFile />`
+   */
   const resumeFile = user?.profile?.resume;
   console.log(resumeFile);
+  /**
+   * React component: `profilePic`.
+   * Renders one UI section of the job portal and responds to application state or user actions.
+   * Example: `<profilePic />`
+   */
   const profilePic = user?.profile?.profilepicture;
 
 

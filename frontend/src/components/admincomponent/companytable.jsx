@@ -1,7 +1,17 @@
+/**
+ * Frontend module: React 19, Vite, React Router aur Axios.
+ * Use case: Ye file job portal ke browser-side UI aur API flow mein kaam karti hai.
+ */
+
 import "../../styles/companiesTable.css";
 import { useNavigate } from "react-router-dom";
 import { useAppContext } from "@/context/AppContext";
  
+/**
+ * React component: `CompanyTable`.
+ * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+ * Example: `<CompanyTable />`
+ */
 const CompanyTable = () => {
   const { companies, searchCompanyByText } = useAppContext();
 

@@ -1,3 +1,8 @@
+/**
+ * Backend module: Node.js, Express 5, Mongoose aur MongoDB.
+ * Use case: Ye file job portal ke HTTP API aur database data flow mein kaam karti hai.
+ */
+
 import express from 'express';
 
 import { logout, register, updateProfile } from '../controllers/usercontrollers.js';

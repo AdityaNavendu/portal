@@ -1,3 +1,8 @@
+/**
+ * Frontend module: React 19, Vite, React Router aur Axios.
+ * Use case: Ye file job portal ke browser-side UI aur API flow mein kaam karti hai.
+ */
+
 import "../../styles/jobcard.css";
 import { Bookmark } from "lucide-react";
 import { useNavigate } from "react-router-dom";
@@ -5,10 +10,30 @@ import { useState } from "react";
 import { toast } from "sonner";
 import { useAppContext } from "@/context/AppContext";
 
+/**
+ * React component: `Jobcard`.
+ * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+ * Example: `<Jobcard />`
+ */
 const Jobcard = ({ job }) => { 
+  /**
+   * React component: `selectedJob`.
+   * Renders one UI section of the job portal and responds to application state or user actions.
+   * Example: `<selectedJob />`
+   */
   const selectedJob = job ;
   console.log("Jobcard component received job:", selectedJob);
+  /**
+   * React component: `safeJob`.
+   * Renders one UI section of the job portal and responds to application state or user actions.
+   * Example: `<safeJob />`
+   */
   const safeJob = selectedJob ?? {};
+  /**
+   * React component: `navigate`.
+   * Renders one UI section of the job portal and responds to application state or user actions.
+   * Example: `<navigate />`
+   */
   const navigate = useNavigate();
   const {
     user,
@@ -17,8 +42,33 @@ const Jobcard = ({ job }) => {
     toggleBookmark,
   } = useAppContext();
   const [bookmarkPending, setBookmarkPending] = useState(false);
+  /**
+   * React component: `isBookmarked`.
+   * Renders one UI section of the job portal and responds to application state or user actions.
+   * Example: `<isBookmarked />`
+   */
   const isBookmarked = bookmarkedJobIds.includes(String(safeJob._id));
 
+  /**
+   * React component: `bookmarkJob`.
+   * Renders one UI section of the job portal and responds to application state or user actions.
+   * Example: `<bookmarkJob />`
+   */
+  /**
+   * React component: `bookmarkJob`.
+   * Renders one UI section of the job portal and responds to application state or user actions.
+   * Example: `<bookmarkJob />`
+   */
+  /**
+   * React component: `bookmarkJob`.
+   * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+   * Example: `<bookmarkJob />`
+   */
+  /**
+   * React component: `bookmarkJob`.
+   * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+   * Example: `<bookmarkJob />`
+   */
   const bookmarkJob = async (event) => {
     event.stopPropagation();
     if (!user) {

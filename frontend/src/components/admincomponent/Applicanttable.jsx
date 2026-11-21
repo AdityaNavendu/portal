@@ -1,3 +1,8 @@
+/**
+ * Frontend module: React 19, Vite, React Router aur Axios.
+ * Use case: Ye file job portal ke browser-side UI aur API flow mein kaam karti hai.
+ */
+
 import '../../styles/Applicantable.css'
 
 import axios from 'axios';
@@ -11,6 +16,11 @@ const actionStatuses = [
   { label: 'Rejected', value: 'rejected' },
 ];
 
+/**
+ * React component: `Applicanttable`.
+ * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+ * Example: `<Applicanttable />`
+ */
 const Applicanttable = () => {
   const { allapplications, setAllApplications } = useAppContext();
   const applicants = allapplications?.applicants;
@@ -21,6 +31,11 @@ const Applicanttable = () => {
 
   const jobId = allapplications?.jobId || allapplications?.id || null;
 
+  /**
+   * React component: `updateStatus`.
+   * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+   * Example: `<updateStatus />`
+   */
   const updateStatus = async (applicationId, nextStatus) => {
     if (!applicationId || updatingApplicationId) return;
 
@@ -56,6 +71,11 @@ const Applicanttable = () => {
   const filteredApplicants = useMemo(() => {
     const q = (searchText || '').trim().toLowerCase();
 
+    /**
+     * React component: `normalizeStatus`.
+     * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+     * Example: `<normalizeStatus />`
+     */
     const normalizeStatus = (raw) => {
       const s = (raw ?? '').toString().toLowerCase().trim();
 

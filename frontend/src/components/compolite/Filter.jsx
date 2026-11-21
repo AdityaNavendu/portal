@@ -1,14 +1,44 @@
+/**
+ * Frontend module: React 19, Vite, React Router aur Axios.
+ * Use case: Ye file job portal ke browser-side UI aur API flow mein kaam karti hai.
+ */
+
 import { useEffect, useState } from "react";
 import "../../styles/filter.css";
 import { useAppContext } from "@/context/AppContext";
 import { jobFilters } from "@/utils/jobFilters";
 
+/**
+ * React component: `Filter`.
+ * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+ * Example: `<Filter />`
+ */
 const Filter = () => {
   const { searchquery, setSearchQuery } = useAppContext();
   const [selectedValues, setSelectedValues] = useState(
     Array.isArray(searchquery) ? searchquery : [],
   );
 
+  /**
+   * React component: `handleChange`.
+   * Renders one UI section of the job portal and responds to application state or user actions.
+   * Example: `<handleChange />`
+   */
+  /**
+   * React component: `handleChange`.
+   * Renders one UI section of the job portal and responds to application state or user actions.
+   * Example: `<handleChange />`
+   */
+  /**
+   * React component: `handleChange`.
+   * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+   * Example: `<handleChange />`
+   */
+  /**
+   * React component: `handleChange`.
+   * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+   * Example: `<handleChange />`
+   */
   const handleChange = (value) => {
     setSelectedValues((prev) =>
       prev.includes(value)
@@ -32,6 +62,11 @@ const Filter = () => {
             <h2 className="filter-heading">{data.filterType}</h2>
 
             {data.array.map((item, indx) => {
+              /**
+               * React component: `itemId`.
+               * Renders one UI section of the job portal and responds to application state or user actions.
+               * Example: `<itemId />`
+               */
               const itemId = `Id${index}-${indx}`;
 
               return (

@@ -1,3 +1,8 @@
+/**
+ * Frontend module: React 19, Vite, React Router aur Axios.
+ * Use case: Ye file job portal ke browser-side UI aur API flow mein kaam karti hai.
+ */
+
 
 import Applicanttable from './Applicanttable';
 import Navbar from '../compolite/Navbar';
@@ -6,6 +11,11 @@ import { useEffect } from 'react';
 import axios from 'axios';
 import { APPLICATION_API_URL } from '@/utils/data';
 import { useAppContext } from '@/context/AppContext';
+/**
+ * React component: `Applicant`.
+ * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+ * Example: `<Applicant />`
+ */
 const Applicant = () => {
 const param = useParams();
 
@@ -14,6 +24,11 @@ const param = useParams();
   const { allapplications, setAllApplications } = useAppContext();
 
   useEffect(() => {
+    /**
+     * React component: `fetchAllApplicants`.
+     * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+     * Example: `<fetchAllApplicants />`
+     */
     const fetchAllApplicants = async () => {
       try {
         if (!param?.id) return;

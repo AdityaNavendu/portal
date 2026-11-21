@@ -1,3 +1,8 @@
+/**
+ * Frontend module: React 19, Vite, React Router aur Axios.
+ * Use case: Ye file job portal ke browser-side UI aur API flow mein kaam karti hai.
+ */
+
 import { useState } from "react";
 
 import Navbar from "../compolite/Navbar.jsx";
@@ -9,6 +14,11 @@ import { useAppContext } from "@/context/AppContext";
 import { useEffect } from "react";
 import "../../styles/register.css";
 
+/**
+ * React component: `Register`.
+ * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+ * Example: `<Register />`
+ */
 const Register = () => {
   const [input, setInput] = useState({
     fullname: "",
@@ -22,16 +32,31 @@ const Register = () => {
   const navigate = useNavigate();
   const { loading, setLoading, user } = useAppContext();
 
+  /**
+   * React component: `changeEventHandler`.
+   * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+   * Example: `<changeEventHandler />`
+   */
   const changeEventHandler = (e) => {
     setInput({ ...input, [e.target.name]: e.target.value });
   };
 
   
+  /**
+   * React component: `profilePictureChangeHandler`.
+   * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+   * Example: `<profilePictureChangeHandler />`
+   */
   const profilePictureChangeHandler = (e) => {
     setInput({ ...input, profilePictureFile: e.target.files?.[0] || null });
   };
 
 
+  /**
+   * React component: `submitHandler`.
+   * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+   * Example: `<submitHandler />`
+   */
   const submitHandler = async (e) => {
     e.preventDefault();
 

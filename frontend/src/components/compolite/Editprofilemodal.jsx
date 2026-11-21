@@ -1,3 +1,8 @@
+/**
+ * Frontend module: React 19, Vite, React Router aur Axios.
+ * Use case: Ye file job portal ke browser-side UI aur API flow mein kaam karti hai.
+ */
+
 import { useState } from "react";
 import axios from "axios";
 import { USER_API_URL } from "../../utils/data.js";
@@ -6,6 +11,11 @@ import { useAppContext } from "@/context/AppContext";
 
 import "../../styles/editprofilemodal.css";
 
+/**
+ * React component: `Editprofilemodal`.
+ * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+ * Example: `<Editprofilemodal />`
+ */
 const Editprofilemodal = ({ open, setOpen }) => {
   const { user, setUser } = useAppContext();
 
@@ -21,6 +31,26 @@ const Editprofilemodal = ({ open, setOpen }) => {
     profilepicture: user?.profile?.profilepicture || "",
   });
 
+  /**
+   * React component: `handleInputChange`.
+   * Renders one UI section of the job portal and responds to application state or user actions.
+   * Example: `<handleInputChange />`
+   */
+  /**
+   * React component: `handleInputChange`.
+   * Renders one UI section of the job portal and responds to application state or user actions.
+   * Example: `<handleInputChange />`
+   */
+  /**
+   * React component: `handleInputChange`.
+   * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+   * Example: `<handleInputChange />`
+   */
+  /**
+   * React component: `handleInputChange`.
+   * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+   * Example: `<handleInputChange />`
+   */
   const handleInputChange = (e) => {
     setInput((prev) => ({
       ...prev,
@@ -28,6 +58,26 @@ const Editprofilemodal = ({ open, setOpen }) => {
     }));
   };
 
+  /**
+   * React component: `filechangeHandler`.
+   * Renders one UI section of the job portal and responds to application state or user actions.
+   * Example: `<filechangeHandler />`
+   */
+  /**
+   * React component: `filechangeHandler`.
+   * Renders one UI section of the job portal and responds to application state or user actions.
+   * Example: `<filechangeHandler />`
+   */
+  /**
+   * React component: `filechangeHandler`.
+   * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+   * Example: `<filechangeHandler />`
+   */
+  /**
+   * React component: `filechangeHandler`.
+   * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+   * Example: `<filechangeHandler />`
+   */
   const filechangeHandler = (e) => {
     setInput((prev) => ({
       ...prev,
@@ -35,6 +85,26 @@ const Editprofilemodal = ({ open, setOpen }) => {
     }));
   };
 
+  /**
+   * React component: `profilePicHandler`.
+   * Renders one UI section of the job portal and responds to application state or user actions.
+   * Example: `<profilePicHandler />`
+   */
+  /**
+   * React component: `profilePicHandler`.
+   * Renders one UI section of the job portal and responds to application state or user actions.
+   * Example: `<profilePicHandler />`
+   */
+  /**
+   * React component: `profilePicHandler`.
+   * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+   * Example: `<profilePicHandler />`
+   */
+  /**
+   * React component: `profilePicHandler`.
+   * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+   * Example: `<profilePicHandler />`
+   */
   const profilePicHandler = (e) => {
     setInput((prev) => ({
       ...prev,
@@ -42,9 +112,34 @@ const Editprofilemodal = ({ open, setOpen }) => {
     }));
   };
 
+  /**
+   * React component: `submitHandler`.
+   * Renders one UI section of the job portal and responds to application state or user actions.
+   * Example: `<submitHandler />`
+   */
+  /**
+   * React component: `submitHandler`.
+   * Renders one UI section of the job portal and responds to application state or user actions.
+   * Example: `<submitHandler />`
+   */
+  /**
+   * React component: `submitHandler`.
+   * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+   * Example: `<submitHandler />`
+   */
+  /**
+   * React component: `submitHandler`.
+   * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+   * Example: `<submitHandler />`
+   */
   const submitHandler = async (e) => {
     e.preventDefault();
 
+    /**
+     * React component: `formData`.
+     * Renders one UI section of the job portal and responds to application state or user actions.
+     * Example: `<formData />`
+     */
     const formData = new FormData();
     formData.append("fullname", input.fullname);
   
@@ -59,6 +154,11 @@ const Editprofilemodal = ({ open, setOpen }) => {
     try {
       setLoading(true);
 
+      /**
+       * React component: `res`.
+       * Renders one UI section of the job portal and responds to application state or user actions.
+       * Example: `<res />`
+       */
       const res = await axios.post(`${USER_API_URL}/update/profile`, formData, {
         headers: { "Content-Type": "multipart/form-data" },
         withCredentials: true,

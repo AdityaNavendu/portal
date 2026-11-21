@@ -1,3 +1,8 @@
+/**
+ * Frontend module: React 19, Vite, React Router aur Axios.
+ * Use case: Ye file job portal ke browser-side UI aur API flow mein kaam karti hai.
+ */
+
 
 import Navbar from "../compolite/Navbar";
 import { ArrowLeft } from "lucide-react";
@@ -11,6 +16,11 @@ import useCompanyGetById from "@/hooks/Companygetbyid";
 import { useAppContext } from "@/context/AppContext";
 
 
+/**
+ * React component: `CompanySetup`.
+ * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+ * Example: `<CompanySetup />`
+ */
 const CompanySetup = () => {
   const param = useParams();
 
@@ -31,12 +41,27 @@ const navigate = useNavigate();
 const [loading, setLoading] = useState(false);
 
 
+  /**
+   * React component: `changeeventhandler`.
+   * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+   * Example: `<changeeventhandler />`
+   */
   const changeeventhandler = (e) => {
     setInput((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
+  /**
+   * React component: `fileEventhandler`.
+   * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+   * Example: `<fileEventhandler />`
+   */
   const fileEventhandler = (e) => {
     setInput({ ...input, file: e.target.files[0] });
   };
+/**
+ * React component: `submithandler`.
+ * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+ * Example: `<submithandler />`
+ */
 const submithandler= async (e)=>{
   e.preventDefault();
    console.log(input)

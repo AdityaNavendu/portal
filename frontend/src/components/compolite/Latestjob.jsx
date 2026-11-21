@@ -1,10 +1,20 @@
+/**
+ * Frontend module: React 19, Vite, React Router aur Axios.
+ * Use case: Ye file job portal ke browser-side UI aur API flow mein kaam karti hai.
+ */
+
 import Jobcard from "./Jobcard";
 import "../../styles/job.css";
 import { useAppContext } from "@/context/AppContext";
 
 
+/**
+ * React component: `Latestjob`.
+ * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+ * Example: `<Latestjob />`
+ */
 const Latestjob = () => {
-  const { alljobs } = useAppContext();
+  const { alljobs } = useAppContext();  
   return (
     <div className="latestjob-wrapper">
       <h2 className="latestjob-title">

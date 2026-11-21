@@ -1,3 +1,8 @@
+/**
+ * Frontend module: React 19, Vite, React Router aur Axios.
+ * Use case: Ye file job portal ke browser-side UI aur API flow mein kaam karti hai.
+ */
+
 import { createBrowserRouter } from "react-router-dom";
 
 import Login from "./components/authen/Login.jsx";
@@ -102,6 +107,11 @@ const approuter = createBrowserRouter([
 ]);
 
 
+/**
+ * React component: `App`.
+ * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+ * Example: `<App />`
+ */
 function App() {
   return (
     <div className="w-full ">
