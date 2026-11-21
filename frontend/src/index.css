@@ -1,6 +1,55 @@
 
 @import url("./styles/footer.css");
 
+:root {
+    color-scheme: dark;
+    --bg-main: #0F172A;
+    --bg-secondary: #111827;
+    --bg-dark-surface: #29323A;
+    --bg-card: #1E293B;
+    --bg-elevated: #263449;
+    --accent-mint: #33D3B1;
+    --accent-mint-rgb: 51, 211, 177;
+    --accent-mint-hover: #70E4C9;
+    --accent-mint-deep: #25B99A;
+    --accent-rose: #EA6C95;
+    --accent-rose-rgb: 234, 108, 149;
+    --purple-depth: #4E357A;
+    --purple-depth-rgb: 78, 53, 122;
+    --plum-depth: #99549A;
+    --plum-depth-rgb: 153, 84, 154;
+    --bg-main-rgb: 15, 23, 42;
+    --bg-secondary-rgb: 17, 24, 39;
+    --bg-dark-surface-rgb: 41, 50, 58;
+    --bg-card-rgb: 30, 41, 59;
+    --bg-elevated-rgb: 38, 52, 73;
+    --text-primary: #F8FAFC;
+    --text-secondary: #B7C4D3;
+    --text-muted: #94A3B8;
+    --border-glass: rgba(183, 196, 211, 0.12);
+    --shadow-card: 0 12px 30px rgba(0, 0, 0, 0.24);
+    --glow-mint: 0 0 20px rgba(51, 211, 177, 0.18);
+    --glow-purple: 0 0 30px rgba(78, 53, 122, 0.25);
+    --radius-card: 12px;
+    --transition-smooth: 0.3s ease;
+
+    --color-bg: var(--bg-main);
+    --color-bg-secondary: var(--bg-secondary);
+    --color-surface: var(--bg-card);
+    --color-surface-elevated: var(--bg-elevated);
+    --color-primary: var(--accent-mint);
+    --color-secondary: var(--accent-rose);
+    --color-glow: var(--purple-depth);
+    --color-plum: var(--plum-depth);
+    --color-text: var(--text-primary);
+    --color-text-secondary: var(--text-secondary);
+    --color-text-muted: var(--text-muted);
+    --color-border: var(--border-glass);
+    --shadow-depth:
+        var(--shadow-card),
+        0 2px 6px rgba(0, 0, 0, 0.22);
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -8,8 +57,8 @@
 
 body{
     padding: 20px;
-    background: #F8FAFC;
-    color: #475569;
+    background: var(--bg-main);
+    color: var(--text-secondary);
 }
 
 h1,
@@ -18,7 +67,7 @@ h3,
 h4,
 h5,
 h6 {
-    color: #0F172A;
+    color: var(--text-primary);
 }
 
 

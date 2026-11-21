@@ -156,12 +156,25 @@ const Applicanttable = () => {
 
                 <td>{applicant.jobTitle || applicant.job || '-'}</td>
 
-                <td>{applicant.status || 'pending'}</td>
+                <td>
+                  <span
+                    className={`application-status ${
+                      applicant.status === 'accepted'
+                        ? 'application-status--accepted'
+                        : applicant.status === 'rejected'
+                          ? 'application-status--rejected'
+                          : 'application-status--pending'
+                    }`}
+                  >
+                    {applicant.status || 'pending'}
+                  </span>
+                </td>
 
                 <td className="text-right">
                   {actionStatuses.map((s) => (
                     <button
                       key={s.value}
+                      className={`application-action application-action--${s.value}`}
                       onClick={() => updateStatus(applicant.applicationId, s.value)}
                       disabled={!applicant.applicationId || updatingApplicationId !== null}
                     >

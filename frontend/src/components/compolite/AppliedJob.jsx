@@ -57,7 +57,19 @@ const AppliedJob = () => {
                 <td>{job?.appliedAt || job?.createdAt ? new Date(job.appliedAt || job.createdAt).toLocaleDateString() : '-'}</td>
                 <td>{job?.company?.name || '-'}</td>
                 <td>{job?.title || '-'}</td>
-                <td>{job?.status === 'accepted' ? 'Accepted' : job?.status === 'rejected' ? 'Rejected' : 'Applied'}</td>
+                <td>
+                  <span
+                    className={`application-status ${
+                      job?.status === 'accepted'
+                        ? 'application-status--accepted'
+                        : job?.status === 'rejected'
+                          ? 'application-status--rejected'
+                          : 'application-status--pending'
+                    }`}
+                  >
+                    {job?.status === 'accepted' ? 'Accepted' : job?.status === 'rejected' ? 'Rejected' : 'Applied'}
+                  </span>
+                </td>
               </tr>
             ))
           )}

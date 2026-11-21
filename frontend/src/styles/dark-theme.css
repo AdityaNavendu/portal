@@ -1,0 +1,752 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: var(--color-text-muted);
+  font-family: "Geist Variable", Inter, ui-sans-serif, system-ui, sans-serif;
+  background-color: var(--color-bg);
+  background-image:
+    radial-gradient(ellipse at 82% 0%, rgba(var(--purple-depth-rgb), 0.07), transparent 34%);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-text);
+}
+
+p,
+label,
+small {
+  color: var(--color-text-muted);
+}
+
+a {
+  color: var(--accent-mint);
+  transition: color 180ms ease;
+}
+
+a:hover {
+  color: var(--accent-mint-hover);
+}
+
+::selection {
+  color: var(--color-text);
+  background: rgba(var(--accent-mint-rgb), 0.32);
+}
+
+.navbar__root,
+.footer {
+  color: var(--color-text);
+  background: rgba(var(--bg-secondary-rgb), 0.86);
+  border-color: var(--color-border);
+  backdrop-filter: blur(8px);
+}
+
+.navbar__root {
+  z-index: 20;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.navbar__brandAccent,
+.header__titleAccent,
+.latestjob-title-highlight,
+.categories-title,
+.footer__title span {
+  color: var(--accent-mint);
+}
+
+.navbar__navLink,
+.navbar__popoverLine,
+.footer__list a,
+.footer__links a {
+  color: var(--color-text-muted);
+}
+
+.navbar__navLink {
+  position: relative;
+  transition:
+    color var(--transition-smooth),
+    transform var(--transition-smooth);
+}
+
+.navbar__navLink::after {
+  position: absolute;
+  right: 0;
+  bottom: -0.5rem;
+  left: 0;
+  height: 2px;
+  content: "";
+  background: var(--accent-mint);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform var(--transition-smooth);
+}
+
+.navbar__navLink:hover {
+  transform: translateY(-2px);
+}
+
+.navbar__navLink:hover,
+.navbar__navLink[aria-current="page"] {
+  color: var(--color-text);
+}
+
+.navbar__navLink[aria-current="page"] {
+  color: var(--accent-mint);
+}
+
+.navbar__navLink[aria-current="page"]::after {
+  transform: scaleX(1);
+}
+
+form {
+  width: 100%;
+  max-width: 700px;
+}
+
+.profile__page,
+.browse-page,
+.jobs-page,
+.description-page,
+.postjob__container,
+.postjob__root,
+.setup__root,
+.jobss__root,
+.login-page,
+.register-page {
+  color: var(--color-text-muted);
+  background: transparent;
+}
+
+.description-page {
+  border-color: var(--color-border);
+}
+
+.bg-gradient-to-br {
+  background-image: none !important;
+}
+
+.login-card,
+.register-card,
+.profile__card,
+.profile__jobsCard,
+.jobcard-card,
+.jobcomponent-card,
+.slider-card,
+.filter-container,
+.postjob__card,
+.company-form,
+.navbar__popover,
+.editprofilemodal__content,
+.table-container,
+.adminjobtable__container,
+.applied-job-table,
+.company-table,
+.table,
+.bg-white {
+  color: var(--color-text);
+  background: var(--bg-card);
+  border-color: var(--color-border);
+  box-shadow: var(--shadow-depth);
+}
+
+.profile__card,
+.login-card,
+.register-card,
+.jobcard-card,
+.jobcomponent-card,
+.postjob__card,
+.editprofilemodal__content {
+  border-radius: var(--radius-card);
+}
+
+.profile__card,
+.profile__jobsCard,
+.slider-card {
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.jobcard-card,
+.jobcomponent-card {
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.profile__card:hover,
+.profile__jobsCard:hover,
+.slider-card:hover {
+  transform: translateY(-2px);
+}
+
+.jobcard-card:hover,
+.jobcomponent-card:hover {
+  transform: perspective(1100px) translateY(-3px) rotateX(0.6deg);
+  box-shadow: 0 18px 34px rgba(0, 0, 0, 0.32);
+}
+
+.profile__bio,
+.profile__muted,
+.profile__contactText,
+.profile__contactIcon,
+.navbar__mutedText,
+.navbar__popoverLine,
+.jobcard-desc,
+.jobcard-time,
+.jobcard-country,
+.jobcomponent-time,
+.jobcomponent-country,
+.jobcomponent-desc,
+.header__desc,
+.categories-subtitle,
+.description-value,
+.company-heading p,
+.postjob__root label,
+.editprofilemodal__label,
+.register-login,
+.footer__desc,
+.footer__list,
+.footer__copyright,
+.footer__links,
+.applied-job-title,
+.filter-label,
+.login-register,
+.register-login {
+  color: var(--color-text-muted);
+}
+
+.description-title,
+.filter-title,
+.filter-heading,
+.postjob__heading,
+.register-label {
+  color: var(--color-text);
+}
+
+.profile__link,
+.profile__link:hover,
+.profile__resumeLink,
+.profile__resumeLink:hover,
+.description-value a,
+.table a,
+.filter-label:hover,
+.navbar__popoverLine:hover,
+.footer__list a:hover,
+.footer__links a:hover,
+.register-login button,
+.login-register button {
+  color: var(--accent-mint);
+}
+
+.register-login button,
+.login-register button {
+  background: transparent;
+}
+
+.profile__editBtn,
+.jobcard-bookmark-btn,
+.jobcomponent-bookmark-btn,
+.jobcomponent-btn-details,
+.cancel-btn {
+  color: var(--color-text-muted);
+  background: var(--color-surface-elevated);
+  border-color: var(--color-border);
+}
+
+.profile__editIcon {
+  color: var(--color-text);
+}
+
+.editprofilemodal__header {
+  background: var(--bg-elevated);
+  border-color: var(--color-border);
+}
+
+.profile__editBtn:hover,
+.jobcard-bookmark-btn:hover,
+.jobcomponent-bookmark-btn:hover,
+.jobcomponent-btn-details:hover,
+.jobcard-bookmark-btn[aria-pressed="true"],
+.jobcomponent-bookmark-btn[aria-pressed="true"] {
+  color: var(--color-text);
+  background: rgba(var(--accent-mint-rgb), 0.08);
+  border-color: rgba(var(--accent-mint-rgb), 0.2);
+}
+
+.profile__skillBadge,
+.jobcard-badge-blue,
+.jobcard-badge-green,
+.jobcomponent-badge-blue,
+.jobcomponent-badge-green,
+.description-badge,
+.badge-blue,
+.badge-green,
+.header__tag,
+.bg-emerald-100 {
+  color: var(--accent-mint);
+  background: rgba(var(--accent-mint-rgb), 0.08);
+  border-color: rgba(var(--accent-mint-rgb), 0.16);
+}
+
+.jobcard-badge-purple,
+.jobcomponent-badge-purple,
+.badge-purple {
+  color: #D7C2EE;
+  background: rgba(var(--purple-depth-rgb), 0.34);
+  border-color: rgba(var(--plum-depth-rgb), 0.38);
+}
+
+.jobcard-badge-orange,
+.jobcomponent-badge-orange,
+.badge-orange,
+.notification-badge,
+.application-status--rejected,
+[class*="status-badge--rejected"],
+[data-status="rejected"] {
+  color: #F7BDD0;
+  background: rgba(var(--accent-rose-rgb), 0.1);
+  border-color: rgba(var(--accent-rose-rgb), 0.18);
+}
+
+[class*="status-badge--accepted"],
+[class*="status-badge--pending"],
+[class*="application-status--accepted"],
+[class*="application-status--pending"],
+[data-status="accepted"],
+[data-status="pending"] {
+  color: var(--accent-mint);
+  background: rgba(var(--accent-mint-rgb), 0.08);
+  border-color: rgba(var(--accent-mint-rgb), 0.16);
+}
+
+.application-status--pending {
+  color: var(--text-secondary);
+  background: rgba(var(--bg-elevated-rgb), 0.48);
+  border-color: var(--color-border);
+}
+
+.header__tag {
+  border-color: rgba(var(--accent-mint-rgb), 0.24);
+}
+
+input,
+textarea,
+select,
+.login-input,
+.register-input,
+.editprofilemodal__input,
+.editprofilemodal__textarea,
+.company-select,
+.header__searchBar,
+.header__searchInput,
+.companies__search input,
+.companies__search,
+.jobss__search {
+  color: var(--color-text);
+  background-color: rgba(var(--bg-main-rgb), 0.78);
+  border-color: var(--color-border);
+}
+
+input::placeholder,
+textarea::placeholder,
+.header__searchInput::placeholder {
+  color: var(--text-muted);
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+.login-input:focus,
+.register-input:focus,
+.editprofilemodal__input:focus,
+.editprofilemodal__textarea:focus,
+.company-select:focus {
+  border-color: rgba(var(--accent-mint-rgb), 0.7);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(var(--accent-mint-rgb), 0.13);
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  accent-color: var(--color-primary);
+}
+
+option {
+  color: var(--color-text);
+  background: var(--color-surface);
+}
+
+.editprofilemodal__overlay {
+  background: rgba(var(--bg-main-rgb), 0.82);
+  backdrop-filter: blur(4px);
+}
+
+table,
+.applied-job-table,
+.adminjobtable__table,
+.company-table,
+.table {
+  color: var(--color-text-muted);
+  border-color: var(--color-border);
+}
+
+table th,
+.applied-job-table thead th,
+.adminjobtable__th,
+.company-table th,
+.table th {
+  color: var(--color-text);
+  background: rgba(var(--bg-elevated-rgb), 0.92);
+  border-color: var(--color-border);
+}
+
+table td,
+.applied-job-table tbody td,
+.adminjobtable__td,
+.company-table td,
+.table td {
+  color: var(--color-text-muted);
+  border-color: var(--color-border);
+}
+
+table tbody tr:hover,
+.table tr:nth-child(even),
+.applied-job-table tbody tr:hover td,
+.adminjobtable__tbody tr:hover,
+.company-table tbody tr:hover,
+.table tr:hover {
+  background: rgba(var(--accent-mint-rgb), 0.04);
+}
+
+button {
+  color: var(--color-text);
+  transition:
+    transform var(--transition-smooth),
+    box-shadow var(--transition-smooth),
+    background-color var(--transition-smooth);
+}
+
+.application-status {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.65rem;
+  border: 1px solid;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.application-action--rejected,
+.application-action--rejected:hover {
+  color: var(--bg-main);
+  background: var(--accent-rose);
+  box-shadow: 0 2px 6px rgba(var(--accent-rose-rgb), 0.12);
+}
+
+.login-submit,
+.register-submit,
+.navbar__navButton--login,
+.navbar__navButton--register,
+.jobss__search__button,
+.jobcard-btn-save,
+.jobcomponent-btn-save,
+.description-button,
+.editprofilemodal__btn,
+.postjob__submit,
+.setup__submit,
+.continue-btn,
+.header__searchBtn,
+.slider-btn,
+.adminjobtable__actionButton,
+.company-table button,
+.table button,
+.companies__search button {
+  color: var(--bg-main);
+  background: var(--accent-mint);
+  border-color: transparent;
+  box-shadow: 0 2px 6px rgba(var(--accent-mint-rgb), 0.12);
+  transform-style: preserve-3d;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    filter 180ms ease;
+}
+
+.jobcomponent-btn-save[aria-pressed="true"] {
+  color: var(--accent-mint);
+  background: rgba(var(--accent-mint-rgb), 0.1);
+  border: 1px solid rgba(var(--accent-mint-rgb), 0.2);
+}
+
+.jobcomponent-btn-save[aria-pressed="true"]:hover {
+  background: rgba(var(--accent-mint-rgb), 0.16);
+}
+
+.login-submit:hover,
+.register-submit:hover,
+.navbar__navButton--login:hover,
+.navbar__navButton--register:hover,
+.jobss__search__button:hover,
+.jobcard-btn-save:hover,
+.jobcomponent-btn-save:hover,
+.description-button:hover,
+.editprofilemodal__btn:hover,
+.postjob__submit:hover,
+.setup__submit:hover,
+.continue-btn:hover,
+.header__searchBtn:hover,
+.slider-btn:hover,
+.adminjobtable__actionButton:hover,
+.company-table button:hover,
+.table button:hover,
+.companies__search button:hover {
+  color: var(--bg-main);
+  background: var(--accent-mint-hover);
+  box-shadow: 0 4px 10px rgba(var(--accent-mint-rgb), 0.16);
+  transform: translateY(-1px);
+}
+
+.table button.application-action--rejected,
+.table button.application-action--rejected:hover {
+  color: var(--bg-main);
+  background: var(--accent-rose);
+  box-shadow: 0 2px 6px rgba(var(--accent-rose-rgb), 0.12);
+}
+
+.login-submit:active,
+.register-submit:active,
+.navbar__navButton--login:active,
+.navbar__navButton--register:active,
+.jobcard-btn-save:active,
+.jobcomponent-btn-save:active,
+.description-button:active,
+.editprofilemodal__btn:active,
+.postjob__submit:active,
+.setup__submit:active,
+.continue-btn:active {
+  transform: translateY(1px) translateZ(-2px) scale(0.985);
+}
+
+.cancel-btn,
+.cancel-btn:hover {
+  color: var(--color-text-muted);
+  background: var(--color-surface-elevated);
+  border-color: var(--color-border);
+}
+
+.text-slate-900,
+.text-gray-900,
+.text-slate-800 {
+  color: var(--color-text);
+}
+
+.text-slate-600,
+.text-gray-600,
+.text-slate-500,
+.text-gray-500 {
+  color: var(--color-text-muted);
+}
+
+.text-emerald-600,
+.text-emerald-700 {
+  color: var(--accent-mint);
+}
+
+.border-emerald-100 {
+  border-color: var(--color-border);
+}
+
+.bg-emerald-100 {
+  background: rgba(var(--accent-mint-rgb), 0.12);
+}
+
+.login-loading,
+.register-loading,
+.adminjobtable__empty,
+.postjob__nojob {
+  color: var(--text-muted);
+}
+
+.description-page,
+.login-card,
+.register-card,
+.profile__card,
+.profile__jobsCard,
+.jobcard-card,
+.jobcomponent-card,
+.slider-card,
+.editprofilemodal__content,
+.navbar__popover {
+  border: 1px solid var(--border-glass);
+}
+
+.description-page {
+  background: var(--bg-card);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+}
+
+.header__searchIcon {
+  color: var(--bg-main);
+}
+
+.navbar__popover {
+  background: var(--bg-elevated);
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(8px);
+}
+
+.table-container,
+.profile__jobsOverflow,
+.adminjobtable__container {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.footer {
+  border-top: 1px solid var(--color-border);
+}
+
+.footer__heading {
+  color: var(--color-text);
+}
+
+.footer__socialLink {
+  color: var(--color-text-muted);
+  background: rgba(var(--bg-elevated-rgb), 0.65);
+  border-color: var(--color-border);
+}
+
+.footer__socialLink:hover {
+  background: rgba(var(--accent-mint-rgb), 0.08);
+}
+
+.header__tagIcon {
+  color: var(--color-primary);
+}
+
+@media (max-width: 768px) {
+  .navbar__inner {
+    height: auto;
+    min-height: 4rem;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .navbar__right {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.75rem;
+  }
+
+  .navbar__navList,
+  .navbar__authActions {
+    gap: clamp(0.65rem, 3vw, 1.25rem);
+  }
+
+  .description-page {
+    width: calc(100% - 2rem);
+    max-width: 48rem;
+    margin: 1.5rem auto;
+  }
+
+  .description-container {
+    max-width: 100%;
+    margin-left: 0;
+    padding-top: 2rem;
+  }
+
+  .header__searchBar {
+    width: min(100%, 34rem);
+  }
+
+}
+
+@media (max-width: 480px) {
+  .navbar__inner {
+    align-items: flex-start;
+  }
+
+  .navbar__right {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .navbar__navList {
+    gap: 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .navbar__authActions {
+    gap: 0.5rem;
+  }
+
+  .login-card,
+  .register-card,
+  .postjob__card {
+    padding: 1rem;
+  }
+
+  .header__title {
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+
+  .description-header {
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}
+
+[data-sonner-toaster] {
+  --normal-bg: var(--color-surface-elevated);
+  --normal-text: var(--color-text);
+  --normal-border: var(--color-border);
+}
+
+[data-sonner-toast][data-type="success"] {
+  border-left: 3px solid var(--accent-mint);
+}
+
+[data-sonner-toast][data-type="error"] {
+  border-left: 3px solid var(--accent-rose);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (max-width: 768px), (prefers-reduced-motion: reduce) {
+  .profile__card:hover,
+  .profile__jobsCard:hover,
+  .jobcard-card:hover,
+  .jobcomponent-card:hover,
+  .slider-card:hover {
+    transform: translateY(-2px);
+  }
+}
