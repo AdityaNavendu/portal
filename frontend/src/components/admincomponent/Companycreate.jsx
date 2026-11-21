@@ -1,8 +1,3 @@
-/**
- * Frontend module: React 19, Vite, React Router aur Axios.
- * Use case: Ye file job portal ke browser-side UI aur API flow mein kaam karti hai.
- */
-
 import "../../styles/create.css";
 import Navbar from "../compolite/Navbar";
 import { useNavigate } from "react-router-dom";
@@ -14,7 +9,7 @@ import { useAppContext } from "@/context/AppContext";
 
 /**
  * React component: `Companycreate`.
- * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+ * Nayi company ke name aur logo ke saath company creation API submit karta hai.
  * Example: `<Companycreate />`
  */
 const Companycreate = () => {
@@ -22,12 +17,12 @@ const Companycreate = () => {
   const [companyName, setCompanyName] = useState("");
   const { setSingleCompany } = useAppContext();
 
-  /**
-   * React component: `registerNewCompany`.
-   * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
-   * Example: `<registerNewCompany />`
-   */
-  const registerNewCompany = async () => {
+    /**
+     * Utility/function: `registerNewCompany`.
+     * `registerNewCompany` is component/hook ke focused UI ya state operation ko execute karta hai.
+     * Example: `registerNewCompany(actual arguments);`
+     */
+    const registerNewCompany = async () => {
     try {
       const res = await axios.post(
         `${COMPANY_API_URL}/register`,

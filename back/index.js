@@ -23,12 +23,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 const corsOptions = {
+    /**
+     * CORS origin callback: request ka origin allowlist se match karta hai.
+     * Local Vite/React origin allow karta hai; unknown origin ko error deta hai.
+     * Example: `origin("http://localhost:5173", callback);`
+     */
     origin: function (origin, callback) {
-        /**
-         * Express route/controller or Node.js utility: `allowed`.
-         * Processes one HTTP/API or data operation using Express, Mongoose, or a project utility.
-         * Example: `allowed(req, res);`
-         */
         const allowed = [
             "http://localhost:5173",
             "http://127.0.0.1:5173",

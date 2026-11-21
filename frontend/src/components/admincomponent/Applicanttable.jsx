@@ -1,8 +1,3 @@
-/**
- * Frontend module: React 19, Vite, React Router aur Axios.
- * Use case: Ye file job portal ke browser-side UI aur API flow mein kaam karti hai.
- */
-
 import '../../styles/Applicantable.css'
 
 import axios from 'axios';
@@ -18,7 +13,7 @@ const actionStatuses = [
 
 /**
  * React component: `Applicanttable`.
- * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+ * Applicant list ko table mein dikhata aur status update actions provide karta hai.
  * Example: `<Applicanttable />`
  */
 const Applicanttable = () => {
@@ -31,12 +26,12 @@ const Applicanttable = () => {
 
   const jobId = allapplications?.jobId || allapplications?.id || null;
 
-  /**
-   * React component: `updateStatus`.
-   * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
-   * Example: `<updateStatus />`
-   */
-  const updateStatus = async (applicationId, nextStatus) => {
+    /**
+     * Utility/function: `updateStatus`.
+     * `updateStatus` is component/hook ke focused UI ya state operation ko execute karta hai.
+     * Example: `updateStatus(actual arguments);`
+     */
+    const updateStatus = async (applicationId, nextStatus) => {
     if (!applicationId || updatingApplicationId) return;
 
     setUpdatingApplicationId(applicationId);
@@ -71,12 +66,12 @@ const Applicanttable = () => {
   const filteredApplicants = useMemo(() => {
     const q = (searchText || '').trim().toLowerCase();
 
-    /**
-     * React component: `normalizeStatus`.
-     * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
-     * Example: `<normalizeStatus />`
-     */
-    const normalizeStatus = (raw) => {
+        /**
+         * Utility/function: `normalizeStatus`.
+         * `normalizeStatus` is component/hook ke focused UI ya state operation ko execute karta hai.
+         * Example: `normalizeStatus(actual arguments);`
+         */
+        const normalizeStatus = (raw) => {
       const s = (raw ?? '').toString().toLowerCase().trim();
 
       if (!s) return 'pending';

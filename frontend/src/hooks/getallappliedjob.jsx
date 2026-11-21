@@ -1,15 +1,10 @@
-/**
- * Frontend module: React 19, Vite, React Router aur Axios.
- * Use case: Ye file job portal ke browser-side UI aur API flow mein kaam karti hai.
- */
-
 import axios from "axios";
 
 import { APPLICATION_API_URL } from "@/utils/data";
 /**
- * React component: `fetchAllAppliedJob`.
- * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
- * Example: `<fetchAllAppliedJob />`
+ * React hook: `fetchAllAppliedJob`.
+ * Axios se logged-in user's applied jobs fetch karke jobs array ya empty array return karta hai.
+ * Example: `fetchAllAppliedJob(actual arguments);`
  */
 export const fetchAllAppliedJob = async () => {
   const res = await axios.get(`${APPLICATION_API_URL}/get/applied`, {

@@ -1,8 +1,3 @@
-/**
- * Frontend module: React 19, Vite, React Router aur Axios.
- * Use case: Ye file job portal ke browser-side UI aur API flow mein kaam karti hai.
- */
-
 
 import Navbar from "../compolite/Navbar";
 import { ArrowLeft } from "lucide-react";
@@ -18,7 +13,7 @@ import { useAppContext } from "@/context/AppContext";
 
 /**
  * React component: `CompanySetup`.
- * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+ * Selected company ki details load aur update karta hai.
  * Example: `<CompanySetup />`
  */
 const CompanySetup = () => {
@@ -41,26 +36,26 @@ const navigate = useNavigate();
 const [loading, setLoading] = useState(false);
 
 
-  /**
-   * React component: `changeeventhandler`.
-   * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
-   * Example: `<changeeventhandler />`
-   */
-  const changeeventhandler = (e) => {
+    /**
+     * Utility/function: `changeeventhandler`.
+     * `changeeventhandler` is component/hook ke focused UI ya state operation ko execute karta hai.
+     * Example: `changeeventhandler(actual arguments);`
+     */
+    const changeeventhandler = (e) => {
     setInput((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
-  /**
-   * React component: `fileEventhandler`.
-   * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
-   * Example: `<fileEventhandler />`
-   */
-  const fileEventhandler = (e) => {
+    /**
+     * Utility/function: `fileEventhandler`.
+     * `fileEventhandler` is component/hook ke focused UI ya state operation ko execute karta hai.
+     * Example: `fileEventhandler(actual arguments);`
+     */
+    const fileEventhandler = (e) => {
     setInput({ ...input, file: e.target.files[0] });
   };
 /**
- * React component: `submithandler`.
- * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
- * Example: `<submithandler />`
+ * Utility/function: `submithandler`.
+ * `submithandler` is component/hook ke focused UI ya state operation ko execute karta hai.
+ * Example: `submithandler(actual arguments);`
  */
 const submithandler= async (e)=>{
   e.preventDefault();

@@ -1,8 +1,3 @@
-/**
- * Frontend module: React 19, Vite, React Router aur Axios.
- * Use case: Ye file job portal ke browser-side UI aur API flow mein kaam karti hai.
- */
-
 
 
 
@@ -15,45 +10,20 @@ import { useNavigate} from "react-router-dom";
 
 /**
  * React component: `Header`.
- * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+ * Landing/header section aur primary navigation UI dikhata hai.
  * Example: `<Header />`
  */
 const Header = () => {
     const [query, setquery] = useState("");
-    /**
-     * React component: `navigate`.
-     * Renders one UI section of the job portal and responds to application state or user actions.
-     * Example: `<navigate />`
-     */
-    const navigate = useNavigate();
+        const navigate = useNavigate();
 
-    /**
-     * React component: `searchJobhandler`.
-     * Renders one UI section of the job portal and responds to application state or user actions.
-     * Example: `<searchJobhandler />`
-     */
-    /**
-     * React component: `searchJobhandler`.
-     * Renders one UI section of the job portal and responds to application state or user actions.
-     * Example: `<searchJobhandler />`
-     */
-    /**
-     * React component: `searchJobhandler`.
-     * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
-     * Example: `<searchJobhandler />`
-     */
-    /**
-     * React component: `searchJobhandler`.
-     * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
-     * Example: `<searchJobhandler />`
-     */
-    const searchJobhandler = () => {
-        /**
-         * React component: `keyword`.
-         * Renders one UI section of the job portal and responds to application state or user actions.
-         * Example: `<keyword />`
-         */
-        const keyword = query.trim();
+                    /**
+                     * Utility/function: `searchJobhandler`.
+                     * `searchJobhandler` is component/hook ke focused UI ya state operation ko execute karta hai.
+                     * Example: `searchJobhandler(actual arguments);`
+                     */
+                    const searchJobhandler = () => {
+                const keyword = query.trim();
         navigate(keyword ? `/browse?keyword=${encodeURIComponent(keyword)}` : "/browse");
     };
 

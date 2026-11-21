@@ -1,17 +1,12 @@
-/**
- * Frontend module: React 19, Vite, React Router aur Axios.
- * Use case: Ye file job portal ke browser-side UI aur API flow mein kaam karti hai.
- */
-
 import { COMPANY_API_URL } from "@/utils/data";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useAppContext } from "@/context/AppContext";
 
 /**
- * React hook ya state helper: `useGetAllCompanies`.
- * Shared portal state ko read/update karta hai aur React components ise reuse karte hain.
- * Example: `useGetAllCompanies();`
+ * React hook: `useGetAllCompanies`.
+ * Axios se `/getall` call karke saari companies ko AppContext mein set karta hai.
+ * Example: `useGetAllCompanies(actual arguments);`
  */
 const useGetAllCompanies = () => {
   const { setCompanies } = useAppContext();
@@ -20,12 +15,12 @@ const useGetAllCompanies = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    /**
-     * React component: `fetchCompanies`.
-     * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
-     * Example: `<fetchCompanies />`
-     */
-    const fetchCompanies = async () => {
+        /**
+         * Function: `fetchCompanies`.
+         * Companies API se list load karke context companies state update karta hai.
+         * Example: `fetchCompanies(actual arguments);`
+         */
+        const fetchCompanies = async () => {
       setLoading(true);
 
       try {

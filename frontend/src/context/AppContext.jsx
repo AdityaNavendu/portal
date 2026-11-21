@@ -1,8 +1,3 @@
-/**
- * Frontend module: React 19, Vite, React Router aur Axios.
- * Use case: Ye file job portal ke browser-side UI aur API flow mein kaam karti hai.
- */
-
 import axios from "axios";
 import { createContext, useContext, useEffect, useRef, useState } from "react";
 import { USER_API_URL } from "@/utils/data";
@@ -10,9 +5,9 @@ import { USER_API_URL } from "@/utils/data";
 const AppContext = createContext(null);
 
 /**
- * React hook ya state helper: `getSavedUser`.
- * Shared portal state ko read/update karta hai aur React components ise reuse karte hain.
- * Example: `getSavedUser();`
+ * Function: `getSavedUser`.
+ * LocalStorage/persisted auth data se saved user ko read karke initial context state return karta hai.
+ * Example: `getSavedUser(actual arguments);`
  */
 const getSavedUser = () => {
   const savedUser = localStorage.getItem("user");
@@ -27,7 +22,7 @@ const getSavedUser = () => {
 
 /**
  * React component: `AppProvider`.
- * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+ * User, jobs, companies, bookmarks aur application search state ko React Context mein globally share karta hai.
  * Example: `<AppProvider />`
  */
 export const AppProvider = ({ children }) => {
@@ -41,12 +36,12 @@ export const AppProvider = ({ children }) => {
   }));
   const bookmarkUserIdRef = useRef(userId);
   const bookmarkMutationVersion = useRef(new Map());
-  /**
-   * React component: `setUser`.
-   * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
-   * Example: `<setUser />`
-   */
-  const setUser = (nextUser) => {
+    /**
+     * Function: `setUser`.
+     * User state aur localStorage/persisted auth values ko updated user ke saath synchronize karta hai.
+     * Example: `setUser(actual arguments);`
+     */
+    const setUser = (nextUser) => {
     const updatedUser =
       typeof nextUser === "function" ? nextUser(user) : nextUser;
     const updatedUserId = updatedUser?._id
@@ -132,12 +127,12 @@ export const AppProvider = ({ children }) => {
   const bookmarksError =
     bookmarkFetch.userId === userId ? bookmarkFetch.error : null;
 
-  /**
-   * React hook ya state helper: `toggleBookmark`.
-   * Shared portal state ko read/update karta hai aur React components ise reuse karte hain.
-   * Example: `toggleBookmark();`
-   */
-  const toggleBookmark = async (job) => {
+    /**
+     * Function: `toggleBookmark`.
+     * Job ko logged-in user's saved/unsaved list mein add ya remove karta hai.
+     * Example: `toggleBookmark(actual arguments);`
+     */
+    const toggleBookmark = async (job) => {
     if (!userId) {
       throw new Error("Please log in to save jobs");
     }
@@ -229,9 +224,9 @@ export const AppProvider = ({ children }) => {
 };
 
 /**
- * React hook ya state helper: `useAppContext`.
- * Shared portal state ko read/update karta hai aur React components ise reuse karte hain.
- * Example: `useAppContext();`
+ * React hook: `useAppContext`.
+ * `useAppContext` React context/state aur effect APIs use karke related data ko current component ke liye load/update karta hai.
+ * Example: `useAppContext(actual arguments);`
  */
 export const useAppContext = () => {
   const context = useContext(AppContext);

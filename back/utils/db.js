@@ -1,16 +1,11 @@
-/**
- * Backend module: Node.js, Express 5, Mongoose aur MongoDB.
- * Use case: Ye file job portal ke HTTP API aur database data flow mein kaam karti hai.
- */
-
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 dotenv.config();
 
 /**
- * Express route/controller ya Node.js utility: `connectDB`.
- * Express, Mongoose ya project utility ke through ek HTTP/API ya data operation process karta hai.
- * Example: `connectDB(req, res);`
+ * Backend function: `connectDB`.
+ * Environment URL se MongoDB/Mongoose connection establish karta hai.
+ * Example: `connectDB(actual arguments);`
  */
 const connectDB = async () => {
     try {

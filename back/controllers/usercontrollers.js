@@ -1,27 +1,90 @@
-/**
- * Backend module: Node.js, Express 5, Mongoose aur MongoDB.
- * Use case: Ye file job portal ke HTTP API aur database data flow mein kaam karti hai.
- */
-
-import User from "../modals/usermodels.js";
+﻿import User from "../modals/usermodels.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import cloudinary from "../utils/cloud.js";
 import getdatauri from "../utils/datauri.js";
+
 /**
- * Express route/controller ya Node.js utility: `register`.
- * Express, Mongoose ya project utility ke through ek HTTP/API ya data operation process karta hai.
+ * Registration data aur optional profile picture validate karke password hash karta,
+ * MongoDB user create karta aur success response return karta hai.
  * Example: `register(req, res);`
  */
 export const register = async (req, res) => {
   try {
     const { fullname, email, phoneNumber, password, role } = req.body;
-    /**
-     * Express route/controller ya Node.js utility: `login`.
-     * Express, Mongoose ya project utility ke through ek HTTP/API ya data operation process karta hai.
-     * Example: `login(req, res);`
-     */
-    export const login = async (req, res) => {
+    const files = req.files;
+
+
+    const profilePictureFile = files?.profilepicture?.[0];
+    let cloudinaryProfilePictureResponse = null;
+
+    if (profilePictureFile) {
+      const profilePictureFileuri = await getdatauri(profilePictureFile);
+      if (profilePictureFileuri?.dataUri) {
+        try {
+          cloudinaryProfilePictureResponse = await cloudinary.uploader.upload(
+            profilePictureFileuri.dataUri,
+          );
+        } catch (e) {
+          console.error("Cloudinary profile picture upload failed:", e);
+        }
+      }
+    }
+
+    if (!fullname || !email || !phoneNumber || !password || !role) {
+      return res.status(400).json({
+        message: "All fields are required",
+        success: false,
+      });
+    }
+
+    const existingUser = await User.findOne({ email });
+    if (existingUser) {
+      return res.status(400).json({
+        message: "User already exists",
+        success: false,
+      });
+    }
+
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    const newUser = new User({
+      fullname,
+      email,
+      phoneNumber,
+      password: hashedPassword,
+      role,
+      profile: {
+        bio: "",
+        skills: [],
+        resume: "",
+        resumeoriginalname: "",
+        company: null,
+        profilepicture:
+          cloudinaryProfilePictureResponse?.secure_url || " ",
+      },
+    });
+
+    await newUser.save();
+
+    return res.status(201).json({
+      message: "User created successfully",
+      success: true,
+    });
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json({
+      message: error.message,
+      success: false,
+    });
+  }
+};
+
+/**
+ * Email, password aur role verify karke JWT token banata, cookie set karta aur user data return karta hai.
+ * Example: `login(req, res);`
+ */
+export const login = async (req, res) => {
   try {
     const { email, password, role } = req.body;
 
@@ -32,12 +95,78 @@ export const register = async (req, res) => {
       });
     }
 
-    /**
-     * Express route/controller ya Node.js utility: `logout`.
-     * Express, Mongoose ya project utility ke through ek HTTP/API ya data operation process karta hai.
-     * Example: `logout(req, res);`
-     */
-    export const logout = async (req, res) => {
+    let user = await User.findOne({ email });
+
+    if (!user) {
+      return res.status(400).json({
+        message: "User does not exist",
+        success: false,
+      });
+    }
+
+    const isPasswordCorrect = await bcrypt.compare(password, user.password);
+
+    if (!isPasswordCorrect) {
+      return res.status(400).json({
+        message: "Incorrect password",
+        success: false,
+      });
+      console.log("Incorrect password");
+    }
+
+    if (user.role !== role) {
+      return res.status(400).json({
+        message: "Incorrect role",
+        success: false,
+      });
+      console.log("Incorrect role");
+    }
+
+    const tokenData = {
+      userId: user._id,
+    };
+
+    const token = jwt.sign(tokenData, process.env.JWT_SECRET, {
+      expiresIn: "5d",
+    });
+
+    const userData = {
+      _id: user._id,
+      fullname: user.fullname,
+      email: user.email,
+      phoneNumber: user.phoneNumber,
+      role: user.role,
+      profile: user.profile,
+    };
+
+    return res
+      .status(200)
+      .cookie("token", token, {
+        httpOnly: true,
+        maxAge: 24 * 60 * 60 * 1000,
+        sameSite: "strict",
+      })
+      .json({
+        message: `Welcome back ${user.fullname}`,
+        success: true,
+        user: userData,
+        token,
+      });
+  } catch (error) {
+    console.error("Login Error:", error);
+
+    return res.status(500).json({
+      message: error.message,
+      success: false,
+    });
+  }
+};
+
+/**
+ * Auth cookie ki value empty karke user ko logout state mein karta hai.
+ * Example: `logout(req, res);`
+ */
+export const logout = async (req, res) => {
   try {
     res
       .status(200)
@@ -53,18 +182,12 @@ export const register = async (req, res) => {
 };
 
 /**
- * Express route/controller ya Node.js utility: `updateProfile`.
- * Express, Mongoose ya project utility ke through ek HTTP/API ya data operation process karta hai.
+ * Resume/profile picture Cloudinary par upload karke authenticated user ki profile fields database mein update karta hai.
  * Example: `updateProfile(req, res);`
  */
 export const updateProfile = async (req, res) => {
   try {
     const { fullname, phoneNumber, bio, skills } = req.body;
-    /**
-     * Express route/controller or Node.js utility: `files`.
-     * Processes one HTTP/API or data operation using Express, Mongoose, or a project utility.
-     * Example: `files(req, res);`
-     */
     const files = req.files;
 
     if (!files) {
@@ -75,38 +198,13 @@ export const updateProfile = async (req, res) => {
       });
     }
 
-    /**
-     * Express route/controller or Node.js utility: `resumeFile`.
-     * Processes one HTTP/API or data operation using Express, Mongoose, or a project utility.
-     * Example: `resumeFile(req, res);`
-     */
     const resumeFile = files?.resume?.[0];
-    /**
-     * Express route/controller or Node.js utility: `profilePictureFile`.
-     * Processes one HTTP/API or data operation using Express, Mongoose, or a project utility.
-     * Example: `profilePictureFile(req, res);`
-     */
     const profilePictureFile = files?.profilepicture?.[0];
 
-    /**
-     * Express route/controller or Node.js utility: `cloudinaryResponse`.
-     * Processes one HTTP/API or data operation using Express, Mongoose, or a project utility.
-     * Example: `cloudinaryResponse(req, res);`
-     */
     let cloudinaryResponse = null;
-    /**
-     * Express route/controller or Node.js utility: `cloudinaryProfilePictureResponse`.
-     * Processes one HTTP/API or data operation using Express, Mongoose, or a project utility.
-     * Example: `cloudinaryProfilePictureResponse(req, res);`
-     */
     let cloudinaryProfilePictureResponse = null;
 
     if (resumeFile) {
-      /**
-       * Express route/controller or Node.js utility: `resumeFileuri`.
-       * Processes one HTTP/API or data operation using Express, Mongoose, or a project utility.
-       * Example: `resumeFileuri(req, res);`
-       */
       const resumeFileuri = await getdatauri(resumeFile);
       if (resumeFileuri?.dataUri) {
         try {
@@ -120,11 +218,6 @@ export const updateProfile = async (req, res) => {
     }
 
     if (profilePictureFile) {
-      /**
-       * Express route/controller or Node.js utility: `profilePictureFileuri`.
-       * Processes one HTTP/API or data operation using Express, Mongoose, or a project utility.
-       * Example: `profilePictureFileuri(req, res);`
-       */
       const profilePictureFileuri = await getdatauri(profilePictureFile);
       if (profilePictureFileuri?.dataUri) {
         try {
@@ -137,11 +230,6 @@ export const updateProfile = async (req, res) => {
       }
     }
 
-    /**
-     * Express route/controller or Node.js utility: `user`.
-     * Processes one HTTP/API or data operation using Express, Mongoose, or a project utility.
-     * Example: `user(req, res);`
-     */
     const user = await User.findById(req.id);
 
     if (!user) {
@@ -176,11 +264,6 @@ export const updateProfile = async (req, res) => {
 
     await user.save();
 
-    /**
-     * Express route/controller or Node.js utility: `userData`.
-     * Processes one HTTP/API or data operation using Express, Mongoose, or a project utility.
-     * Example: `userData(req, res);`
-     */
     const userData = {
       _id: user._id,
       fullname: user.fullname,

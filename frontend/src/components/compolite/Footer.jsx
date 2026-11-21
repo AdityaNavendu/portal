@@ -1,8 +1,3 @@
-/**
- * Frontend module: React 19, Vite, React Router aur Axios.
- * Use case: Ye file job portal ke browser-side UI aur API flow mein kaam karti hai.
- */
-
 
 
 
@@ -12,9 +7,9 @@ import { FaSquareXTwitter, FaLinkedinIn, FaGithub } from "react-icons/fa6";
 import "../../styles/footer.css";
 
 /**
- * React component: `Footer`.
- * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
- * Example: `<Footer />`
+ * Utility/function: `Footer`.
+ * `Footer` is component/hook ke focused UI ya state operation ko execute karta hai.
+ * Example: `Footer(actual arguments);`
  */
 const Footer = () => {
   return (

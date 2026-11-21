@@ -1,8 +1,3 @@
-/**
- * Frontend module: React 19, Vite, React Router aur Axios.
- * Use case: Ye file job portal ke browser-side UI aur API flow mein kaam karti hai.
- */
-
 
 import Navbar from "./Navbar";
 import Header from "./Header";
@@ -17,7 +12,7 @@ import { useAppContext } from "@/context/AppContext";
 
 /**
  * React component: `Home`.
- * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+ * Portal ka home page compose karta hai aur featured/latest content components render karta hai.
  * Example: `<Home />`
  */
 const Home = () => {
@@ -26,12 +21,7 @@ const Home = () => {
   const { alljobs: jobs, user } = useAppContext();
   console.log(jobs);
 
-  /**
-   * React component: `navigate`.
-   * Renders one UI section of the job portal and responds to application state or user actions.
-   * Example: `<navigate />`
-   */
-  const navigate = useNavigate();
+    const navigate = useNavigate();
 
 useEffect(() => {
   if(user?.role==="recruiter"){

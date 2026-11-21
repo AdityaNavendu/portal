@@ -1,8 +1,3 @@
-/**
- * Frontend module: React 19, Vite, React Router aur Axios.
- * Use case: Ye file job portal ke browser-side UI aur API flow mein kaam karti hai.
- */
-
 import Navbar from "../compolite/Navbar";
 import "../../styles/companies.css";
 import CompanyTable from "./companytable";
@@ -13,7 +8,7 @@ import { useState } from "react";
 import { useAppContext } from "@/context/AppContext";
 /**
  * React component: `Companies`.
- * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+ * Saari companies ki admin management page aur company table render karta hai.
  * Example: `<Companies />`
  */
 const Companies = () => {
@@ -27,9 +22,9 @@ useEffect(() => {
 
 
 /**
- * React component: `inputhandler`.
- * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
- * Example: `<inputhandler />`
+ * Utility/function: `inputhandler`.
+ * `inputhandler` is component/hook ke focused UI ya state operation ko execute karta hai.
+ * Example: `inputhandler(actual arguments);`
  */
 const inputhandler = (e) => {
   setInput(e.target.value);

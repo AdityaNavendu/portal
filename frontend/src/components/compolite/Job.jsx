@@ -1,8 +1,3 @@
-/**
- * Frontend module: React 19, Vite, React Router aur Axios.
- * Use case: Ye file job portal ke browser-side UI aur API flow mein kaam karti hai.
- */
-
 import { Bookmark } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import "../../styles/jobcomponent.css";
@@ -11,22 +6,12 @@ import { toast } from "sonner";
 import { useAppContext } from "@/context/AppContext";
 /**
  * React component: `Job`.
- * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+ * Ek job ka short card render karke saved status aur details page navigation handle karta hai.
  * Example: `<Job />`
  */
 const Job = ({ job }) => {
-  /**
-   * React component: `navigate`.
-   * Renders one UI section of the job portal and responds to application state or user actions.
-   * Example: `<navigate />`
-   */
-  const navigate = useNavigate();
-  /**
-   * React component: `jobId`.
-   * Renders one UI section of the job portal and responds to application state or user actions.
-   * Example: `<jobId />`
-   */
-  const jobId = job._id;
+    const navigate = useNavigate();
+    const jobId = job._id;
   const {
     user,
     bookmarkedJobIds,
@@ -36,33 +21,13 @@ const Job = ({ job }) => {
   console.log("Job component received job:", job);
 
   const [bookmarkPending, setBookmarkPending] = useState(false);
-  /**
-   * React component: `isbookmarked`.
-   * Renders one UI section of the job portal and responds to application state or user actions.
-   * Example: `<isbookmarked />`
-   */
-  const isbookmarked = bookmarkedJobIds.includes(String(jobId));
-  /**
-   * React component: `bookmarkJob`.
-   * Renders one UI section of the job portal and responds to application state or user actions.
-   * Example: `<bookmarkJob />`
-   */
-  /**
-   * React component: `bookmarkJob`.
-   * Renders one UI section of the job portal and responds to application state or user actions.
-   * Example: `<bookmarkJob />`
-   */
-  /**
-   * React component: `bookmarkJob`.
-   * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
-   * Example: `<bookmarkJob />`
-   */
-  /**
-   * React component: `bookmarkJob`.
-   * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
-   * Example: `<bookmarkJob />`
-   */
-  const bookmarkJob = async () => {
+    const isbookmarked = bookmarkedJobIds.includes(String(jobId));
+          /**
+           * Utility/function: `bookmarkJob`.
+           * `bookmarkJob` is component/hook ke focused UI ya state operation ko execute karta hai.
+           * Example: `bookmarkJob(actual arguments);`
+           */
+          const bookmarkJob = async () => {
     if (!user) {
       navigate("/login");
       return;
@@ -78,51 +43,16 @@ const Job = ({ job }) => {
     }
   };
 
-  /**
-   * React component: `daysago`.
-   * Renders one UI section of the job portal and responds to application state or user actions.
-   * Example: `<daysago />`
-   */
-  /**
-   * React component: `daysago`.
-   * Renders one UI section of the job portal and responds to application state or user actions.
-   * Example: `<daysago />`
-   */
-  /**
-   * React component: `daysago`.
-   * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
-   * Example: `<daysago />`
-   */
-  /**
-   * React component: `daysago`.
-   * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
-   * Example: `<daysago />`
-   */
-  const daysago= (mongodbTime) =>{
-    /**
-     * React component: `date`.
-     * Renders one UI section of the job portal and responds to application state or user actions.
-     * Example: `<date />`
-     */
-    const date = new Date(mongodbTime);
-    /**
-     * React component: `now`.
-     * Renders one UI section of the job portal and responds to application state or user actions.
-     * Example: `<now />`
-     */
-    const now = new Date();
-    /**
-     * React component: `diff`.
-     * Renders one UI section of the job portal and responds to application state or user actions.
-     * Example: `<diff />`
-     */
-    const diff = now.getTime() - date.getTime();
-    /**
-     * React component: `days`.
-     * Renders one UI section of the job portal and responds to application state or user actions.
-     * Example: `<days />`
-     */
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+          /**
+           * Utility/function: `daysago`.
+           * `daysago` is component/hook ke focused UI ya state operation ko execute karta hai.
+           * Example: `daysago(actual arguments);`
+           */
+          const daysago= (mongodbTime) =>{
+        const date = new Date(mongodbTime);
+        const now = new Date();
+        const diff = now.getTime() - date.getTime();
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
     return days;
   }
 

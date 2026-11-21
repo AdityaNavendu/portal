@@ -1,8 +1,3 @@
-/**
- * Frontend module: React 19, Vite, React Router aur Axios.
- * Use case: Ye file job portal ke browser-side UI aur API flow mein kaam karti hai.
- */
-
 import Navbar from "../compolite/Navbar";
 import { useEffect, useMemo, useState } from "react";
 import "../../styles/postjob.css";
@@ -15,7 +10,7 @@ import { useAppContext } from "@/context/AppContext";
 
 /**
  * React component: `PostJob`.
- * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+ * Naya job create ya existing job edit karne ka form aur submit API handle karta hai.
  * Example: `<PostJob />`
  */
 const PostJob = () => {
@@ -54,21 +49,21 @@ const PostJob = () => {
   const [loading, setLoading] = useState(false);
   const [fetching, setFetching] = useState(false);
 
-  /**
-   * React component: `selectChangeHandler`.
-   * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
-   * Example: `<selectChangeHandler />`
-   */
-  const selectChangeHandler = (companyId) => {
+    /**
+     * Function: `selectChangeHandler`.
+     * Dropdown select ki value se selected ID/state update karta hai.
+     * Example: `selectChangeHandler(actual arguments);`
+     */
+    const selectChangeHandler = (companyId) => {
     setInput((prev) => ({ ...prev, company_Id: companyId }));
   };
 
-  /**
-   * React component: `handleChange`.
-   * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
-   * Example: `<handleChange />`
-   */
-  const handleChange = (e) => {
+    /**
+     * Function: `handleChange`.
+     * Form ke input change event se field name aur value read karke component state update karta hai.
+     * Example: `handleChange(actual arguments);`
+     */
+    const handleChange = (e) => {
     setInput((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
@@ -76,12 +71,12 @@ const PostJob = () => {
   useEffect(() => {
     let cancelled = false;
 
-    /**
-     * React component: `fetchJob`.
-     * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
-     * Example: `<fetchJob />`
-     */
-    const fetchJob = async () => {
+        /**
+         * Function: `fetchJob`.
+         * Job ID se existing job details load karke edit form state fill karta hai.
+         * Example: `fetchJob(actual arguments);`
+         */
+        const fetchJob = async () => {
       if (!id) return;
       setFetching(true);
       try {
@@ -120,12 +115,12 @@ const PostJob = () => {
     };
   }, [id, initialInput]);
 
-  /**
-   * React component: `onsubmitHandler`.
-   * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
-   * Example: `<onsubmitHandler />`
-   */
-  const onsubmitHandler = async (e) => {
+    /**
+     * Function: `onsubmitHandler`.
+     * Form submit ko refresh se rokta hai, validation ke baad API payload submit karta hai.
+     * Example: `onsubmitHandler(actual arguments);`
+     */
+    const onsubmitHandler = async (e) => {
     e.preventDefault();
 
     try {

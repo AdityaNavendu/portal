@@ -1,8 +1,3 @@
-/**
- * Backend module: Node.js, Express 5, Mongoose aur MongoDB.
- * Use case: Ye file job portal ke HTTP API aur database data flow mein kaam karti hai.
- */
-
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
@@ -10,9 +5,9 @@ import heroImg from './assets/hero.png'
 import './App.css'
 
 /**
- * Express route/controller ya Node.js utility: `App`.
- * Express, Mongoose ya project utility ke through ek HTTP/API ya data operation process karta hai.
- * Example: `App(req, res);`
+ * React component: `App`.
+ * React Router ke saath public aur protected application routes register karta hai.
+ * Example: `<App />`
  */
 function App() {
   const [count, setCount] = useState(0)

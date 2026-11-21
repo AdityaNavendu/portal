@@ -1,12 +1,7 @@
 /**
- * Frontend module: React 19, Vite, React Router aur Axios.
- * Use case: Ye file job portal ke browser-side UI aur API flow mein kaam karti hai.
- */
-
-/**
- * React component: `Termsofservices`.
- * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
- * Example: `<Termsofservices />`
+ * Utility/function: `Termsofservices`.
+ * `Termsofservices` is component/hook ke focused UI ya state operation ko execute karta hai.
+ * Example: `Termsofservices(actual arguments);`
  */
 const Termsofservices = () => {
 

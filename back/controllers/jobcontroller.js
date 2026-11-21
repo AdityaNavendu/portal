@@ -1,47 +1,100 @@
-/**
- * Backend module: Node.js, Express 5, Mongoose aur MongoDB.
- * Use case: Ye file job portal ke HTTP API aur database data flow mein kaam karti hai.
- */
-
 import Job from "../modals/jobmodal.js";
 
 /**
- * Express route/controller ya Node.js utility: `postjob`.
- * Express, Mongoose ya project utility ke through ek HTTP/API ya data operation process karta hai.
+ * Backend function: `postjob`.
+ * Authenticated recruiter ka validated job data MongoDB mein create karke naya job record banata hai.
  * Example: `postjob(req, res);`
  */
 export const postjob = async (req, res) => {
+    try {
+        const {title, description, requirements, location, salary, jobtype, company_Id, position, experience} = req.body;
+        const userId = req.id;
 
-    try{
-        const {title,description,requirements,location,salary,jobtype,company_Id,position,experience} = req.body;
-        /**
-         * Express route/controller ya Node.js utility: `getalljobs`.
-         * Express, Mongoose ya project utility ke through ek HTTP/API ya data operation process karta hai.
-         * Example: `getalljobs(req, res);`
-         */
-        export const getalljobs = async (req, res) => {
-    try {
-        /**
-         * Express route/controller ya Node.js utility: `getjobbyid`.
-         * Express, Mongoose ya project utility ke through ek HTTP/API ya data operation process karta hai.
-         * Example: `getjobbyid(req, res);`
-         */
-        export const getjobbyid = async (req, res) => {
-    try {
-        /**
-         * Express route/controller ya Node.js utility: `getadminjobs`.
-         * Express, Mongoose ya project utility ke through ek HTTP/API ya data operation process karta hai.
-         * Example: `getadminjobs(req, res);`
-         */
-        export const getadminjobs = async (req, res) => {
-    try {
-        console.log("req.id:", req.id);
+        if (!title || !description || !requirements || !location || !salary || !jobtype || !company_Id || !position || !experience) {
+            return res.status(400).json({ message: "All fields are required", success: false });
+        }
 
-        /**
-         * Express route/controller or Node.js utility: `jobs`.
-         * Processes one HTTP/API or data operation using Express, Mongoose, or a project utility.
-         * Example: `jobs(req, res);`
-         */
+        const job = await Job.create({
+            title,
+            description,
+            requirements: requirements.split(","),
+            location,
+            salary: Number(salary),
+            jobtype,
+            company: company_Id,
+            position,
+            experience: Number(experience),
+            created_by: userId
+        });
+
+        res.status(201).json({ message: "Job created successfully", success: true, job });
+    } catch (error) {
+        console.log("POSTJOB ERROR:", error);
+        return res.status(500).json({
+            message: "Error creating job",
+            error: error?.message || error,
+        });
+    }
+};
+
+/**
+ * Backend function: `getalljobs`.
+ * Search keyword se MongoDB mein matching jobs query karta hai, company populate karta hai aur newest jobs pehle return karta hai.
+ * Example: `getalljobs(req, res);`
+ */
+export const getalljobs = async (req, res) => {
+    try {
+        const keyword = typeof req.query.keyword === "string"
+            ? req.query.keyword.trim().replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
+            : "";
+        const query = {
+            $or: [
+                { title: { $regex: keyword, $options: "i" } },
+                { description: { $regex: keyword, $options: "i" } },
+                { requirements: { $regex: keyword, $options: "i" } },
+                { location: { $regex: keyword, $options: "i" } },
+                { jobtype: { $regex: keyword, $options: "i" } },
+                { position: { $regex: keyword, $options: "i" } },
+            ],
+        };
+
+        const jobs = await Job.find(query)
+            .populate({ path: "company" })
+            .sort({ createdAt: -1 });
+
+        res.status(200).json({ message: "Jobs retrieved successfully", success: true, jobs });
+    } catch (error) {
+        res.status(500).json({ message: "Error retrieving jobs", error });
+    }
+};
+
+/**
+ * Backend function: `getjobbyid`.
+ * Job ID se ek job record aur uske applicants list ko populate karke job details return karta hai.
+ * Example: `getjobbyid(req, res);`
+ */
+export const getjobbyid = async (req, res) => {
+    try {
+        const jobId = req.params.id;
+        const job = await Job.findById(jobId).populate({
+            path: "applicants",
+        });
+        if (!job) {
+            return res.status(400).json({ message: "Job not found", success: false });
+        }
+        res.status(200).json({ message: "Job retrieved successfully", success: true, job });
+    } catch (error) {
+        res.status(500).json({ message: "Error retrieving job", error });
+    }
+};
+
+/**
+ * Backend function: `getadminjobs`.
+ * JWT se authenticated recruiter ki `created_by` ID se sirf uske banaye jobs MongoDB se return karta hai.
+ * Example: `getadminjobs(req, res);`
+ */
+export const getadminjobs = async (req, res) => {
+    try {
         const jobs = await Job.find({
             created_by: req.id
         }).populate({
@@ -49,18 +102,14 @@ export const postjob = async (req, res) => {
             options: { sort: { createdAt: -1 } }
         });
 
-        console.log("Jobs:", jobs);
-
         return res.status(200).json({
             success: true,
             jobs
         });
     } catch (error) {
-        console.error("ERROR:", error);
-
         return res.status(500).json({
             success: false,
             message: error.message
         });
     }
-}
+};

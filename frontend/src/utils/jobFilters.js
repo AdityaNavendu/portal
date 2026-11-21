@@ -1,8 +1,8 @@
 /**
- * Frontend module: React 19, Vite, React Router aur Axios.
- * Use case: Ye file job portal ke browser-side UI aur API flow mein kaam karti hai.
+ * Utility/function: `jobFilters`.
+ * `jobFilters` is component/hook ke focused UI ya state operation ko execute karta hai.
+ * Example: `jobFilters(actual arguments);`
  */
-
 export const jobFilters = [
   {
     filterType: "Location",

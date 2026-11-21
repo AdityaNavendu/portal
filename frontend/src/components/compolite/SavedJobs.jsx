@@ -1,8 +1,3 @@
-/**
- * Frontend module: React 19, Vite, React Router aur Axios.
- * Use case: Ye file job portal ke browser-side UI aur API flow mein kaam karti hai.
- */
-
 import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
 import Job from "./Job";
@@ -12,7 +7,7 @@ import "../../styles/savedjobs.css";
 
 /**
  * React component: `SavedJobs`.
- * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+ * User ke bookmarked jobs ko fetch/bookmark state se list karta hai.
  * Example: `<SavedJobs />`
  */
 const SavedJobs = () => {

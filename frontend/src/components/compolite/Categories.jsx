@@ -1,8 +1,3 @@
-/**
- * Frontend module: React 19, Vite, React Router aur Axios.
- * Use case: Ye file job portal ke browser-side UI aur API flow mein kaam karti hai.
- */
-
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../../styles/categories.css";
@@ -26,120 +21,50 @@ const categories = [
 
 /**
  * React component: `Categories`.
- * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+ * Technology/category options dikhata hai aur selection ko shared job search query mein add/remove karta hai.
  * Example: `<Categories />`
  */
 const Categories = () => {
-  /**
-   * React component: `navigate`.
-   * Renders one UI section of the job portal and responds to application state or user actions.
-   * Example: `<navigate />`
-   */
-  const navigate = useNavigate();
+    const navigate = useNavigate();
   const [current, setCurrent] = useState(0);
   const [startX, setStartX] = useState(0);
 
-  /**
-   * React component: `nextSlide`.
-   * Renders one UI section of the job portal and responds to application state or user actions.
-   * Example: `<nextSlide />`
-   */
-  /**
-   * React component: `nextSlide`.
-   * Renders one UI section of the job portal and responds to application state or user actions.
-   * Example: `<nextSlide />`
-   */
-  /**
-   * React component: `nextSlide`.
-   * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
-   * Example: `<nextSlide />`
-   */
-  /**
-   * React component: `nextSlide`.
-   * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
-   * Example: `<nextSlide />`
-   */
-  const nextSlide = () => {
+          /**
+           * Utility/function: `nextSlide`.
+           * `nextSlide` is component/hook ke focused UI ya state operation ko execute karta hai.
+           * Example: `nextSlide(actual arguments);`
+           */
+          const nextSlide = () => {
     setCurrent((prev) => (prev + 1) % categories.length);
   };
 
-  /**
-   * React component: `prevSlide`.
-   * Renders one UI section of the job portal and responds to application state or user actions.
-   * Example: `<prevSlide />`
-   */
-  /**
-   * React component: `prevSlide`.
-   * Renders one UI section of the job portal and responds to application state or user actions.
-   * Example: `<prevSlide />`
-   */
-  /**
-   * React component: `prevSlide`.
-   * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
-   * Example: `<prevSlide />`
-   */
-  /**
-   * React component: `prevSlide`.
-   * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
-   * Example: `<prevSlide />`
-   */
-  const prevSlide = () => {
+          /**
+           * Utility/function: `prevSlide`.
+           * `prevSlide` is component/hook ke focused UI ya state operation ko execute karta hai.
+           * Example: `prevSlide(actual arguments);`
+           */
+          const prevSlide = () => {
     setCurrent(
       (prev) => (prev - 1 + categories.length) % categories.length
     );
   };
 
-  /**
-   * React component: `handleMouseDown`.
-   * Renders one UI section of the job portal and responds to application state or user actions.
-   * Example: `<handleMouseDown />`
-   */
-  /**
-   * React component: `handleMouseDown`.
-   * Renders one UI section of the job portal and responds to application state or user actions.
-   * Example: `<handleMouseDown />`
-   */
-  /**
-   * React component: `handleMouseDown`.
-   * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
-   * Example: `<handleMouseDown />`
-   */
-  /**
-   * React component: `handleMouseDown`.
-   * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
-   * Example: `<handleMouseDown />`
-   */
-  const handleMouseDown = (e) => {
+          /**
+           * Event handler: `handleMouseDown`.
+           * `handleMouseDown` user/form event ki value aur state read karke UI state ya API submission update karta hai.
+           * Example: `handleMouseDown(actual arguments);`
+           */
+          const handleMouseDown = (e) => {
     setStartX(e.clientX);
   };
 
-  /**
-   * React component: `handleMouseUp`.
-   * Renders one UI section of the job portal and responds to application state or user actions.
-   * Example: `<handleMouseUp />`
-   */
-  /**
-   * React component: `handleMouseUp`.
-   * Renders one UI section of the job portal and responds to application state or user actions.
-   * Example: `<handleMouseUp />`
-   */
-  /**
-   * React component: `handleMouseUp`.
-   * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
-   * Example: `<handleMouseUp />`
-   */
-  /**
-   * React component: `handleMouseUp`.
-   * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
-   * Example: `<handleMouseUp />`
-   */
-  const handleMouseUp = (e) => {
-    /**
-     * React component: `diff`.
-     * Renders one UI section of the job portal and responds to application state or user actions.
-     * Example: `<diff />`
-     */
-    const diff = e.clientX - startX;
+          /**
+           * Event handler: `handleMouseUp`.
+           * `handleMouseUp` user/form event ki value aur state read karke UI state ya API submission update karta hai.
+           * Example: `handleMouseUp(actual arguments);`
+           */
+          const handleMouseUp = (e) => {
+        const diff = e.clientX - startX;
 
     if (diff > 50) {
       prevSlide();
@@ -148,57 +73,22 @@ const Categories = () => {
     }
   };
 
-  /**
-   * React component: `handleTouchStart`.
-   * Renders one UI section of the job portal and responds to application state or user actions.
-   * Example: `<handleTouchStart />`
-   */
-  /**
-   * React component: `handleTouchStart`.
-   * Renders one UI section of the job portal and responds to application state or user actions.
-   * Example: `<handleTouchStart />`
-   */
-  /**
-   * React component: `handleTouchStart`.
-   * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
-   * Example: `<handleTouchStart />`
-   */
-  /**
-   * React component: `handleTouchStart`.
-   * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
-   * Example: `<handleTouchStart />`
-   */
-  const handleTouchStart = (e) => {
+          /**
+           * Event handler: `handleTouchStart`.
+           * `handleTouchStart` user/form event ki value aur state read karke UI state ya API submission update karta hai.
+           * Example: `handleTouchStart(actual arguments);`
+           */
+          const handleTouchStart = (e) => {
     setStartX(e.touches[0].clientX);
   };
 
-  /**
-   * React component: `handleTouchEnd`.
-   * Renders one UI section of the job portal and responds to application state or user actions.
-   * Example: `<handleTouchEnd />`
-   */
-  /**
-   * React component: `handleTouchEnd`.
-   * Renders one UI section of the job portal and responds to application state or user actions.
-   * Example: `<handleTouchEnd />`
-   */
-  /**
-   * React component: `handleTouchEnd`.
-   * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
-   * Example: `<handleTouchEnd />`
-   */
-  /**
-   * React component: `handleTouchEnd`.
-   * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
-   * Example: `<handleTouchEnd />`
-   */
-  const handleTouchEnd = (e) => {
-    /**
-     * React component: `diff`.
-     * Renders one UI section of the job portal and responds to application state or user actions.
-     * Example: `<diff />`
-     */
-    const diff = e.changedTouches[0].clientX - startX;
+          /**
+           * Event handler: `handleTouchEnd`.
+           * `handleTouchEnd` user/form event ki value aur state read karke UI state ya API submission update karta hai.
+           * Example: `handleTouchEnd(actual arguments);`
+           */
+          const handleTouchEnd = (e) => {
+        const diff = e.changedTouches[0].clientX - startX;
 
     if (diff > 50) {
       prevSlide();
@@ -207,27 +97,12 @@ const Categories = () => {
     }
   };
 
-  /**
-   * React component: `onCategoryClick`.
-   * Renders one UI section of the job portal and responds to application state or user actions.
-   * Example: `<onCategoryClick />`
-   */
-  /**
-   * React component: `onCategoryClick`.
-   * Renders one UI section of the job portal and responds to application state or user actions.
-   * Example: `<onCategoryClick />`
-   */
-  /**
-   * React component: `onCategoryClick`.
-   * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
-   * Example: `<onCategoryClick />`
-   */
-  /**
-   * React component: `onCategoryClick`.
-   * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
-   * Example: `<onCategoryClick />`
-   */
-  const onCategoryClick = (category) => {
+          /**
+           * Utility/function: `onCategoryClick`.
+           * `onCategoryClick` is component/hook ke focused UI ya state operation ko execute karta hai.
+           * Example: `onCategoryClick(actual arguments);`
+           */
+          const onCategoryClick = (category) => {
     navigate(`/browse?category=${encodeURIComponent(category)}`);
   };
 

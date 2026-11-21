@@ -1,8 +1,3 @@
-/**
- * Frontend module: React 19, Vite, React Router aur Axios.
- * Use case: Ye file job portal ke browser-side UI aur API flow mein kaam karti hai.
- */
-
 import { useState } from "react";
 
 import Navbar from "../compolite/Navbar.jsx";
@@ -16,7 +11,7 @@ import "../../styles/register.css";
 
 /**
  * React component: `Register`.
- * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
+ * Registration form data aur profile file validate/submit karke naya user banata hai.
  * Example: `<Register />`
  */
 const Register = () => {
@@ -32,32 +27,32 @@ const Register = () => {
   const navigate = useNavigate();
   const { loading, setLoading, user } = useAppContext();
 
-  /**
-   * React component: `changeEventHandler`.
-   * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
-   * Example: `<changeEventHandler />`
-   */
-  const changeEventHandler = (e) => {
+    /**
+     * Event handler: `changeEventHandler`.
+     * `changeEventHandler` user/form event ki value aur state read karke UI state ya API submission update karta hai.
+     * Example: `changeEventHandler(actual arguments);`
+     */
+    const changeEventHandler = (e) => {
     setInput({ ...input, [e.target.name]: e.target.value });
   };
 
   
-  /**
-   * React component: `profilePictureChangeHandler`.
-   * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
-   * Example: `<profilePictureChangeHandler />`
-   */
-  const profilePictureChangeHandler = (e) => {
+    /**
+     * Event handler: `profilePictureChangeHandler`.
+     * `profilePictureChangeHandler` user/form event ki value aur state read karke UI state ya API submission update karta hai.
+     * Example: `profilePictureChangeHandler(actual arguments);`
+     */
+    const profilePictureChangeHandler = (e) => {
     setInput({ ...input, profilePictureFile: e.target.files?.[0] || null });
   };
 
 
-  /**
-   * React component: `submitHandler`.
-   * Job portal ka ek UI section render karta hai aur application state ya user action ka response deta hai.
-   * Example: `<submitHandler />`
-   */
-  const submitHandler = async (e) => {
+    /**
+     * Event handler: `submitHandler`.
+     * `submitHandler` user/form event ki value aur state read karke UI state ya API submission update karta hai.
+     * Example: `submitHandler(actual arguments);`
+     */
+    const submitHandler = async (e) => {
     e.preventDefault();
 
     const formData = new FormData();
