@@ -92,13 +92,7 @@ cd back
 npm install
 ```
 
-Create a `.env` file in the backend directory:
 
-```env
-PORT=5001
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_jwt_secret
-```
 
 Add any additional environment variables required by your project, such as your file-upload service credentials.
 
