@@ -16,6 +16,8 @@ import { useAppContext } from "@/context/AppContext";
 const Navbar = () => {
   const { user, setUser } = useAppContext();
   const [open, setOpen] = useState(false);
+  const rootRef=useRef();
+  const navigate= useNavigate();
     /**
      * Utility/function: `logouthandler`.
      * `logouthandler` is component/hook ke focused UI ya state operation ko execute karta hai.
@@ -38,13 +40,9 @@ const Navbar = () => {
     toast.error(error?.response?.data?.message || "Failed to logout");
   }
 }
-  useEffect(() => {
-                    /**
-                     * Utility/function: `onDocClick`.
-                     * `onDocClick` is component/hook ke focused UI ya state operation ko execute karta hai.
-                     * Example: `onDocClick(actual arguments);`
-                     */
-                    const onDocClick = (e) => {
+
+ useEffect(() => {
+    const onDocClick = (e) => {
       if (!rootRef.current) return;
       if (!rootRef.current.contains(e.target)) setOpen(false);
     };
@@ -52,8 +50,7 @@ const Navbar = () => {
     document.addEventListener("mousedown", onDocClick);
     return () => document.removeEventListener("mousedown", onDocClick);
   }, []);
-
-  return (
+    return (
     <header className="navbar__root">
       <div className="navbar__inner">
         <div className="navbar__brand" onClick={() => navigate("/")}>
@@ -97,7 +94,7 @@ const Navbar = () => {
           </ul>
 
           {user ? (
-            <div className="navbar__profileWrap" ref={rootRef}>
+            <div className="navbar__profileWrap"  ref={rootRef}>
               <button
                 type="button"
                 className="navbar__avatarButton"

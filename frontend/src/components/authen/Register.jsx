@@ -71,7 +71,7 @@ const Register = () => {
 
     try {
       setLoading(true);
-      const res = await axios.post(`${USER_API_URL}/register`, formData, {
+      const res = await axios.post(`${USER_API_URL}/register`, formData, { 
         headers: {
           "Content-Type": "multipart/form-data",
         },
